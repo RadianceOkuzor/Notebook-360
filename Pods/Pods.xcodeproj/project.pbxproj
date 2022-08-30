@@ -7,314 +7,155 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		051C8C5974237CF3332F3F4BE6CE8670 /* h3.png in Resources */ = {isa = PBXBuildFile; fileRef = B54B757A46E642DF6D67100C1397C305 /* h3.png */; };
-		0988BE8DA127806B515BFDC02AE12526 /* subscript.png in Resources */ = {isa = PBXBuildFile; fileRef = D8CCDB03BA44BA6FA7F30D1F253ABFD2 /* subscript.png */; };
-		0B4A3F84DB9141B258B2DD0F6B1C837A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
-		0BB6A4F2146AEE4084418695230A2A4E /* h6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E46409C7FB0022F9A1ED29E632F6FAC /* h6@2x.png */; };
-		0E2E22BE5CB0D3462CD6972DD80DEEFC /* bold@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F8D4DB1D266872965CBC5208EC6655D /* bold@2x.png */; };
-		119E0D47B72E3B9A448B1F0316C5C9BC /* h3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7943E0A7B4BB63112DE6EDCFC6F409A9 /* h3@2x.png */; };
-		14A64D0E6EA7013D02ECE0121149AD08 /* unordered_list.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E508F4D661F88E354EF01B4C16D377 /* unordered_list.png */; };
-		170A7B869109C8A023ACC15F42BF828B /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DAE978E667FD94D266F4ADE00141CA /* UIColor.swift */; };
+		134C1D8864680AD85A074731D4B591C3 /* Pods-Notebook360-Notebook360UITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AD144F0930E6AA0B6582F806A35D742 /* Pods-Notebook360-Notebook360UITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		170A7B869109C8A023ACC15F42BF828B /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6FA5B1D339D52F5D4DD797E4EE39CA /* UIColor.swift */; };
 		1822D42704890ED13A0A5231D0A6D721 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */; };
-		1BF736CDC1B7781BFE15E3CCD5213F20 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9DD8AE9BE159A46B242493DCE358EE /* Bundle.swift */; };
-		1BF7DC3F565CF8A903CB5DCC4E0CBD44 /* CGPoint+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023E0C372D4FE36C1C626ABF6FFDCD88 /* CGPoint+Helpers.swift */; };
-		1EC08736F2A00BF8B354C008362444E9 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359DCDC60302D5179AC17FB652B86E4B /* UIColor+Extensions.swift */; };
+		1BF736CDC1B7781BFE15E3CCD5213F20 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00142E6B1DCFB59BBCD5BF3C929B932C /* Bundle.swift */; };
+		1BF7DC3F565CF8A903CB5DCC4E0CBD44 /* CGPoint+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43B8C9AD5BAC59D614998F2F52205CA /* CGPoint+Helpers.swift */; };
 		203D78BDBF2768B298191D683195452A /* Pods-Notebook360Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C4C8AEE1CBD06C0937E49632EDFBC96 /* Pods-Notebook360Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		20F97AA9128B820BAAFB3F80B7A16BA5 /* Array+KCScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D2FDBE86CDAEC231FDFA0BFBA6DC5C /* Array+KCScope.swift */; };
-		2322F9575944134D308E51CD180B752D /* insert_image.png in Resources */ = {isa = PBXBuildFile; fileRef = EE3545389988B4E61BFBF2A28A955665 /* insert_image.png */; };
-		236F07201920FEA3A15C1D16A5C79934 /* justify_right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1EDBE59534C5F8FA28496CC6DFAAE0E /* justify_right@2x.png */; };
-		25F1C8F69708900025792337A60D2BDE /* KCLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318AEA2326941CC030DD0E2FC80805AE /* KCLoginResponse.swift */; };
-		28C3D21C3992288CAF6B833171A2F139 /* DrawableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED74950F973F9F908FDB2FB9A6C27E87 /* DrawableView.swift */; };
-		2A38E3D7CF0F526516A76E805954A9B1 /* LoginResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC6D40B9F69C982F99AE1504410D30E /* LoginResult.swift */; };
+		20F97AA9128B820BAAFB3F80B7A16BA5 /* Array+KCScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D41ABF80FAFCE5105D8C4902A7F7B16 /* Array+KCScope.swift */; };
+		23DB751E7507A48D8685634C74D94EB6 /* Pods-Notebook360-Notebook360UITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B6CFE4FE1D84CE75AE1BBB85C0B0051B /* Pods-Notebook360-Notebook360UITests-dummy.m */; };
+		25F1C8F69708900025792337A60D2BDE /* KCLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A8DF9001F88BAA696AD0B3628BC10A /* KCLoginResponse.swift */; };
+		28C3D21C3992288CAF6B833171A2F139 /* DrawableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55898EC4117375447B885CCD073D0D58 /* DrawableView.swift */; };
+		2A38E3D7CF0F526516A76E805954A9B1 /* LoginResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A12AF8DBB78344EFF2EC80F8DCED77 /* LoginResult.swift */; };
 		2C9C205449FE488D667622205A0E4A41 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
-		2D2E8125F0F35FD8A6222671440B6835 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60D6CDCDB7638A3DFE5D5019D6A2FCA4 /* Assets.xcassets */; };
-		2DA927A34A864764871EC6D7FE500D6C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AACBE6FB5FF64C42AF21A15C6DEB15 /* Constants.swift */; };
-		2FCC09BFF887B1D47CBCC9E9D915983D /* justify_left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CB66FE262285C918870C1FC8A3E404E /* justify_left@2x.png */; };
-		37A7604AE50101C27273223106DEE58C /* assert.js in Resources */ = {isa = PBXBuildFile; fileRef = DB004BE3469E9A229FE46459BB1B27DA /* assert.js */; };
-		39A2138A14F4F7E88AB8A4431A73A9A8 /* justify_right.png in Resources */ = {isa = PBXBuildFile; fileRef = A2E7F31C150B40518804409E16F7C85E /* justify_right.png */; };
-		40FFCE8B5832E850D62F5CEDA4CA1306 /* Array+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83AF6296A8536BF3DCA6F2343AD41D3 /* Array+Helpers.swift */; };
-		4178C143F85052C6BB5FE1F42A5CD4CD /* superscript.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CD52329920A0389BC5EDF903DF0D4F9 /* superscript.png */; };
-		420C55FD618692419D2A16522AB3246C /* bg_color.png in Resources */ = {isa = PBXBuildFile; fileRef = AA30312A427EC59B3777FDF448AADB0A /* bg_color.png */; };
-		461AE67A2723BEC8BCF4095296138710 /* DrawableView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 203D3F0B065BED5A6FA1247598400C13 /* DrawableView-dummy.m */; };
-		4699EAB169E6D18F554D9E85CD76ABB3 /* redo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FEB75B7F7AAA7008DF9CB939892C1E72 /* redo@2x.png */; };
-		480B2E8D5793932F47AEDA8471A316A0 /* rich_editor_tests.js in Resources */ = {isa = PBXBuildFile; fileRef = DB97ACA2BBB8525CC85655D5E8845041 /* rich_editor_tests.js */; };
-		48486EA87ED67D0532EED070E8A92595 /* ordered_list.png in Resources */ = {isa = PBXBuildFile; fileRef = CB3685E9B3A476022A1E688039E64E3E /* ordered_list.png */; };
-		48805802FC546FE4E641BB0F95500109 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = FC980BFFF3CB2BE39B264238285BCBC5 /* style.css */; };
-		488346EEC2640A4375EFC43C0CDC1A64 /* text_color@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F21D9CDC72875181CE206F8C51DA16EF /* text_color@2x.png */; };
-		498220836F1ED93AF064B9F044FBFAE1 /* rich_editor.js in Resources */ = {isa = PBXBuildFile; fileRef = CC857CE997E2C754223B46EB1A6CDE1D /* rich_editor.js */; };
-		4F4A3ED540E6F1A361C4D3E4492E9884 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
+		2D2E8125F0F35FD8A6222671440B6835 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 650D0D71BE0E78B72120E7D5621D04E8 /* Assets.xcassets */; };
+		2DA927A34A864764871EC6D7FE500D6C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32CBE9357F5C33FD291D61B4FADF209 /* Constants.swift */; };
+		3DBB27401BB536783030C203A3C1266C /* Pods-Notebook360-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C21E55BF01CCBCAEB99A5483100B98E4 /* Pods-Notebook360-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		40FFCE8B5832E850D62F5CEDA4CA1306 /* Array+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1633ECFDFB8D87D61436C8DA19DC7382 /* Array+Helpers.swift */; };
+		461AE67A2723BEC8BCF4095296138710 /* DrawableView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EEB393FF5726402D70ABA3604D8CA64A /* DrawableView-dummy.m */; };
 		542AD6A8F20D23BBBB4C93EAACC9B179 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
-		55C99EAB4F04A4C35AC09BB5BE193A99 /* strikethrough@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 372C9733EF38072896A1A8A8BE30BF8A /* strikethrough@2x.png */; };
-		5A785B990451F1A3D16619A461F8AA94 /* Pods-Notebook360-Notebook360UITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B6CFE4FE1D84CE75AE1BBB85C0B0051B /* Pods-Notebook360-Notebook360UITests-dummy.m */; };
-		5E146BD57FE5DF39552B1392F8E198C8 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACBB73C15166ED507310F1A75DB44E0 /* String+Extensions.swift */; };
-		5E641A4812FD42507FDB04DDC481DDAB /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816CBBD955319922F955AAF69F8A8ACB /* Localization.swift */; };
-		612E849160531E7E8D7691AA9B741219 /* bg_color@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B5504347E485038031553BE36AF3621 /* bg_color@2x.png */; };
+		5E641A4812FD42507FDB04DDC481DDAB /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8094ABC6C3A2DE3418B8CA9891137F /* Localization.swift */; };
 		633ABA743A10A7D7AD009B575FEC2D3A /* Pods-Notebook360Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C31D925503A72A1F3A8A2A587D230AB /* Pods-Notebook360Tests-dummy.m */; };
-		6698F3919503D4091A5C1D812776A367 /* normalize.css in Resources */ = {isa = PBXBuildFile; fileRef = 6E6BA84A115B920ECC9DE0BCD408BE4E /* normalize.css */; };
 		6A299313DA4F6BC75E04C66D3C210065 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
-		6D4C8072C10F4049BD9E7B20FEA35C6B /* text_color.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DB332101C0B6D6C5D295D184A997A79 /* text_color.png */; };
-		78ED8B30D7BF6B6205DC81ADEB128681 /* StrokeCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE01E03BC95FEC10016E8F691B2544AA /* StrokeCollection.swift */; };
-		79B43721720D94EFDD4BF0A4508DCB73 /* undo.png in Resources */ = {isa = PBXBuildFile; fileRef = 36FA45D7EDFA2FF0757EAE3B42B7A82C /* undo.png */; };
-		7BF0661669933F5DFBE87044DBF0B7B1 /* Stroke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587CE99170203959E3EAAD197925A8AF /* Stroke.swift */; };
-		871CF741A8D317BCC444DB231D9325BC /* KCLoginManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BD22CED9827C5C7FF04D1F338EB2B /* KCLoginManaging.swift */; };
-		8B779F1AF5C91FB7E217AC927680F35D /* h1.png in Resources */ = {isa = PBXBuildFile; fileRef = 06DF0AFD527DAFA78B9621DD079E78B5 /* h1.png */; };
-		8D7DE4AC590621EE960190CEEA572D08 /* subscript@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34EF15A9EBAB8197CF35678528E51A69 /* subscript@2x.png */; };
-		8E8CC1C0E1DCA6938BF8B6ADA441E04D /* CJWWebView+HackishAccessoryHiding.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C63B57620E5B92FC37EA68B7D34C54B /* CJWWebView+HackishAccessoryHiding.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8F7DA0B6BD58D8657FF2CC19F0E42567 /* RichEditorOptionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A067E42E3BB459BA96CFF095F917AC /* RichEditorOptionItem.swift */; };
-		90C62DA72D489FC8ECE91340AADA012B /* Pods-Notebook360-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C485D37E0289C04B08FA985871BE67 /* Pods-Notebook360-dummy.m */; };
-		90E1BAE6F6DA4A8DC50D8A41FF18CAD1 /* indent.png in Resources */ = {isa = PBXBuildFile; fileRef = 70296B7F25A071A065F8A704909FE026 /* indent.png */; };
-		92C6E5EB4D47F4D9F248F9AC2CA82845 /* h5.png in Resources */ = {isa = PBXBuildFile; fileRef = 0290E146551C1E749C07F6F875D863D9 /* h5.png */; };
-		9679581FFB4C567259FA84BA4080F61A /* strikethrough.png in Resources */ = {isa = PBXBuildFile; fileRef = 570326767294B53E74E96596D6A480DA /* strikethrough.png */; };
-		969C53385F628AB1F219EA6D6FC28C35 /* italic.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6DA406A0AFF4CAE0F0B11FE377815E /* italic.png */; };
-		9704D9631CD754DE9B09672A4D9F6321 /* insert_link.png in Resources */ = {isa = PBXBuildFile; fileRef = 372D7CAEDE8EBD9CBEAC90E29D123705 /* insert_link.png */; };
-		994423BE259FB0069789BFBFD2947B23 /* superscript@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B6BF81987A194462E7D4496A7943569 /* superscript@2x.png */; };
-		994E78F3E6E08FA788C53074780A32A7 /* KCLoginSDK-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 531BF422AFAD68D0BF7068335DFAA499 /* KCLoginSDK-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9A2BD9737BEBD730BAE436E77480EA52 /* justify_center.png in Resources */ = {isa = PBXBuildFile; fileRef = 58111826A8AA9CE113312A478721FD65 /* justify_center.png */; };
-		9C57B69CD9B1AC9413F1EAA4649AC70E /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2DFCDB92AC876EE8F0DF41EE427068 /* URLBuilder.swift */; };
-		9D491612F330B2FA2A890F89F80D7B11 /* RichEditorView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AADC2367F317164CE5F7FA47E4674BC7 /* RichEditorView-dummy.m */; };
-		A16251A2FCA70BFF9FA4E79F1CF60092 /* KCLoginSDK-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BB107667005C3633C0437F32AC8C8B0 /* KCLoginSDK-dummy.m */; };
-		A18B9C368160381875393285FB3A8CE7 /* KCScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3BB99F1713AEC9F33F9CF55B2C8447 /* KCScope.swift */; };
-		A1A226688A43000907C019ADB74B3239 /* bold.png in Resources */ = {isa = PBXBuildFile; fileRef = 04C6F7D945D9934778F3B0BD72D49699 /* bold.png */; };
-		A1FAC61CF242DE05FA51731662B42E64 /* h2.png in Resources */ = {isa = PBXBuildFile; fileRef = F57C3998FA58E093681AB790619E08D8 /* h2.png */; };
-		A9712AEE964444648F0EAD54C33C1AC6 /* indent@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DEDCC5DCE67625750E5A04FDD1F41486 /* indent@2x.png */; };
-		A98190ED26F152FD85362CF34B15985C /* Array+QueryItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83993280898FC9651F4731A66208769F /* Array+QueryItems.swift */; };
-		AA373B335FA5E6A66CD58A661ACFDCE8 /* justify_center@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B48146558AA2A2BBCC927712870EE5A /* justify_center@2x.png */; };
-		B2A281A8816EAEE010A334E3C15B9216 /* Pods-Notebook360-Notebook360UITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AD144F0930E6AA0B6582F806A35D742 /* Pods-Notebook360-Notebook360UITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BA50C86F39DABB466FB009828089F8A3 /* redo.png in Resources */ = {isa = PBXBuildFile; fileRef = D3D1A1857D47C7F543C13F07E2A0AC6E /* redo.png */; };
-		BA6411D4A5F1F4B8370961BE8D5A5BA4 /* underline.png in Resources */ = {isa = PBXBuildFile; fileRef = 0609FF08B888395A29DC6EDA0FE39BCA /* underline.png */; };
-		BBB060B7A9F6FACC5BCFC2D6FD6095A1 /* h4.png in Resources */ = {isa = PBXBuildFile; fileRef = CAAEBD3792B0671DC36116E56EBC63E9 /* h4.png */; };
-		BC6B169D126B37442E5777ED5229F53C /* RichEditorToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0E7B37D2B234648ED221023164ABB5 /* RichEditorToolbar.swift */; };
-		BFA40E26BC8BA7C0EB927EBDB0687AC5 /* outdent.png in Resources */ = {isa = PBXBuildFile; fileRef = BE86ABD55D24EE2D100B772A0BB1617E /* outdent.png */; };
-		C20111701957512FD191214C9593A82A /* h5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E390DFC5278DB2F35B2E09100C9DBD0 /* h5@2x.png */; };
-		C21C8D1026F567D4C63BE24A29223EA6 /* insert_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6913275773FC0F95BF256E769AA55F81 /* insert_image@2x.png */; };
-		C59793A0644D36447629B45E1DADD559 /* RichEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AE35E6490F379D3BBC44100DC5254C /* RichEditorView.swift */; };
-		C645FF884E6BFFE94BC6F337D2CFF09C /* URLResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A0E8EFCD10D17B66DA00C2DAD432F0 /* URLResolver.swift */; };
-		C7F18E843E06A4FA9C17A34AF90E847F /* rich_editor_tests.html in Resources */ = {isa = PBXBuildFile; fileRef = F31AE96A62E0BE1E2BF0DD9F9730FC3E /* rich_editor_tests.html */; };
-		CC243EBE08F8072AB34A623051EC422C /* underline@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BAC55069B85A4144730EDFF7E1136E3 /* underline@2x.png */; };
-		CC772F95648EA90F34A76E992A7C1F18 /* outdent@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB62CFCA3C95F0A6B1A3C3E7CEE1CD2C /* outdent@2x.png */; };
-		CE58890CE8094F93876462D2B246FC43 /* justify_left.png in Resources */ = {isa = PBXBuildFile; fileRef = DCA4BF59C1B4F17472CF3C6B4CE43F20 /* justify_left.png */; };
-		D23D4E9504FCB09FD9E730A246432939 /* UIView+Responder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A486675C3877CB19D1195AD57E8E6034 /* UIView+Responder.swift */; };
-		D42B090895C130506760417E914C3605 /* italic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C68F31C8C69D2EAABFA1A88DC438576C /* italic@2x.png */; };
-		D443D0CCADD3EB8531B041892847731A /* rich_editor.html in Resources */ = {isa = PBXBuildFile; fileRef = 61F56D7ADFC7BB05D82ED8B906D0E132 /* rich_editor.html */; };
-		D76BDEEAE80F4C74CCD4E5662929C08A /* h1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7D8BC80B1706F470EFDB03ED15B3F08 /* h1@2x.png */; };
-		DEF4C7AF5F1C5F0D71ED69FA1C3B38C0 /* insert_link@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 08A60D1DAC93E49EB5DC70CBE3272BD5 /* insert_link@2x.png */; };
-		DFBF6182B2329E2F254A40EA509645BC /* clear.png in Resources */ = {isa = PBXBuildFile; fileRef = 17B8E5F5AE15E356D20D30B4B445FD6A /* clear.png */; };
-		E099DAAD49CCF5DD5A9AF171A308E251 /* KCLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05CB8E4ED29FD04D4C1369C2154768F /* KCLoginManager.swift */; };
-		E34754598215A05D60F4E25EAFFC9828 /* ordered_list@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7F98871168391FCF2D8792E2209E520 /* ordered_list@2x.png */; };
-		E7161C46999395A04DD6BC73C64B82A1 /* unordered_list@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B94598662247DF4CC707027812A17C41 /* unordered_list@2x.png */; };
-		E921EE6B45BF1C2E3DC16C3673870925 /* KCLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA53FCC44D19959EFEC1747165D259BB /* KCLoginButton.swift */; };
-		E9C04DC51FE4FEE8E666FA3762DB6737 /* DrawableView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 667113F5AF9847A8CE3134A2B5EE7631 /* DrawableView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		ED335323876DE3EA3902EDAAA0C60510 /* CJWWebView+HackishAccessoryHiding.m in Sources */ = {isa = PBXBuildFile; fileRef = EC7200EDF3626648529230B946C8A9ED /* CJWWebView+HackishAccessoryHiding.m */; };
-		ED602782DA2DDA2931AB9B058DEFD5A3 /* Pods-Notebook360-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C21E55BF01CCBCAEB99A5483100B98E4 /* Pods-Notebook360-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EE7AD444C7AA5801C48277E6BBEB836D /* undo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A9274D033EDC81D5879453BB0B02195 /* undo@2x.png */; };
-		EF15AE7D2A7FAAE973C9DBD625EDD72D /* h2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50A8697A2CFC8500429B534B9AC3B005 /* h2@2x.png */; };
-		EF429990FE688A7CC8B3895F0E5F908A /* h4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 724F932174DF55E0083F8DEE24152EA4 /* h4@2x.png */; };
-		EFCB87394381D56F043EF07BDEB5279C /* KCLoginError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352EA196ACD5805EE276A8C13771EA20 /* KCLoginError.swift */; };
-		F3483A544E382D1FD7D0909BB82B0BCC /* Brush.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE0548553D53C77CA11D1D0E884BA75 /* Brush.swift */; };
-		F802E93A2076E9C19D9B792F037FE770 /* RichEditorView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DD029C05301719B88FFD2FE25E1C781 /* RichEditorView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F8A27D6723BBEB09575822757615ED76 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
-		F8AA0455BF3924972C4D4848DA471962 /* clear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F7BCDBB66FEECB99EE25BF9DF5B71EC6 /* clear@2x.png */; };
-		F9918957C05B470D89AD62560ABAD06F /* h6.png in Resources */ = {isa = PBXBuildFile; fileRef = 853F77CAADE18D0595029088E2157D17 /* h6.png */; };
+		78ED8B30D7BF6B6205DC81ADEB128681 /* StrokeCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA86A05843A854E96E4D655A0691F681 /* StrokeCollection.swift */; };
+		7BF0661669933F5DFBE87044DBF0B7B1 /* Stroke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523CCBB3953641BE6FB53B596FA0414C /* Stroke.swift */; };
+		871CF741A8D317BCC444DB231D9325BC /* KCLoginManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C11F98C3C25536F44E87D3C2A0D850 /* KCLoginManaging.swift */; };
+		994E78F3E6E08FA788C53074780A32A7 /* KCLoginSDK-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F23C8FCECBF75EEFF2003FF4263CE47 /* KCLoginSDK-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9C57B69CD9B1AC9413F1EAA4649AC70E /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53334F58729F5D70ECEE68D1AD860BCC /* URLBuilder.swift */; };
+		A16251A2FCA70BFF9FA4E79F1CF60092 /* KCLoginSDK-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1433ADF27E45AFF72EE1B4FBBAFD2518 /* KCLoginSDK-dummy.m */; };
+		A18B9C368160381875393285FB3A8CE7 /* KCScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8C04C69CF96C249FD7F37CDE27FE0D /* KCScope.swift */; };
+		A98190ED26F152FD85362CF34B15985C /* Array+QueryItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A148C75E0D8221B02F430B6EB7B2AB /* Array+QueryItems.swift */; };
+		C645FF884E6BFFE94BC6F337D2CFF09C /* URLResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5B712BF7FC29739AA1D79346940B51 /* URLResolver.swift */; };
+		D446335359A68A5CDB7204B246E5FA1C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
+		E099DAAD49CCF5DD5A9AF171A308E251 /* KCLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E19A6ACB0E5CB31A2D2D25AA891F7A /* KCLoginManager.swift */; };
+		E40760B38372D297BDC658AF2558FF82 /* Pods-Notebook360-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C485D37E0289C04B08FA985871BE67 /* Pods-Notebook360-dummy.m */; };
+		E7A4A438E44242C306F47E5286472A21 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
+		E921EE6B45BF1C2E3DC16C3673870925 /* KCLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D364924315552C58244BCEBBD22A5D4 /* KCLoginButton.swift */; };
+		E9C04DC51FE4FEE8E666FA3762DB6737 /* DrawableView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 615D799E664750F276847EC431D3EE15 /* DrawableView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EFCB87394381D56F043EF07BDEB5279C /* KCLoginError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19C01186542C2E17F0BD28DB085DAED /* KCLoginError.swift */; };
+		F3483A544E382D1FD7D0909BB82B0BCC /* Brush.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42B23D385D15CE0D81A9AE86CB5519F /* Brush.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		21EA2517CFB64F91536818911BE6D16D /* PBXContainerItemProxy */ = {
+		37F6E36A92835A956715D40C987D34DB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 449195A8BBA2C468B4C1881D17DC1458;
-			remoteInfo = KCLoginSDK;
+			remoteGlobalIDString = B93AF38D29CDCEB84B32AA89FC15BDC5;
+			remoteInfo = DrawableView;
 		};
-		2CC70BD6D548201B9225DDCE3BCFF4B5 /* PBXContainerItemProxy */ = {
+		3B24167A54D58C613B6147F09528D333 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 330AA24538B3DA2EA93E14814B8E50CA;
 			remoteInfo = "Pods-Notebook360";
 		};
-		876CA863F024CFFF1665558575B07514 /* PBXContainerItemProxy */ = {
+		730E2E6206233CF48BBFBB26BED839E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B93AF38D29CDCEB84B32AA89FC15BDC5;
+			remoteInfo = DrawableView;
+		};
+		99DD9080B086FAC1B4C954AE97361F20 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 449195A8BBA2C468B4C1881D17DC1458;
 			remoteInfo = KCLoginSDK;
 		};
-		9273FB4809DD9E6277E80117D09ACCA4 /* PBXContainerItemProxy */ = {
+		AA9298CE1616FEADB7BBF0ACB4053522 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = EE1675A9CD3D9AB59F10128C452292F9;
-			remoteInfo = RichEditorView;
-		};
-		A3EEA3C19281C5D33F59B21366FEF012 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B93AF38D29CDCEB84B32AA89FC15BDC5;
-			remoteInfo = DrawableView;
-		};
-		A857C2F909F77EBA26CE0A76FEF049EE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EE1675A9CD3D9AB59F10128C452292F9;
-			remoteInfo = RichEditorView;
-		};
-		D44443293E35C1F5247D44AA50F51BE2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B93AF38D29CDCEB84B32AA89FC15BDC5;
-			remoteInfo = DrawableView;
+			remoteGlobalIDString = 449195A8BBA2C468B4C1881D17DC1458;
+			remoteInfo = KCLoginSDK;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00142E6B1DCFB59BBCD5BF3C929B932C /* Bundle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Bundle.swift; path = KCLoginSDK/Sources/Internal/Extension/Bundle.swift; sourceTree = "<group>"; };
 		0130CC06DF425000EAF8F89CA9E76A56 /* Pods-Notebook360Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Notebook360Tests.release.xcconfig"; sourceTree = "<group>"; };
-		023E0C372D4FE36C1C626ABF6FFDCD88 /* CGPoint+Helpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CGPoint+Helpers.swift"; path = "DrawableView/CGPoint+Helpers.swift"; sourceTree = "<group>"; };
-		0290E146551C1E749C07F6F875D863D9 /* h5.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = h5.png; path = RichEditorView/Assets/icons/h5.png; sourceTree = "<group>"; };
+		024E2BAB09D76D5125B2A46FC734304D /* DrawableView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DrawableView.debug.xcconfig; sourceTree = "<group>"; };
 		03C485D37E0289C04B08FA985871BE67 /* Pods-Notebook360-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Notebook360-dummy.m"; sourceTree = "<group>"; };
-		04C6F7D945D9934778F3B0BD72D49699 /* bold.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = bold.png; path = RichEditorView/Assets/icons/bold.png; sourceTree = "<group>"; };
-		0609FF08B888395A29DC6EDA0FE39BCA /* underline.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = underline.png; path = RichEditorView/Assets/icons/underline.png; sourceTree = "<group>"; };
-		06DF0AFD527DAFA78B9621DD079E78B5 /* h1.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = h1.png; path = RichEditorView/Assets/icons/h1.png; sourceTree = "<group>"; };
-		08A60D1DAC93E49EB5DC70CBE3272BD5 /* insert_link@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "insert_link@2x.png"; path = "RichEditorView/Assets/icons/insert_link@2x.png"; sourceTree = "<group>"; };
-		08D2FDBE86CDAEC231FDFA0BFBA6DC5C /* Array+KCScope.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Array+KCScope.swift"; path = "KCLoginSDK/Sources/Internal/Extension/Array+KCScope.swift"; sourceTree = "<group>"; };
-		0A9274D033EDC81D5879453BB0B02195 /* undo@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "undo@2x.png"; path = "RichEditorView/Assets/icons/undo@2x.png"; sourceTree = "<group>"; };
-		0B5504347E485038031553BE36AF3621 /* bg_color@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "bg_color@2x.png"; path = "RichEditorView/Assets/icons/bg_color@2x.png"; sourceTree = "<group>"; };
-		0E9DD8AE9BE159A46B242493DCE358EE /* Bundle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Bundle.swift; path = KCLoginSDK/Sources/Internal/Extension/Bundle.swift; sourceTree = "<group>"; };
-		0F6DA406A0AFF4CAE0F0B11FE377815E /* italic.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = italic.png; path = RichEditorView/Assets/icons/italic.png; sourceTree = "<group>"; };
-		17B8E5F5AE15E356D20D30B4B445FD6A /* clear.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = clear.png; path = RichEditorView/Assets/icons/clear.png; sourceTree = "<group>"; };
-		1B48146558AA2A2BBCC927712870EE5A /* justify_center@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "justify_center@2x.png"; path = "RichEditorView/Assets/icons/justify_center@2x.png"; sourceTree = "<group>"; };
+		1433ADF27E45AFF72EE1B4FBBAFD2518 /* KCLoginSDK-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "KCLoginSDK-dummy.m"; sourceTree = "<group>"; };
+		1633ECFDFB8D87D61436C8DA19DC7382 /* Array+Helpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Array+Helpers.swift"; path = "DrawableView/Array+Helpers.swift"; sourceTree = "<group>"; };
 		1B5D1EFB4123C755898A37BA6286ADEE /* DrawableView */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DrawableView; path = DrawableView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1BB107667005C3633C0437F32AC8C8B0 /* KCLoginSDK-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "KCLoginSDK-dummy.m"; sourceTree = "<group>"; };
-		203D3F0B065BED5A6FA1247598400C13 /* DrawableView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DrawableView-dummy.m"; sourceTree = "<group>"; };
-		2A2F634028C667B5BF1EC66233FD9264 /* DrawableView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DrawableView.debug.xcconfig; sourceTree = "<group>"; };
-		2B47E0C627CC6E1674F8AEF317021DF9 /* DrawableView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DrawableView.modulemap; sourceTree = "<group>"; };
-		2E390DFC5278DB2F35B2E09100C9DBD0 /* h5@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "h5@2x.png"; path = "RichEditorView/Assets/icons/h5@2x.png"; sourceTree = "<group>"; };
-		2F40A16FFD9BEB4396B0913E1D575699 /* DrawableView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DrawableView.release.xcconfig; sourceTree = "<group>"; };
-		318AEA2326941CC030DD0E2FC80805AE /* KCLoginResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KCLoginResponse.swift; path = KCLoginSDK/Sources/Public/KCLoginResponse.swift; sourceTree = "<group>"; };
-		31AACBE6FB5FF64C42AF21A15C6DEB15 /* Constants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = KCLoginSDK/Sources/Internal/Other/Constants.swift; sourceTree = "<group>"; };
-		336C05CA496BA6DA84E8DB488B9DCBF3 /* RichEditorView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = RichEditorView.modulemap; sourceTree = "<group>"; };
-		34EF15A9EBAB8197CF35678528E51A69 /* subscript@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "subscript@2x.png"; path = "RichEditorView/Assets/icons/subscript@2x.png"; sourceTree = "<group>"; };
 		35115946263393F906063236552B9563 /* Pods-Notebook360.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Notebook360.modulemap"; sourceTree = "<group>"; };
-		352EA196ACD5805EE276A8C13771EA20 /* KCLoginError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KCLoginError.swift; path = KCLoginSDK/Sources/Public/KCLoginError.swift; sourceTree = "<group>"; };
-		359DCDC60302D5179AC17FB652B86E4B /* UIColor+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIColor+Extensions.swift"; path = "RichEditorView/Classes/UIColor+Extensions.swift"; sourceTree = "<group>"; };
-		36FA45D7EDFA2FF0757EAE3B42B7A82C /* undo.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = undo.png; path = RichEditorView/Assets/icons/undo.png; sourceTree = "<group>"; };
 		37163CAEFC194B0D2A6C928CFCC9D344 /* Pods-Notebook360-Notebook360UITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Notebook360-Notebook360UITests-acknowledgements.plist"; sourceTree = "<group>"; };
-		372C9733EF38072896A1A8A8BE30BF8A /* strikethrough@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "strikethrough@2x.png"; path = "RichEditorView/Assets/icons/strikethrough@2x.png"; sourceTree = "<group>"; };
-		372D7CAEDE8EBD9CBEAC90E29D123705 /* insert_link.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = insert_link.png; path = RichEditorView/Assets/icons/insert_link.png; sourceTree = "<group>"; };
 		3AD144F0930E6AA0B6582F806A35D742 /* Pods-Notebook360-Notebook360UITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Notebook360-Notebook360UITests-umbrella.h"; sourceTree = "<group>"; };
 		3C4C8AEE1CBD06C0937E49632EDFBC96 /* Pods-Notebook360Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Notebook360Tests-umbrella.h"; sourceTree = "<group>"; };
-		3CB66FE262285C918870C1FC8A3E404E /* justify_left@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "justify_left@2x.png"; path = "RichEditorView/Assets/icons/justify_left@2x.png"; sourceTree = "<group>"; };
-		3D0E7B37D2B234648ED221023164ABB5 /* RichEditorToolbar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RichEditorToolbar.swift; path = RichEditorView/Classes/RichEditorToolbar.swift; sourceTree = "<group>"; };
+		3F30A8479445A155A85BE0C540CAC6A3 /* DrawableView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DrawableView-prefix.pch"; sourceTree = "<group>"; };
 		3F58537A3FC16F83C2B975F1B4FE9DD8 /* Pods-Notebook360-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Notebook360-frameworks.sh"; sourceTree = "<group>"; };
+		44A148C75E0D8221B02F430B6EB7B2AB /* Array+QueryItems.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Array+QueryItems.swift"; path = "KCLoginSDK/Sources/Internal/Extension/Array+QueryItems.swift"; sourceTree = "<group>"; };
 		484F83FB45EFB42466346D21A76BE336 /* Pods-Notebook360-Notebook360UITests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Notebook360-Notebook360UITests"; path = Pods_Notebook360_Notebook360UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		495B7790952B85AB4B32B53302F97728 /* KCLoginSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KCLoginSDK.release.xcconfig; sourceTree = "<group>"; };
-		4DD029C05301719B88FFD2FE25E1C781 /* RichEditorView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RichEditorView-umbrella.h"; sourceTree = "<group>"; };
-		50A8697A2CFC8500429B534B9AC3B005 /* h2@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "h2@2x.png"; path = "RichEditorView/Assets/icons/h2@2x.png"; sourceTree = "<group>"; };
-		531BF422AFAD68D0BF7068335DFAA499 /* KCLoginSDK-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KCLoginSDK-umbrella.h"; sourceTree = "<group>"; };
-		54E508F4D661F88E354EF01B4C16D377 /* unordered_list.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = unordered_list.png; path = RichEditorView/Assets/icons/unordered_list.png; sourceTree = "<group>"; };
-		570326767294B53E74E96596D6A480DA /* strikethrough.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = strikethrough.png; path = RichEditorView/Assets/icons/strikethrough.png; sourceTree = "<group>"; };
-		573330AB60AD49C7C2A9AD7844668646 /* KCLoginSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KCLoginSDK.debug.xcconfig; sourceTree = "<group>"; };
-		58111826A8AA9CE113312A478721FD65 /* justify_center.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = justify_center.png; path = RichEditorView/Assets/icons/justify_center.png; sourceTree = "<group>"; };
-		587CE99170203959E3EAAD197925A8AF /* Stroke.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Stroke.swift; path = DrawableView/Stroke.swift; sourceTree = "<group>"; };
+		4F23C8FCECBF75EEFF2003FF4263CE47 /* KCLoginSDK-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KCLoginSDK-umbrella.h"; sourceTree = "<group>"; };
+		523CCBB3953641BE6FB53B596FA0414C /* Stroke.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Stroke.swift; path = DrawableView/Stroke.swift; sourceTree = "<group>"; };
+		53334F58729F5D70ECEE68D1AD860BCC /* URLBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLBuilder.swift; path = KCLoginSDK/Sources/Internal/Model/URLBuilder.swift; sourceTree = "<group>"; };
+		55898EC4117375447B885CCD073D0D58 /* DrawableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DrawableView.swift; path = DrawableView/DrawableView.swift; sourceTree = "<group>"; };
+		5959EADFF46AE07853056C2DEAD2042C /* DrawableView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DrawableView.modulemap; sourceTree = "<group>"; };
 		5BE7EC8180E8466640C54CC4244CF53B /* Pods-Notebook360Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Notebook360Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		5FA1EAFD9C950747D2DF29FFEA917BE1 /* RichEditorView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RichEditorView.release.xcconfig; sourceTree = "<group>"; };
-		60D6CDCDB7638A3DFE5D5019D6A2FCA4 /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = KCLoginSDK/Resources/Assets.xcassets; sourceTree = "<group>"; };
-		61F56D7ADFC7BB05D82ED8B906D0E132 /* rich_editor.html */ = {isa = PBXFileReference; includeInIndex = 1; name = rich_editor.html; path = RichEditorView/Assets/editor/rich_editor.html; sourceTree = "<group>"; };
-		667113F5AF9847A8CE3134A2B5EE7631 /* DrawableView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DrawableView-umbrella.h"; sourceTree = "<group>"; };
-		6913275773FC0F95BF256E769AA55F81 /* insert_image@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "insert_image@2x.png"; path = "RichEditorView/Assets/icons/insert_image@2x.png"; sourceTree = "<group>"; };
-		6B6BF81987A194462E7D4496A7943569 /* superscript@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "superscript@2x.png"; path = "RichEditorView/Assets/icons/superscript@2x.png"; sourceTree = "<group>"; };
-		6C614A86A3A063D255C141F4DF9D8809 /* RichEditorView */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RichEditorView; path = RichEditorView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6C63B57620E5B92FC37EA68B7D34C54B /* CJWWebView+HackishAccessoryHiding.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CJWWebView+HackishAccessoryHiding.h"; path = "RichEditorView/Classes/CJWWebView+HackishAccessoryHiding.h"; sourceTree = "<group>"; };
-		6DB332101C0B6D6C5D295D184A997A79 /* text_color.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = text_color.png; path = RichEditorView/Assets/icons/text_color.png; sourceTree = "<group>"; };
-		6E6BA84A115B920ECC9DE0BCD408BE4E /* normalize.css */ = {isa = PBXFileReference; includeInIndex = 1; name = normalize.css; path = RichEditorView/Assets/editor/normalize.css; sourceTree = "<group>"; };
-		70296B7F25A071A065F8A704909FE026 /* indent.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = indent.png; path = RichEditorView/Assets/icons/indent.png; sourceTree = "<group>"; };
-		724F932174DF55E0083F8DEE24152EA4 /* h4@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "h4@2x.png"; path = "RichEditorView/Assets/icons/h4@2x.png"; sourceTree = "<group>"; };
+		5D41ABF80FAFCE5105D8C4902A7F7B16 /* Array+KCScope.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Array+KCScope.swift"; path = "KCLoginSDK/Sources/Internal/Extension/Array+KCScope.swift"; sourceTree = "<group>"; };
+		615D799E664750F276847EC431D3EE15 /* DrawableView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DrawableView-umbrella.h"; sourceTree = "<group>"; };
+		650D0D71BE0E78B72120E7D5621D04E8 /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = KCLoginSDK/Resources/Assets.xcassets; sourceTree = "<group>"; };
 		72D18725363702CDC0ABD1B527CDDB62 /* Pods-Notebook360.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Notebook360.debug.xcconfig"; sourceTree = "<group>"; };
 		758B5EF4C1F4ED396C64BEDE2E4B1085 /* Pods-Notebook360 */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Notebook360"; path = Pods_Notebook360.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7943E0A7B4BB63112DE6EDCFC6F409A9 /* h3@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "h3@2x.png"; path = "RichEditorView/Assets/icons/h3@2x.png"; sourceTree = "<group>"; };
-		7CD52329920A0389BC5EDF903DF0D4F9 /* superscript.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = superscript.png; path = RichEditorView/Assets/icons/superscript.png; sourceTree = "<group>"; };
+		7B04CE6D752CC05B2032B6B7440687F1 /* KCLoginSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KCLoginSDK.debug.xcconfig; sourceTree = "<group>"; };
+		7B8C04C69CF96C249FD7F37CDE27FE0D /* KCScope.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KCScope.swift; path = KCLoginSDK/Sources/Public/KCScope.swift; sourceTree = "<group>"; };
+		7C8094ABC6C3A2DE3418B8CA9891137F /* Localization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Localization.swift; path = KCLoginSDK/Sources/Internal/Other/Localization.swift; sourceTree = "<group>"; };
+		7D364924315552C58244BCEBBD22A5D4 /* KCLoginButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KCLoginButton.swift; path = KCLoginSDK/Sources/Public/KCLoginButton.swift; sourceTree = "<group>"; };
 		7F35B458919862DB2967EC91663106B3 /* Pods-Notebook360Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Notebook360Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		816CBBD955319922F955AAF69F8A8ACB /* Localization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Localization.swift; path = KCLoginSDK/Sources/Internal/Other/Localization.swift; sourceTree = "<group>"; };
-		83993280898FC9651F4731A66208769F /* Array+QueryItems.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Array+QueryItems.swift"; path = "KCLoginSDK/Sources/Internal/Extension/Array+QueryItems.swift"; sourceTree = "<group>"; };
-		853F77CAADE18D0595029088E2157D17 /* h6.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = h6.png; path = RichEditorView/Assets/icons/h6.png; sourceTree = "<group>"; };
 		88181336AD860868E6925CDFEB97DDB7 /* Pods-Notebook360Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Notebook360Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		8BAC55069B85A4144730EDFF7E1136E3 /* underline@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "underline@2x.png"; path = "RichEditorView/Assets/icons/underline@2x.png"; sourceTree = "<group>"; };
 		8C31D925503A72A1F3A8A2A587D230AB /* Pods-Notebook360Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Notebook360Tests-dummy.m"; sourceTree = "<group>"; };
 		8D9E57D1336414893AC75FE3EE18E555 /* Pods-Notebook360-Notebook360UITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Notebook360-Notebook360UITests-Info.plist"; sourceTree = "<group>"; };
 		8F24E31CE13BFE661BAE358325E6E0F7 /* Pods-Notebook360-Notebook360UITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Notebook360-Notebook360UITests-frameworks.sh"; sourceTree = "<group>"; };
-		9A3BB99F1713AEC9F33F9CF55B2C8447 /* KCScope.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KCScope.swift; path = KCLoginSDK/Sources/Public/KCScope.swift; sourceTree = "<group>"; };
-		9ACBB73C15166ED507310F1A75DB44E0 /* String+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+Extensions.swift"; path = "RichEditorView/Classes/String+Extensions.swift"; sourceTree = "<group>"; };
-		9B818FFD893B47EA8F7E7F88E20B6A81 /* RichEditorView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "RichEditorView-Info.plist"; sourceTree = "<group>"; };
+		960E3C3BDEEB3DE4BEC52CFF5E98B2F7 /* KCLoginSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KCLoginSDK.release.xcconfig; sourceTree = "<group>"; };
+		9800D458AF0A0C6EF51D3C03873A5C02 /* KCLoginSDK.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = KCLoginSDK.modulemap; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9E46409C7FB0022F9A1ED29E632F6FAC /* h6@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "h6@2x.png"; path = "RichEditorView/Assets/icons/h6@2x.png"; sourceTree = "<group>"; };
-		9F8D4DB1D266872965CBC5208EC6655D /* bold@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "bold@2x.png"; path = "RichEditorView/Assets/icons/bold@2x.png"; sourceTree = "<group>"; };
-		A05CB8E4ED29FD04D4C1369C2154768F /* KCLoginManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KCLoginManager.swift; path = KCLoginSDK/Sources/Public/KCLoginManager.swift; sourceTree = "<group>"; };
-		A1EDBE59534C5F8FA28496CC6DFAAE0E /* justify_right@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "justify_right@2x.png"; path = "RichEditorView/Assets/icons/justify_right@2x.png"; sourceTree = "<group>"; };
-		A2E7F31C150B40518804409E16F7C85E /* justify_right.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = justify_right.png; path = RichEditorView/Assets/icons/justify_right.png; sourceTree = "<group>"; };
-		A486675C3877CB19D1195AD57E8E6034 /* UIView+Responder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Responder.swift"; path = "RichEditorView/Classes/UIView+Responder.swift"; sourceTree = "<group>"; };
-		A7D8BC80B1706F470EFDB03ED15B3F08 /* h1@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "h1@2x.png"; path = "RichEditorView/Assets/icons/h1@2x.png"; sourceTree = "<group>"; };
+		9EC2195CCF1D2B5853C04FD11B8C832D /* KCLoginSDK-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "KCLoginSDK-Info.plist"; sourceTree = "<group>"; };
+		A42B23D385D15CE0D81A9AE86CB5519F /* Brush.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Brush.swift; path = DrawableView/Brush.swift; sourceTree = "<group>"; };
 		A8CAA14047175D3472A1E4C63C227C59 /* Pods-Notebook360-Notebook360UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Notebook360-Notebook360UITests.release.xcconfig"; sourceTree = "<group>"; };
-		AA30312A427EC59B3777FDF448AADB0A /* bg_color.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = bg_color.png; path = RichEditorView/Assets/icons/bg_color.png; sourceTree = "<group>"; };
-		AA53FCC44D19959EFEC1747165D259BB /* KCLoginButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KCLoginButton.swift; path = KCLoginSDK/Sources/Public/KCLoginButton.swift; sourceTree = "<group>"; };
-		AADC2367F317164CE5F7FA47E4674BC7 /* RichEditorView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RichEditorView-dummy.m"; sourceTree = "<group>"; };
-		AD1257DAC0F19CC0E8D6254BFBC2200E /* KCLoginSDK-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KCLoginSDK-prefix.pch"; sourceTree = "<group>"; };
+		A8CD721BF7B45049354493B722015A34 /* DrawableView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "DrawableView-Info.plist"; sourceTree = "<group>"; };
 		B252C645D340E61B40C13C7222CB358C /* Pods-Notebook360-Notebook360UITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Notebook360-Notebook360UITests.modulemap"; sourceTree = "<group>"; };
-		B4DAE978E667FD94D266F4ADE00141CA /* UIColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIColor.swift; path = KCLoginSDK/Sources/Internal/Extension/UIColor.swift; sourceTree = "<group>"; };
-		B54B757A46E642DF6D67100C1397C305 /* h3.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = h3.png; path = RichEditorView/Assets/icons/h3.png; sourceTree = "<group>"; };
 		B6CFE4FE1D84CE75AE1BBB85C0B0051B /* Pods-Notebook360-Notebook360UITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Notebook360-Notebook360UITests-dummy.m"; sourceTree = "<group>"; };
-		B83AF6296A8536BF3DCA6F2343AD41D3 /* Array+Helpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Array+Helpers.swift"; path = "DrawableView/Array+Helpers.swift"; sourceTree = "<group>"; };
-		B94598662247DF4CC707027812A17C41 /* unordered_list@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "unordered_list@2x.png"; path = "RichEditorView/Assets/icons/unordered_list@2x.png"; sourceTree = "<group>"; };
-		BAC6D40B9F69C982F99AE1504410D30E /* LoginResult.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LoginResult.swift; path = KCLoginSDK/Sources/Internal/Model/LoginResult.swift; sourceTree = "<group>"; };
-		BC561C4C8ACF0A5711A2F322766313AE /* DrawableView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "DrawableView-Info.plist"; sourceTree = "<group>"; };
-		BCE0548553D53C77CA11D1D0E884BA75 /* Brush.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Brush.swift; path = DrawableView/Brush.swift; sourceTree = "<group>"; };
 		BDC5EF4BBD959E3951F69B6416ECCBE0 /* Pods-Notebook360-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Notebook360-Info.plist"; sourceTree = "<group>"; };
-		BE86ABD55D24EE2D100B772A0BB1617E /* outdent.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = outdent.png; path = RichEditorView/Assets/icons/outdent.png; sourceTree = "<group>"; };
 		C0B38E6FAC7C61AA67A74304CEB293E1 /* Pods-Notebook360-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Notebook360-acknowledgements.markdown"; sourceTree = "<group>"; };
+		C19C01186542C2E17F0BD28DB085DAED /* KCLoginError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KCLoginError.swift; path = KCLoginSDK/Sources/Public/KCLoginError.swift; sourceTree = "<group>"; };
 		C1A39A13941A4AA95AF12EA29C3F7B38 /* Pods-Notebook360-Notebook360UITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Notebook360-Notebook360UITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		C1C11F98C3C25536F44E87D3C2A0D850 /* KCLoginManaging.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KCLoginManaging.swift; path = KCLoginSDK/Sources/Public/KCLoginManaging.swift; sourceTree = "<group>"; };
 		C21E55BF01CCBCAEB99A5483100B98E4 /* Pods-Notebook360-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Notebook360-umbrella.h"; sourceTree = "<group>"; };
 		C501F3DEC1618D36AD98B8CC98EF0C8D /* Pods-Notebook360Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Notebook360Tests.modulemap"; sourceTree = "<group>"; };
-		C68F31C8C69D2EAABFA1A88DC438576C /* italic@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "italic@2x.png"; path = "RichEditorView/Assets/icons/italic@2x.png"; sourceTree = "<group>"; };
-		C70BD22CED9827C5C7FF04D1F338EB2B /* KCLoginManaging.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KCLoginManaging.swift; path = KCLoginSDK/Sources/Public/KCLoginManaging.swift; sourceTree = "<group>"; };
-		CAAEBD3792B0671DC36116E56EBC63E9 /* h4.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = h4.png; path = RichEditorView/Assets/icons/h4.png; sourceTree = "<group>"; };
-		CB3685E9B3A476022A1E688039E64E3E /* ordered_list.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = ordered_list.png; path = RichEditorView/Assets/icons/ordered_list.png; sourceTree = "<group>"; };
-		CC857CE997E2C754223B46EB1A6CDE1D /* rich_editor.js */ = {isa = PBXFileReference; includeInIndex = 1; name = rich_editor.js; path = RichEditorView/Assets/editor/rich_editor.js; sourceTree = "<group>"; };
-		CD26F8C9B8F897E85DF49101874A4DD4 /* KCLoginSDK-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "KCLoginSDK-Info.plist"; sourceTree = "<group>"; };
-		D19C2D6C7AFC668A309316A737617303 /* RichEditorView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RichEditorView-prefix.pch"; sourceTree = "<group>"; };
+		C7A8DF9001F88BAA696AD0B3628BC10A /* KCLoginResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KCLoginResponse.swift; path = KCLoginSDK/Sources/Public/KCLoginResponse.swift; sourceTree = "<group>"; };
+		D1A12AF8DBB78344EFF2EC80F8DCED77 /* LoginResult.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LoginResult.swift; path = KCLoginSDK/Sources/Internal/Model/LoginResult.swift; sourceTree = "<group>"; };
 		D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		D3D1A1857D47C7F543C13F07E2A0AC6E /* redo.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = redo.png; path = RichEditorView/Assets/icons/redo.png; sourceTree = "<group>"; };
+		D32CBE9357F5C33FD291D61B4FADF209 /* Constants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = KCLoginSDK/Sources/Internal/Other/Constants.swift; sourceTree = "<group>"; };
 		D7DE3C80B8B3E8FDDD0C104C82393FCA /* Pods-Notebook360.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Notebook360.release.xcconfig"; sourceTree = "<group>"; };
 		D86CFEBE29E6165F96C8F224C0B00C5C /* Pods-Notebook360Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Notebook360Tests-Info.plist"; sourceTree = "<group>"; };
-		D8CCDB03BA44BA6FA7F30D1F253ABFD2 /* subscript.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = subscript.png; path = RichEditorView/Assets/icons/subscript.png; sourceTree = "<group>"; };
-		DB004BE3469E9A229FE46459BB1B27DA /* assert.js */ = {isa = PBXFileReference; includeInIndex = 1; name = assert.js; path = RichEditorView/Assets/editor/assert.js; sourceTree = "<group>"; };
-		DB97ACA2BBB8525CC85655D5E8845041 /* rich_editor_tests.js */ = {isa = PBXFileReference; includeInIndex = 1; name = rich_editor_tests.js; path = RichEditorView/Assets/editor/rich_editor_tests.js; sourceTree = "<group>"; };
-		DCA4BF59C1B4F17472CF3C6B4CE43F20 /* justify_left.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = justify_left.png; path = RichEditorView/Assets/icons/justify_left.png; sourceTree = "<group>"; };
 		DDB17C22C46675C3F4BEE04360BCB21D /* Pods-Notebook360Tests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Notebook360Tests"; path = Pods_Notebook360Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DEDCC5DCE67625750E5A04FDD1F41486 /* indent@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "indent@2x.png"; path = "RichEditorView/Assets/icons/indent@2x.png"; sourceTree = "<group>"; };
-		E5A067E42E3BB459BA96CFF095F917AC /* RichEditorOptionItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RichEditorOptionItem.swift; path = RichEditorView/Classes/RichEditorOptionItem.swift; sourceTree = "<group>"; };
-		E7A0E8EFCD10D17B66DA00C2DAD432F0 /* URLResolver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLResolver.swift; path = KCLoginSDK/Sources/Internal/Model/URLResolver.swift; sourceTree = "<group>"; };
-		E7F98871168391FCF2D8792E2209E520 /* ordered_list@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "ordered_list@2x.png"; path = "RichEditorView/Assets/icons/ordered_list@2x.png"; sourceTree = "<group>"; };
-		E9AE35E6490F379D3BBC44100DC5254C /* RichEditorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RichEditorView.swift; path = RichEditorView/Classes/RichEditorView.swift; sourceTree = "<group>"; };
+		DF5B712BF7FC29739AA1D79346940B51 /* URLResolver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLResolver.swift; path = KCLoginSDK/Sources/Internal/Model/URLResolver.swift; sourceTree = "<group>"; };
+		EA86A05843A854E96E4D655A0691F681 /* StrokeCollection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StrokeCollection.swift; path = DrawableView/StrokeCollection.swift; sourceTree = "<group>"; };
 		EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		EC7200EDF3626648529230B946C8A9ED /* CJWWebView+HackishAccessoryHiding.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "CJWWebView+HackishAccessoryHiding.m"; path = "RichEditorView/Classes/CJWWebView+HackishAccessoryHiding.m"; sourceTree = "<group>"; };
-		ED74950F973F9F908FDB2FB9A6C27E87 /* DrawableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DrawableView.swift; path = DrawableView/DrawableView.swift; sourceTree = "<group>"; };
-		EE3545389988B4E61BFBF2A28A955665 /* insert_image.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = insert_image.png; path = RichEditorView/Assets/icons/insert_image.png; sourceTree = "<group>"; };
-		F21D9CDC72875181CE206F8C51DA16EF /* text_color@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "text_color@2x.png"; path = "RichEditorView/Assets/icons/text_color@2x.png"; sourceTree = "<group>"; };
-		F31AE96A62E0BE1E2BF0DD9F9730FC3E /* rich_editor_tests.html */ = {isa = PBXFileReference; includeInIndex = 1; name = rich_editor_tests.html; path = RichEditorView/Assets/editor/rich_editor_tests.html; sourceTree = "<group>"; };
+		EC6FA5B1D339D52F5D4DD797E4EE39CA /* UIColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIColor.swift; path = KCLoginSDK/Sources/Internal/Extension/UIColor.swift; sourceTree = "<group>"; };
+		EEB393FF5726402D70ABA3604D8CA64A /* DrawableView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DrawableView-dummy.m"; sourceTree = "<group>"; };
 		F3528054ABDCB02D8CEF3AEAC8E3E164 /* KCLoginSDK */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KCLoginSDK; path = KCLoginSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F57C3998FA58E093681AB790619E08D8 /* h2.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = h2.png; path = RichEditorView/Assets/icons/h2.png; sourceTree = "<group>"; };
-		F7BCDBB66FEECB99EE25BF9DF5B71EC6 /* clear@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "clear@2x.png"; path = "RichEditorView/Assets/icons/clear@2x.png"; sourceTree = "<group>"; };
-		F97E3BBE82C4DEF34748C69359BD7024 /* KCLoginSDK.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = KCLoginSDK.modulemap; sourceTree = "<group>"; };
-		F9B0C0003D4051BB5EC1B7B0A4EC0952 /* DrawableView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DrawableView-prefix.pch"; sourceTree = "<group>"; };
+		F43B8C9AD5BAC59D614998F2F52205CA /* CGPoint+Helpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CGPoint+Helpers.swift"; path = "DrawableView/CGPoint+Helpers.swift"; sourceTree = "<group>"; };
+		F5A2B9ABDFFC8F5930B6D1C6D859C64F /* DrawableView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DrawableView.release.xcconfig; sourceTree = "<group>"; };
+		F63C73E680AB87F8D3E6635C029D809A /* KCLoginSDK-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KCLoginSDK-prefix.pch"; sourceTree = "<group>"; };
+		F6E19A6ACB0E5CB31A2D2D25AA891F7A /* KCLoginManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KCLoginManager.swift; path = KCLoginSDK/Sources/Public/KCLoginManager.swift; sourceTree = "<group>"; };
 		FA8D8749CEF668607C0EA81EC6E0F5C0 /* Pods-Notebook360-Notebook360UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Notebook360-Notebook360UITests.debug.xcconfig"; sourceTree = "<group>"; };
-		FB62CFCA3C95F0A6B1A3C3E7CEE1CD2C /* outdent@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "outdent@2x.png"; path = "RichEditorView/Assets/icons/outdent@2x.png"; sourceTree = "<group>"; };
-		FB72F0ED0AB03C41E4F3620D403049D3 /* RichEditorView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RichEditorView.debug.xcconfig; sourceTree = "<group>"; };
-		FC2DFCDB92AC876EE8F0DF41EE427068 /* URLBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLBuilder.swift; path = KCLoginSDK/Sources/Internal/Model/URLBuilder.swift; sourceTree = "<group>"; };
-		FC980BFFF3CB2BE39B264238285BCBC5 /* style.css */ = {isa = PBXFileReference; includeInIndex = 1; name = style.css; path = RichEditorView/Assets/editor/style.css; sourceTree = "<group>"; };
 		FDA0F6D294FFA80C3AB0F68915E68C0E /* Pods-Notebook360-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Notebook360-acknowledgements.plist"; sourceTree = "<group>"; };
-		FE01E03BC95FEC10016E8F691B2544AA /* StrokeCollection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StrokeCollection.swift; path = DrawableView/StrokeCollection.swift; sourceTree = "<group>"; };
-		FEB75B7F7AAA7008DF9CB939892C1E72 /* redo@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "redo@2x.png"; path = "RichEditorView/Assets/icons/redo@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -327,27 +168,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4206992C8F251FB30EF5B454E8DEEDBB /* Frameworks */ = {
+		1C62FE74BB8CCE0496112C51F8C3134D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B4A3F84DB9141B258B2DD0F6B1C837A /* Foundation.framework in Frameworks */,
+				D446335359A68A5CDB7204B246E5FA1C /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		781C3569F275FE1C2FCD18ED1E49C01A /* Frameworks */ = {
+		34DDE49A4D2FD76A18A47AA4D6779837 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F4A3ED540E6F1A361C4D3E4492E9884 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7E37B87B87A5D2E163501D764201CA24 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F8A27D6723BBEB09575822757615ED76 /* Foundation.framework in Frameworks */,
+				E7A4A438E44242C306F47E5286472A21 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,32 +203,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		094E46CBD5A53102E66FEE8F8969C824 /* Support Files */ = {
+		1060F67FFBB60B61D74FA5C7F57A03F5 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				336C05CA496BA6DA84E8DB488B9DCBF3 /* RichEditorView.modulemap */,
-				AADC2367F317164CE5F7FA47E4674BC7 /* RichEditorView-dummy.m */,
-				9B818FFD893B47EA8F7E7F88E20B6A81 /* RichEditorView-Info.plist */,
-				D19C2D6C7AFC668A309316A737617303 /* RichEditorView-prefix.pch */,
-				4DD029C05301719B88FFD2FE25E1C781 /* RichEditorView-umbrella.h */,
-				FB72F0ED0AB03C41E4F3620D403049D3 /* RichEditorView.debug.xcconfig */,
-				5FA1EAFD9C950747D2DF29FFEA917BE1 /* RichEditorView.release.xcconfig */,
+				5959EADFF46AE07853056C2DEAD2042C /* DrawableView.modulemap */,
+				EEB393FF5726402D70ABA3604D8CA64A /* DrawableView-dummy.m */,
+				A8CD721BF7B45049354493B722015A34 /* DrawableView-Info.plist */,
+				3F30A8479445A155A85BE0C540CAC6A3 /* DrawableView-prefix.pch */,
+				615D799E664750F276847EC431D3EE15 /* DrawableView-umbrella.h */,
+				024E2BAB09D76D5125B2A46FC734304D /* DrawableView.debug.xcconfig */,
+				F5A2B9ABDFFC8F5930B6D1C6D859C64F /* DrawableView.release.xcconfig */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/RichEditorView";
-			sourceTree = "<group>";
-		};
-		11E74ECBE45BB4A3E656DFF068827CD7 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				1B5D1EFB4123C755898A37BA6286ADEE /* DrawableView */,
-				F3528054ABDCB02D8CEF3AEAC8E3E164 /* KCLoginSDK */,
-				758B5EF4C1F4ED396C64BEDE2E4B1085 /* Pods-Notebook360 */,
-				484F83FB45EFB42466346D21A76BE336 /* Pods-Notebook360-Notebook360UITests */,
-				DDB17C22C46675C3F4BEE04360BCB21D /* Pods-Notebook360Tests */,
-				6C614A86A3A063D255C141F4DF9D8809 /* RichEditorView */,
-			);
-			name = Products;
+			path = "../Target Support Files/DrawableView";
 			sourceTree = "<group>";
 		};
 		1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */ = {
@@ -406,27 +226,44 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		36BD0099B32B68C3D64D5251971A6EDC /* DrawableView */ = {
+		382D9E8CF95C5AF6E4CEDEF500DB1236 /* KCLoginSDK */ = {
 			isa = PBXGroup;
 			children = (
-				B83AF6296A8536BF3DCA6F2343AD41D3 /* Array+Helpers.swift */,
-				BCE0548553D53C77CA11D1D0E884BA75 /* Brush.swift */,
-				023E0C372D4FE36C1C626ABF6FFDCD88 /* CGPoint+Helpers.swift */,
-				ED74950F973F9F908FDB2FB9A6C27E87 /* DrawableView.swift */,
-				587CE99170203959E3EAAD197925A8AF /* Stroke.swift */,
-				FE01E03BC95FEC10016E8F691B2544AA /* StrokeCollection.swift */,
-				A8D4AD9DEA5C58A7BC9A5EDDE2598343 /* Support Files */,
+				5D41ABF80FAFCE5105D8C4902A7F7B16 /* Array+KCScope.swift */,
+				44A148C75E0D8221B02F430B6EB7B2AB /* Array+QueryItems.swift */,
+				00142E6B1DCFB59BBCD5BF3C929B932C /* Bundle.swift */,
+				D32CBE9357F5C33FD291D61B4FADF209 /* Constants.swift */,
+				7D364924315552C58244BCEBBD22A5D4 /* KCLoginButton.swift */,
+				C19C01186542C2E17F0BD28DB085DAED /* KCLoginError.swift */,
+				F6E19A6ACB0E5CB31A2D2D25AA891F7A /* KCLoginManager.swift */,
+				C1C11F98C3C25536F44E87D3C2A0D850 /* KCLoginManaging.swift */,
+				C7A8DF9001F88BAA696AD0B3628BC10A /* KCLoginResponse.swift */,
+				7B8C04C69CF96C249FD7F37CDE27FE0D /* KCScope.swift */,
+				7C8094ABC6C3A2DE3418B8CA9891137F /* Localization.swift */,
+				D1A12AF8DBB78344EFF2EC80F8DCED77 /* LoginResult.swift */,
+				EC6FA5B1D339D52F5D4DD797E4EE39CA /* UIColor.swift */,
+				53334F58729F5D70ECEE68D1AD860BCC /* URLBuilder.swift */,
+				DF5B712BF7FC29739AA1D79346940B51 /* URLResolver.swift */,
+				6F4129C887280EF5AF1195CAC9386DDA /* Resources */,
+				437AF87C1B8DD700E3ADD000BAC5BC3D /* Support Files */,
 			);
-			name = DrawableView;
-			path = DrawableView;
+			name = KCLoginSDK;
+			path = KCLoginSDK;
 			sourceTree = "<group>";
 		};
-		4AAE721B410555007C438EED022898A5 /* Resources */ = {
+		437AF87C1B8DD700E3ADD000BAC5BC3D /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				60D6CDCDB7638A3DFE5D5019D6A2FCA4 /* Assets.xcassets */,
+				9800D458AF0A0C6EF51D3C03873A5C02 /* KCLoginSDK.modulemap */,
+				1433ADF27E45AFF72EE1B4FBBAFD2518 /* KCLoginSDK-dummy.m */,
+				9EC2195CCF1D2B5853C04FD11B8C832D /* KCLoginSDK-Info.plist */,
+				F63C73E680AB87F8D3E6635C029D809A /* KCLoginSDK-prefix.pch */,
+				4F23C8FCECBF75EEFF2003FF4263CE47 /* KCLoginSDK-umbrella.h */,
+				7B04CE6D752CC05B2032B6B7440687F1 /* KCLoginSDK.debug.xcconfig */,
+				960E3C3BDEEB3DE4BEC52CFF5E98B2F7 /* KCLoginSDK.release.xcconfig */,
 			);
-			name = Resources;
+			name = "Support Files";
+			path = "../Target Support Files/KCLoginSDK";
 			sourceTree = "<group>";
 		};
 		4FB329EC6EFA6A206E21800A162CF9DA /* Pods-Notebook360-Notebook360UITests */ = {
@@ -455,39 +292,12 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		633ADF60D8BA551E896EB0C28CFD385A /* Pods */ = {
+		6F4129C887280EF5AF1195CAC9386DDA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				36BD0099B32B68C3D64D5251971A6EDC /* DrawableView */,
-				7F23F8C1AD3F0A6950C96DD3F1017BFB /* KCLoginSDK */,
-				9E5273AB9EC5349337C9757606DD4D9F /* RichEditorView */,
+				650D0D71BE0E78B72120E7D5621D04E8 /* Assets.xcassets */,
 			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		7F23F8C1AD3F0A6950C96DD3F1017BFB /* KCLoginSDK */ = {
-			isa = PBXGroup;
-			children = (
-				08D2FDBE86CDAEC231FDFA0BFBA6DC5C /* Array+KCScope.swift */,
-				83993280898FC9651F4731A66208769F /* Array+QueryItems.swift */,
-				0E9DD8AE9BE159A46B242493DCE358EE /* Bundle.swift */,
-				31AACBE6FB5FF64C42AF21A15C6DEB15 /* Constants.swift */,
-				AA53FCC44D19959EFEC1747165D259BB /* KCLoginButton.swift */,
-				352EA196ACD5805EE276A8C13771EA20 /* KCLoginError.swift */,
-				A05CB8E4ED29FD04D4C1369C2154768F /* KCLoginManager.swift */,
-				C70BD22CED9827C5C7FF04D1F338EB2B /* KCLoginManaging.swift */,
-				318AEA2326941CC030DD0E2FC80805AE /* KCLoginResponse.swift */,
-				9A3BB99F1713AEC9F33F9CF55B2C8447 /* KCScope.swift */,
-				816CBBD955319922F955AAF69F8A8ACB /* Localization.swift */,
-				BAC6D40B9F69C982F99AE1504410D30E /* LoginResult.swift */,
-				B4DAE978E667FD94D266F4ADE00141CA /* UIColor.swift */,
-				FC2DFCDB92AC876EE8F0DF41EE427068 /* URLBuilder.swift */,
-				E7A0E8EFCD10D17B66DA00C2DAD432F0 /* URLResolver.swift */,
-				4AAE721B410555007C438EED022898A5 /* Resources */,
-				AEA61EF46DBE3992BC6799613F06F398 /* Support Files */,
-			);
-			name = KCLoginSDK;
-			path = KCLoginSDK;
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		80827002F469DFCA9DF077AE660C7A9D /* Targets Support Files */ = {
@@ -500,52 +310,16 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		9E5273AB9EC5349337C9757606DD4D9F /* RichEditorView */ = {
+		85D4895713EEB507B257C0D1DAB0F93D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6C63B57620E5B92FC37EA68B7D34C54B /* CJWWebView+HackishAccessoryHiding.h */,
-				EC7200EDF3626648529230B946C8A9ED /* CJWWebView+HackishAccessoryHiding.m */,
-				E5A067E42E3BB459BA96CFF095F917AC /* RichEditorOptionItem.swift */,
-				3D0E7B37D2B234648ED221023164ABB5 /* RichEditorToolbar.swift */,
-				E9AE35E6490F379D3BBC44100DC5254C /* RichEditorView.swift */,
-				9ACBB73C15166ED507310F1A75DB44E0 /* String+Extensions.swift */,
-				359DCDC60302D5179AC17FB652B86E4B /* UIColor+Extensions.swift */,
-				A486675C3877CB19D1195AD57E8E6034 /* UIView+Responder.swift */,
-				D848D9A1EB9C0899165E7BDD205BFC0D /* Resources */,
-				094E46CBD5A53102E66FEE8F8969C824 /* Support Files */,
+				1B5D1EFB4123C755898A37BA6286ADEE /* DrawableView */,
+				F3528054ABDCB02D8CEF3AEAC8E3E164 /* KCLoginSDK */,
+				758B5EF4C1F4ED396C64BEDE2E4B1085 /* Pods-Notebook360 */,
+				484F83FB45EFB42466346D21A76BE336 /* Pods-Notebook360-Notebook360UITests */,
+				DDB17C22C46675C3F4BEE04360BCB21D /* Pods-Notebook360Tests */,
 			);
-			name = RichEditorView;
-			path = RichEditorView;
-			sourceTree = "<group>";
-		};
-		A8D4AD9DEA5C58A7BC9A5EDDE2598343 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				2B47E0C627CC6E1674F8AEF317021DF9 /* DrawableView.modulemap */,
-				203D3F0B065BED5A6FA1247598400C13 /* DrawableView-dummy.m */,
-				BC561C4C8ACF0A5711A2F322766313AE /* DrawableView-Info.plist */,
-				F9B0C0003D4051BB5EC1B7B0A4EC0952 /* DrawableView-prefix.pch */,
-				667113F5AF9847A8CE3134A2B5EE7631 /* DrawableView-umbrella.h */,
-				2A2F634028C667B5BF1EC66233FD9264 /* DrawableView.debug.xcconfig */,
-				2F40A16FFD9BEB4396B0913E1D575699 /* DrawableView.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/DrawableView";
-			sourceTree = "<group>";
-		};
-		AEA61EF46DBE3992BC6799613F06F398 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				F97E3BBE82C4DEF34748C69359BD7024 /* KCLoginSDK.modulemap */,
-				1BB107667005C3633C0437F32AC8C8B0 /* KCLoginSDK-dummy.m */,
-				CD26F8C9B8F897E85DF49101874A4DD4 /* KCLoginSDK-Info.plist */,
-				AD1257DAC0F19CC0E8D6254BFBC2200E /* KCLoginSDK-prefix.pch */,
-				531BF422AFAD68D0BF7068335DFAA499 /* KCLoginSDK-umbrella.h */,
-				573330AB60AD49C7C2A9AD7844668646 /* KCLoginSDK.debug.xcconfig */,
-				495B7790952B85AB4B32B53302F97728 /* KCLoginSDK.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/KCLoginSDK";
+			name = Products;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -553,76 +327,19 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
-				633ADF60D8BA551E896EB0C28CFD385A /* Pods */,
-				11E74ECBE45BB4A3E656DFF068827CD7 /* Products */,
+				E310627F4AFA443029D6E8290134BCEF /* Pods */,
+				85D4895713EEB507B257C0D1DAB0F93D /* Products */,
 				80827002F469DFCA9DF077AE660C7A9D /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		D848D9A1EB9C0899165E7BDD205BFC0D /* Resources */ = {
+		E310627F4AFA443029D6E8290134BCEF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				DB004BE3469E9A229FE46459BB1B27DA /* assert.js */,
-				AA30312A427EC59B3777FDF448AADB0A /* bg_color.png */,
-				0B5504347E485038031553BE36AF3621 /* bg_color@2x.png */,
-				04C6F7D945D9934778F3B0BD72D49699 /* bold.png */,
-				9F8D4DB1D266872965CBC5208EC6655D /* bold@2x.png */,
-				17B8E5F5AE15E356D20D30B4B445FD6A /* clear.png */,
-				F7BCDBB66FEECB99EE25BF9DF5B71EC6 /* clear@2x.png */,
-				06DF0AFD527DAFA78B9621DD079E78B5 /* h1.png */,
-				A7D8BC80B1706F470EFDB03ED15B3F08 /* h1@2x.png */,
-				F57C3998FA58E093681AB790619E08D8 /* h2.png */,
-				50A8697A2CFC8500429B534B9AC3B005 /* h2@2x.png */,
-				B54B757A46E642DF6D67100C1397C305 /* h3.png */,
-				7943E0A7B4BB63112DE6EDCFC6F409A9 /* h3@2x.png */,
-				CAAEBD3792B0671DC36116E56EBC63E9 /* h4.png */,
-				724F932174DF55E0083F8DEE24152EA4 /* h4@2x.png */,
-				0290E146551C1E749C07F6F875D863D9 /* h5.png */,
-				2E390DFC5278DB2F35B2E09100C9DBD0 /* h5@2x.png */,
-				853F77CAADE18D0595029088E2157D17 /* h6.png */,
-				9E46409C7FB0022F9A1ED29E632F6FAC /* h6@2x.png */,
-				70296B7F25A071A065F8A704909FE026 /* indent.png */,
-				DEDCC5DCE67625750E5A04FDD1F41486 /* indent@2x.png */,
-				EE3545389988B4E61BFBF2A28A955665 /* insert_image.png */,
-				6913275773FC0F95BF256E769AA55F81 /* insert_image@2x.png */,
-				372D7CAEDE8EBD9CBEAC90E29D123705 /* insert_link.png */,
-				08A60D1DAC93E49EB5DC70CBE3272BD5 /* insert_link@2x.png */,
-				0F6DA406A0AFF4CAE0F0B11FE377815E /* italic.png */,
-				C68F31C8C69D2EAABFA1A88DC438576C /* italic@2x.png */,
-				58111826A8AA9CE113312A478721FD65 /* justify_center.png */,
-				1B48146558AA2A2BBCC927712870EE5A /* justify_center@2x.png */,
-				DCA4BF59C1B4F17472CF3C6B4CE43F20 /* justify_left.png */,
-				3CB66FE262285C918870C1FC8A3E404E /* justify_left@2x.png */,
-				A2E7F31C150B40518804409E16F7C85E /* justify_right.png */,
-				A1EDBE59534C5F8FA28496CC6DFAAE0E /* justify_right@2x.png */,
-				6E6BA84A115B920ECC9DE0BCD408BE4E /* normalize.css */,
-				CB3685E9B3A476022A1E688039E64E3E /* ordered_list.png */,
-				E7F98871168391FCF2D8792E2209E520 /* ordered_list@2x.png */,
-				BE86ABD55D24EE2D100B772A0BB1617E /* outdent.png */,
-				FB62CFCA3C95F0A6B1A3C3E7CEE1CD2C /* outdent@2x.png */,
-				D3D1A1857D47C7F543C13F07E2A0AC6E /* redo.png */,
-				FEB75B7F7AAA7008DF9CB939892C1E72 /* redo@2x.png */,
-				61F56D7ADFC7BB05D82ED8B906D0E132 /* rich_editor.html */,
-				CC857CE997E2C754223B46EB1A6CDE1D /* rich_editor.js */,
-				F31AE96A62E0BE1E2BF0DD9F9730FC3E /* rich_editor_tests.html */,
-				DB97ACA2BBB8525CC85655D5E8845041 /* rich_editor_tests.js */,
-				570326767294B53E74E96596D6A480DA /* strikethrough.png */,
-				372C9733EF38072896A1A8A8BE30BF8A /* strikethrough@2x.png */,
-				FC980BFFF3CB2BE39B264238285BCBC5 /* style.css */,
-				D8CCDB03BA44BA6FA7F30D1F253ABFD2 /* subscript.png */,
-				34EF15A9EBAB8197CF35678528E51A69 /* subscript@2x.png */,
-				7CD52329920A0389BC5EDF903DF0D4F9 /* superscript.png */,
-				6B6BF81987A194462E7D4496A7943569 /* superscript@2x.png */,
-				6DB332101C0B6D6C5D295D184A997A79 /* text_color.png */,
-				F21D9CDC72875181CE206F8C51DA16EF /* text_color@2x.png */,
-				0609FF08B888395A29DC6EDA0FE39BCA /* underline.png */,
-				8BAC55069B85A4144730EDFF7E1136E3 /* underline@2x.png */,
-				36FA45D7EDFA2FF0757EAE3B42B7A82C /* undo.png */,
-				0A9274D033EDC81D5879453BB0B02195 /* undo@2x.png */,
-				54E508F4D661F88E354EF01B4C16D377 /* unordered_list.png */,
-				B94598662247DF4CC707027812A17C41 /* unordered_list@2x.png */,
+				F7AD728D04F35E0BA3E0EC36F1F53B27 /* DrawableView */,
+				382D9E8CF95C5AF6E4CEDEF500DB1236 /* KCLoginSDK */,
 			);
-			name = Resources;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		F05D2372C1053123C0B98BD7903DF1EF /* Pods-Notebook360 */ = {
@@ -658,14 +375,45 @@
 			path = "Target Support Files/Pods-Notebook360Tests";
 			sourceTree = "<group>";
 		};
+		F7AD728D04F35E0BA3E0EC36F1F53B27 /* DrawableView */ = {
+			isa = PBXGroup;
+			children = (
+				1633ECFDFB8D87D61436C8DA19DC7382 /* Array+Helpers.swift */,
+				A42B23D385D15CE0D81A9AE86CB5519F /* Brush.swift */,
+				F43B8C9AD5BAC59D614998F2F52205CA /* CGPoint+Helpers.swift */,
+				55898EC4117375447B885CCD073D0D58 /* DrawableView.swift */,
+				523CCBB3953641BE6FB53B596FA0414C /* Stroke.swift */,
+				EA86A05843A854E96E4D655A0691F681 /* StrokeCollection.swift */,
+				1060F67FFBB60B61D74FA5C7F57A03F5 /* Support Files */,
+			);
+			name = DrawableView;
+			path = DrawableView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		352F59FFCC524865412C65BE6F031883 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				134C1D8864680AD85A074731D4B591C3 /* Pods-Notebook360-Notebook360UITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4B647F383B00B2DEFA681B12666BE8BA /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				994E78F3E6E08FA788C53074780A32A7 /* KCLoginSDK-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4DA865780A29B9CF3180E6C94D8F2FDB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DBB27401BB536783030C203A3C1266C /* Pods-Notebook360-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -677,22 +425,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		84ACD87A699879DBB9C47A6A3D2535F2 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				ED602782DA2DDA2931AB9B058DEFD5A3 /* Pods-Notebook360-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9714A712E32D037CE035EE284FBB4FBB /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B2A281A8816EAEE010A334E3C15B9216 /* Pods-Notebook360-Notebook360UITests-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		B452146CF26DC511B9CD628CE99F3E2D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -701,33 +433,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E2E62F43F40C9FE12DF613D7750C5E85 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8E8CC1C0E1DCA6938BF8B6ADA441E04D /* CJWWebView+HackishAccessoryHiding.h in Headers */,
-				F802E93A2076E9C19D9B792F037FE770 /* RichEditorView-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		330AA24538B3DA2EA93E14814B8E50CA /* Pods-Notebook360 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DF0571F94BA5C82D22E213DD0129441A /* Build configuration list for PBXNativeTarget "Pods-Notebook360" */;
+			buildConfigurationList = F9D96C07EF69797A6E35C0F5C6C7A68D /* Build configuration list for PBXNativeTarget "Pods-Notebook360" */;
 			buildPhases = (
-				84ACD87A699879DBB9C47A6A3D2535F2 /* Headers */,
-				4912BC5714BA6E5C723868BAEA863A28 /* Sources */,
-				7E37B87B87A5D2E163501D764201CA24 /* Frameworks */,
-				E09BCA000F888A57A7DA77EA784F5CAF /* Resources */,
+				4DA865780A29B9CF3180E6C94D8F2FDB /* Headers */,
+				D5B624ED3833A84022FCE2E2AF5B6AA7 /* Sources */,
+				1C62FE74BB8CCE0496112C51F8C3134D /* Frameworks */,
+				05D21E863B85D68C9FBF7EDC2EE528C0 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				E4A8D029E2CC8AF1F678B52F878E96AF /* PBXTargetDependency */,
-				A3A5327F1931F49279913BDE1BDEBD74 /* PBXTargetDependency */,
-				872D36A389CF676FA97D7C13A0B9F0EF /* PBXTargetDependency */,
+				C188D5C991621FB7267F1740629625AB /* PBXTargetDependency */,
+				E7D226F4403381D1E640A5606774BED3 /* PBXTargetDependency */,
 			);
 			name = "Pods-Notebook360";
 			productName = Pods_Notebook360;
@@ -764,7 +486,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				70C3DAE48582B9A47973CD61A94EBEA0 /* PBXTargetDependency */,
+				DEF4C9BFAC5EE35BEF72C64D31F73A81 /* PBXTargetDependency */,
 			);
 			name = "Pods-Notebook360Tests";
 			productName = Pods_Notebook360Tests;
@@ -773,19 +495,18 @@
 		};
 		9B1896E0D0F804A435B6FF4CD2AA65F8 /* Pods-Notebook360-Notebook360UITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E5A0D13DDEC21E040BC08E5E4CFE241D /* Build configuration list for PBXNativeTarget "Pods-Notebook360-Notebook360UITests" */;
+			buildConfigurationList = 34147119DAA584A165BC40794A08C95E /* Build configuration list for PBXNativeTarget "Pods-Notebook360-Notebook360UITests" */;
 			buildPhases = (
-				9714A712E32D037CE035EE284FBB4FBB /* Headers */,
-				EE12A99017C59A1B67E8722D20D9A5EF /* Sources */,
-				781C3569F275FE1C2FCD18ED1E49C01A /* Frameworks */,
-				E9BE630E27523E728A1BE50CB3687CF4 /* Resources */,
+				352F59FFCC524865412C65BE6F031883 /* Headers */,
+				4B5CF0FF86D3997EAD0B4D2A1E051E1C /* Sources */,
+				34DDE49A4D2FD76A18A47AA4D6779837 /* Frameworks */,
+				4E120A1418457C2F84BCC11E2724079B /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				DF13BC745C12537EA3C6E279F9FA979F /* PBXTargetDependency */,
-				3E75FEE053D481BABB14B058F364E240 /* PBXTargetDependency */,
-				E772DEDB9803D23C54892538239765A6 /* PBXTargetDependency */,
+				3C66D8B875E18142C0B8845E97C06FFC /* PBXTargetDependency */,
+				F607B69B734FC7395F3695533158FA77 /* PBXTargetDependency */,
 			);
 			name = "Pods-Notebook360-Notebook360UITests";
 			productName = Pods_Notebook360_Notebook360UITests;
@@ -810,24 +531,6 @@
 			productReference = 1B5D1EFB4123C755898A37BA6286ADEE /* DrawableView */;
 			productType = "com.apple.product-type.framework";
 		};
-		EE1675A9CD3D9AB59F10128C452292F9 /* RichEditorView */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8DA7790B29708E8A9B12D3180378CCEC /* Build configuration list for PBXNativeTarget "RichEditorView" */;
-			buildPhases = (
-				E2E62F43F40C9FE12DF613D7750C5E85 /* Headers */,
-				98A992EE9D147FA32C65D257915D4F70 /* Sources */,
-				4206992C8F251FB30EF5B454E8DEEDBB /* Frameworks */,
-				269125F0EA986594D0580629BACF5664 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = RichEditorView;
-			productName = RichEditorView;
-			productReference = 6C614A86A3A063D255C141F4DF9D8809 /* RichEditorView */;
-			productType = "com.apple.product-type.framework";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -846,7 +549,7 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 11E74ECBE45BB4A3E656DFF068827CD7 /* Products */;
+			productRefGroup = 85D4895713EEB507B257C0D1DAB0F93D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -855,75 +558,15 @@
 				330AA24538B3DA2EA93E14814B8E50CA /* Pods-Notebook360 */,
 				9B1896E0D0F804A435B6FF4CD2AA65F8 /* Pods-Notebook360-Notebook360UITests */,
 				944E8A73B94B7A5080BBDE44E546EB8C /* Pods-Notebook360Tests */,
-				EE1675A9CD3D9AB59F10128C452292F9 /* RichEditorView */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		269125F0EA986594D0580629BACF5664 /* Resources */ = {
+		05D21E863B85D68C9FBF7EDC2EE528C0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37A7604AE50101C27273223106DEE58C /* assert.js in Resources */,
-				420C55FD618692419D2A16522AB3246C /* bg_color.png in Resources */,
-				612E849160531E7E8D7691AA9B741219 /* bg_color@2x.png in Resources */,
-				A1A226688A43000907C019ADB74B3239 /* bold.png in Resources */,
-				0E2E22BE5CB0D3462CD6972DD80DEEFC /* bold@2x.png in Resources */,
-				DFBF6182B2329E2F254A40EA509645BC /* clear.png in Resources */,
-				F8AA0455BF3924972C4D4848DA471962 /* clear@2x.png in Resources */,
-				8B779F1AF5C91FB7E217AC927680F35D /* h1.png in Resources */,
-				D76BDEEAE80F4C74CCD4E5662929C08A /* h1@2x.png in Resources */,
-				A1FAC61CF242DE05FA51731662B42E64 /* h2.png in Resources */,
-				EF15AE7D2A7FAAE973C9DBD625EDD72D /* h2@2x.png in Resources */,
-				051C8C5974237CF3332F3F4BE6CE8670 /* h3.png in Resources */,
-				119E0D47B72E3B9A448B1F0316C5C9BC /* h3@2x.png in Resources */,
-				BBB060B7A9F6FACC5BCFC2D6FD6095A1 /* h4.png in Resources */,
-				EF429990FE688A7CC8B3895F0E5F908A /* h4@2x.png in Resources */,
-				92C6E5EB4D47F4D9F248F9AC2CA82845 /* h5.png in Resources */,
-				C20111701957512FD191214C9593A82A /* h5@2x.png in Resources */,
-				F9918957C05B470D89AD62560ABAD06F /* h6.png in Resources */,
-				0BB6A4F2146AEE4084418695230A2A4E /* h6@2x.png in Resources */,
-				90E1BAE6F6DA4A8DC50D8A41FF18CAD1 /* indent.png in Resources */,
-				A9712AEE964444648F0EAD54C33C1AC6 /* indent@2x.png in Resources */,
-				2322F9575944134D308E51CD180B752D /* insert_image.png in Resources */,
-				C21C8D1026F567D4C63BE24A29223EA6 /* insert_image@2x.png in Resources */,
-				9704D9631CD754DE9B09672A4D9F6321 /* insert_link.png in Resources */,
-				DEF4C7AF5F1C5F0D71ED69FA1C3B38C0 /* insert_link@2x.png in Resources */,
-				969C53385F628AB1F219EA6D6FC28C35 /* italic.png in Resources */,
-				D42B090895C130506760417E914C3605 /* italic@2x.png in Resources */,
-				9A2BD9737BEBD730BAE436E77480EA52 /* justify_center.png in Resources */,
-				AA373B335FA5E6A66CD58A661ACFDCE8 /* justify_center@2x.png in Resources */,
-				CE58890CE8094F93876462D2B246FC43 /* justify_left.png in Resources */,
-				2FCC09BFF887B1D47CBCC9E9D915983D /* justify_left@2x.png in Resources */,
-				39A2138A14F4F7E88AB8A4431A73A9A8 /* justify_right.png in Resources */,
-				236F07201920FEA3A15C1D16A5C79934 /* justify_right@2x.png in Resources */,
-				6698F3919503D4091A5C1D812776A367 /* normalize.css in Resources */,
-				48486EA87ED67D0532EED070E8A92595 /* ordered_list.png in Resources */,
-				E34754598215A05D60F4E25EAFFC9828 /* ordered_list@2x.png in Resources */,
-				BFA40E26BC8BA7C0EB927EBDB0687AC5 /* outdent.png in Resources */,
-				CC772F95648EA90F34A76E992A7C1F18 /* outdent@2x.png in Resources */,
-				BA50C86F39DABB466FB009828089F8A3 /* redo.png in Resources */,
-				4699EAB169E6D18F554D9E85CD76ABB3 /* redo@2x.png in Resources */,
-				D443D0CCADD3EB8531B041892847731A /* rich_editor.html in Resources */,
-				498220836F1ED93AF064B9F044FBFAE1 /* rich_editor.js in Resources */,
-				C7F18E843E06A4FA9C17A34AF90E847F /* rich_editor_tests.html in Resources */,
-				480B2E8D5793932F47AEDA8471A316A0 /* rich_editor_tests.js in Resources */,
-				9679581FFB4C567259FA84BA4080F61A /* strikethrough.png in Resources */,
-				55C99EAB4F04A4C35AC09BB5BE193A99 /* strikethrough@2x.png in Resources */,
-				48805802FC546FE4E641BB0F95500109 /* style.css in Resources */,
-				0988BE8DA127806B515BFDC02AE12526 /* subscript.png in Resources */,
-				8D7DE4AC590621EE960190CEEA572D08 /* subscript@2x.png in Resources */,
-				4178C143F85052C6BB5FE1F42A5CD4CD /* superscript.png in Resources */,
-				994423BE259FB0069789BFBFD2947B23 /* superscript@2x.png in Resources */,
-				6D4C8072C10F4049BD9E7B20FEA35C6B /* text_color.png in Resources */,
-				488346EEC2640A4375EFC43C0CDC1A64 /* text_color@2x.png in Resources */,
-				BA6411D4A5F1F4B8370961BE8D5A5BA4 /* underline.png in Resources */,
-				CC243EBE08F8072AB34A623051EC422C /* underline@2x.png in Resources */,
-				79B43721720D94EFDD4BF0A4508DCB73 /* undo.png in Resources */,
-				EE7AD444C7AA5801C48277E6BBEB836D /* undo@2x.png in Resources */,
-				14A64D0E6EA7013D02ECE0121149AD08 /* unordered_list.png in Resources */,
-				E7161C46999395A04DD6BC73C64B82A1 /* unordered_list@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -932,6 +575,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D2E8125F0F35FD8A6222671440B6835 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E120A1418457C2F84BCC11E2724079B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -949,28 +599,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E09BCA000F888A57A7DA77EA784F5CAF /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E9BE630E27523E728A1BE50CB3687CF4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		4912BC5714BA6E5C723868BAEA863A28 /* Sources */ = {
+		4B5CF0FF86D3997EAD0B4D2A1E051E1C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90C62DA72D489FC8ECE91340AADA012B /* Pods-Notebook360-dummy.m in Sources */,
+				23DB751E7507A48D8685634C74D94EB6 /* Pods-Notebook360-Notebook360UITests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1011,26 +647,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		98A992EE9D147FA32C65D257915D4F70 /* Sources */ = {
+		D5B624ED3833A84022FCE2E2AF5B6AA7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED335323876DE3EA3902EDAAA0C60510 /* CJWWebView+HackishAccessoryHiding.m in Sources */,
-				8F7DA0B6BD58D8657FF2CC19F0E42567 /* RichEditorOptionItem.swift in Sources */,
-				BC6B169D126B37442E5777ED5229F53C /* RichEditorToolbar.swift in Sources */,
-				C59793A0644D36447629B45E1DADD559 /* RichEditorView.swift in Sources */,
-				9D491612F330B2FA2A890F89F80D7B11 /* RichEditorView-dummy.m in Sources */,
-				5E146BD57FE5DF39552B1392F8E198C8 /* String+Extensions.swift in Sources */,
-				1EC08736F2A00BF8B354C008362444E9 /* UIColor+Extensions.swift in Sources */,
-				D23D4E9504FCB09FD9E730A246432939 /* UIView+Responder.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EE12A99017C59A1B67E8722D20D9A5EF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5A785B990451F1A3D16619A461F8AA94 /* Pods-Notebook360-Notebook360UITests-dummy.m in Sources */,
+				E40760B38372D297BDC658AF2558FF82 /* Pods-Notebook360-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1045,54 +666,117 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3E75FEE053D481BABB14B058F364E240 /* PBXTargetDependency */ = {
+		3C66D8B875E18142C0B8845E97C06FFC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = KCLoginSDK;
-			target = 449195A8BBA2C468B4C1881D17DC1458 /* KCLoginSDK */;
-			targetProxy = 876CA863F024CFFF1665558575B07514 /* PBXContainerItemProxy */;
+			name = DrawableView;
+			target = B93AF38D29CDCEB84B32AA89FC15BDC5 /* DrawableView */;
+			targetProxy = 37F6E36A92835A956715D40C987D34DB /* PBXContainerItemProxy */;
 		};
-		70C3DAE48582B9A47973CD61A94EBEA0 /* PBXTargetDependency */ = {
+		C188D5C991621FB7267F1740629625AB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DrawableView;
+			target = B93AF38D29CDCEB84B32AA89FC15BDC5 /* DrawableView */;
+			targetProxy = 730E2E6206233CF48BBFBB26BED839E0 /* PBXContainerItemProxy */;
+		};
+		DEF4C9BFAC5EE35BEF72C64D31F73A81 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-Notebook360";
 			target = 330AA24538B3DA2EA93E14814B8E50CA /* Pods-Notebook360 */;
-			targetProxy = 2CC70BD6D548201B9225DDCE3BCFF4B5 /* PBXContainerItemProxy */;
+			targetProxy = 3B24167A54D58C613B6147F09528D333 /* PBXContainerItemProxy */;
 		};
-		872D36A389CF676FA97D7C13A0B9F0EF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = RichEditorView;
-			target = EE1675A9CD3D9AB59F10128C452292F9 /* RichEditorView */;
-			targetProxy = 9273FB4809DD9E6277E80117D09ACCA4 /* PBXContainerItemProxy */;
-		};
-		A3A5327F1931F49279913BDE1BDEBD74 /* PBXTargetDependency */ = {
+		E7D226F4403381D1E640A5606774BED3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = KCLoginSDK;
 			target = 449195A8BBA2C468B4C1881D17DC1458 /* KCLoginSDK */;
-			targetProxy = 21EA2517CFB64F91536818911BE6D16D /* PBXContainerItemProxy */;
+			targetProxy = AA9298CE1616FEADB7BBF0ACB4053522 /* PBXContainerItemProxy */;
 		};
-		DF13BC745C12537EA3C6E279F9FA979F /* PBXTargetDependency */ = {
+		F607B69B734FC7395F3695533158FA77 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = DrawableView;
-			target = B93AF38D29CDCEB84B32AA89FC15BDC5 /* DrawableView */;
-			targetProxy = A3EEA3C19281C5D33F59B21366FEF012 /* PBXContainerItemProxy */;
-		};
-		E4A8D029E2CC8AF1F678B52F878E96AF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = DrawableView;
-			target = B93AF38D29CDCEB84B32AA89FC15BDC5 /* DrawableView */;
-			targetProxy = D44443293E35C1F5247D44AA50F51BE2 /* PBXContainerItemProxy */;
-		};
-		E772DEDB9803D23C54892538239765A6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = RichEditorView;
-			target = EE1675A9CD3D9AB59F10128C452292F9 /* RichEditorView */;
-			targetProxy = A857C2F909F77EBA26CE0A76FEF049EE /* PBXContainerItemProxy */;
+			name = KCLoginSDK;
+			target = 449195A8BBA2C468B4C1881D17DC1458 /* KCLoginSDK */;
+			targetProxy = 99DD9080B086FAC1B4C954AE97361F20 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		07B9AE10CD1F778F214244D4E75A58FA /* Release */ = {
+		1BB33A99B77AE9172A6EE8E2C026EB52 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5FA1EAFD9C950747D2DF29FFEA917BE1 /* RichEditorView.release.xcconfig */;
+			baseConfigurationReference = D7DE3C80B8B3E8FDDD0C104C82393FCA /* Pods-Notebook360.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Notebook360/Pods-Notebook360-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Notebook360/Pods-Notebook360.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		2AEE59215B22C9C1FD7EBC268F6C0CC8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72D18725363702CDC0ABD1B527CDDB62 /* Pods-Notebook360.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Notebook360/Pods-Notebook360-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Notebook360/Pods-Notebook360.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4081C5A15B51E35810FD95FA1CD7C204 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 024E2BAB09D76D5125B2A46FC734304D /* DrawableView.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1102,22 +786,56 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/RichEditorView/RichEditorView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/RichEditorView/RichEditorView-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/DrawableView/DrawableView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DrawableView/DrawableView-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MODULEMAP_FILE = "Target Support Files/RichEditorView/RichEditorView.modulemap";
-				PRODUCT_MODULE_NAME = RichEditorView;
-				PRODUCT_NAME = RichEditorView;
+				MODULEMAP_FILE = "Target Support Files/DrawableView/DrawableView.modulemap";
+				PRODUCT_MODULE_NAME = DrawableView;
+				PRODUCT_NAME = DrawableView;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6FA5616A3D387D3FEA38B6AAEB4FE0F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 960E3C3BDEEB3DE4BEC52CFF5E98B2F7 /* KCLoginSDK.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/KCLoginSDK/KCLoginSDK-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/KCLoginSDK/KCLoginSDK-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/KCLoginSDK/KCLoginSDK.modulemap";
+				PRODUCT_MODULE_NAME = KCLoginSDK;
+				PRODUCT_NAME = KCLoginSDK;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1125,7 +843,81 @@
 			};
 			name = Release;
 		};
-		09909ECBA13E8F70A928465E7F7A9A92 /* Debug */ = {
+		7B9E0D2ABFF8A74272DF5FD5B16B909C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA8D8749CEF668607C0EA81EC6E0F5C0 /* Pods-Notebook360-Notebook360UITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Notebook360-Notebook360UITests/Pods-Notebook360-Notebook360UITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Notebook360-Notebook360UITests/Pods-Notebook360-Notebook360UITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		88997F77D7FBC483EBE31696EAD3C20D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F35B458919862DB2967EC91663106B3 /* Pods-Notebook360Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Notebook360Tests/Pods-Notebook360Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Notebook360Tests/Pods-Notebook360Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		90D4D09BCB6A4660E43ACBE9ECB6FE9A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -1178,7 +970,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1191,7 +983,7 @@
 			};
 			name = Debug;
 		};
-		2DE0D8898245310716431F92FA4989FF /* Release */ = {
+		9553C89E183877A5CB2F3C6801BEC129 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -1241,7 +1033,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1253,153 +1045,9 @@
 			};
 			name = Release;
 		};
-		4081C5A15B51E35810FD95FA1CD7C204 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2A2F634028C667B5BF1EC66233FD9264 /* DrawableView.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/DrawableView/DrawableView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/DrawableView/DrawableView-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/DrawableView/DrawableView.modulemap";
-				PRODUCT_MODULE_NAME = DrawableView;
-				PRODUCT_NAME = DrawableView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		65C9505AADFE17095C7D424E45CBA444 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D7DE3C80B8B3E8FDDD0C104C82393FCA /* Pods-Notebook360.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Notebook360/Pods-Notebook360-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Notebook360/Pods-Notebook360.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		6FA5616A3D387D3FEA38B6AAEB4FE0F2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 495B7790952B85AB4B32B53302F97728 /* KCLoginSDK.release.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/KCLoginSDK/KCLoginSDK-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/KCLoginSDK/KCLoginSDK-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/KCLoginSDK/KCLoginSDK.modulemap";
-				PRODUCT_MODULE_NAME = KCLoginSDK;
-				PRODUCT_NAME = KCLoginSDK;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		7AD7B19F0B46CDE2BB6EC70CB87B350C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FA8D8749CEF668607C0EA81EC6E0F5C0 /* Pods-Notebook360-Notebook360UITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Notebook360-Notebook360UITests/Pods-Notebook360-Notebook360UITests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Notebook360-Notebook360UITests/Pods-Notebook360-Notebook360UITests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		993DA42F9DDE2E452742C4CA19F178A9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2F40A16FFD9BEB4396B0913E1D575699 /* DrawableView.release.xcconfig */;
+			baseConfigurationReference = F5A2B9ABDFFC8F5930B6D1C6D859C64F /* DrawableView.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1432,150 +1080,7 @@
 			};
 			name = Release;
 		};
-		BB45E77288299A3CCFBC4CBBAC92067C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 573330AB60AD49C7C2A9AD7844668646 /* KCLoginSDK.debug.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/KCLoginSDK/KCLoginSDK-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/KCLoginSDK/KCLoginSDK-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/KCLoginSDK/KCLoginSDK.modulemap";
-				PRODUCT_MODULE_NAME = KCLoginSDK;
-				PRODUCT_NAME = KCLoginSDK;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		C37E0FCA64669A122F04059FA6BE2C99 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7F35B458919862DB2967EC91663106B3 /* Pods-Notebook360Tests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Notebook360Tests/Pods-Notebook360Tests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Notebook360Tests/Pods-Notebook360Tests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		C6D744AB9657B359FA75ADFC39A4AAD3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A8CAA14047175D3472A1E4C63C227C59 /* Pods-Notebook360-Notebook360UITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Notebook360-Notebook360UITests/Pods-Notebook360-Notebook360UITests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Notebook360-Notebook360UITests/Pods-Notebook360-Notebook360UITests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		DA1CC520C8E6FCACD1686B75C2F4C4C2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FB72F0ED0AB03C41E4F3620D403049D3 /* RichEditorView.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/RichEditorView/RichEditorView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/RichEditorView/RichEditorView-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/RichEditorView/RichEditorView.modulemap";
-				PRODUCT_MODULE_NAME = RichEditorView;
-				PRODUCT_NAME = RichEditorView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		DDBC50CBCDD095BC5A4E54EA93A4334B /* Release */ = {
+		9C950D944C927EC24731692B28AF905F /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0130CC06DF425000EAF8F89CA9E76A56 /* Pods-Notebook360Tests.release.xcconfig */;
 			buildSettings = {
@@ -1591,7 +1096,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-Notebook360Tests/Pods-Notebook360Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1613,9 +1118,9 @@
 			};
 			name = Release;
 		};
-		E74BDFD8795BEE95588182837BEF2CE6 /* Debug */ = {
+		9FDD762886A4AEC802D03472309C1AE2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 72D18725363702CDC0ABD1B527CDDB62 /* Pods-Notebook360.debug.xcconfig */;
+			baseConfigurationReference = A8CAA14047175D3472A1E4C63C227C59 /* Pods-Notebook360-Notebook360UITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -1627,16 +1132,16 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Notebook360/Pods-Notebook360-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-Notebook360-Notebook360UITests/Pods-Notebook360-Notebook360UITests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Notebook360/Pods-Notebook360.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-Notebook360-Notebook360UITests/Pods-Notebook360-Notebook360UITests.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -1644,6 +1149,41 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BB45E77288299A3CCFBC4CBBAC92067C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B04CE6D752CC05B2032B6B7440687F1 /* KCLoginSDK.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/KCLoginSDK/KCLoginSDK-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/KCLoginSDK/KCLoginSDK-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/KCLoginSDK/KCLoginSDK.modulemap";
+				PRODUCT_MODULE_NAME = KCLoginSDK;
+				PRODUCT_NAME = KCLoginSDK;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1653,11 +1193,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		34147119DAA584A165BC40794A08C95E /* Build configuration list for PBXNativeTarget "Pods-Notebook360-Notebook360UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B9E0D2ABFF8A74272DF5FD5B16B909C /* Debug */,
+				9FDD762886A4AEC802D03472309C1AE2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				09909ECBA13E8F70A928465E7F7A9A92 /* Debug */,
-				2DE0D8898245310716431F92FA4989FF /* Release */,
+				90D4D09BCB6A4660E43ACBE9ECB6FE9A /* Debug */,
+				9553C89E183877A5CB2F3C6801BEC129 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1671,20 +1220,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8DA7790B29708E8A9B12D3180378CCEC /* Build configuration list for PBXNativeTarget "RichEditorView" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DA1CC520C8E6FCACD1686B75C2F4C4C2 /* Debug */,
-				07B9AE10CD1F778F214244D4E75A58FA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		911EEFAFDA92D80CF6CE69C3BB992509 /* Build configuration list for PBXNativeTarget "Pods-Notebook360Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C37E0FCA64669A122F04059FA6BE2C99 /* Debug */,
-				DDBC50CBCDD095BC5A4E54EA93A4334B /* Release */,
+				88997F77D7FBC483EBE31696EAD3C20D /* Debug */,
+				9C950D944C927EC24731692B28AF905F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1698,20 +1238,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DF0571F94BA5C82D22E213DD0129441A /* Build configuration list for PBXNativeTarget "Pods-Notebook360" */ = {
+		F9D96C07EF69797A6E35C0F5C6C7A68D /* Build configuration list for PBXNativeTarget "Pods-Notebook360" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E74BDFD8795BEE95588182837BEF2CE6 /* Debug */,
-				65C9505AADFE17095C7D424E45CBA444 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E5A0D13DDEC21E040BC08E5E4CFE241D /* Build configuration list for PBXNativeTarget "Pods-Notebook360-Notebook360UITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7AD7B19F0B46CDE2BB6EC70CB87B350C /* Debug */,
-				C6D744AB9657B359FA75ADFC39A4AAD3 /* Release */,
+				2AEE59215B22C9C1FD7EBC268F6C0CC8 /* Debug */,
+				1BB33A99B77AE9172A6EE8E2C026EB52 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

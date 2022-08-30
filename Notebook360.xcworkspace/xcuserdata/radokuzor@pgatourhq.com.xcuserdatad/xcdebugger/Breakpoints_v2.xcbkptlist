@@ -36,5 +36,117 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "36C4A731-BC0D-43B7-A141-B055F0C0CCE5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/RichEditorView/RichEditorView/Classes/RichEditorView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "369"
+            endingLineNumber = "369"
+            landmarkName = "RichEditorView"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "36C4A731-BC0D-43B7-A141-B055F0C0CCE5 - 2436835968c284dd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Any&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in RichEditorView.RichEditorView.runJS(Swift.String) -&gt; Swift.String"
+                  moduleName = "RichEditorView"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/radokuzor@pgatourhq.com/Desktop/Notebook360/Pods/RichEditorView/RichEditorView/Classes/RichEditorView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "369"
+                  endingLineNumber = "369"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  uuid = "36C4A731-BC0D-43B7-A141-B055F0C0CCE5 - 307eb528b6cc28e4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RichEditorView.RichEditorView.runJS(Swift.String) -&gt; Swift.String"
+                  moduleName = "RichEditorView"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/radokuzor@pgatourhq.com/Desktop/Notebook360/Pods/RichEditorView/RichEditorView/Classes/RichEditorView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "369"
+                  endingLineNumber = "369"
+                  offsetFromSymbolStart = "692">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9D7F56F2-5BBB-47EA-9105-BA9229DD300D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/RichEditorView/RichEditorView/Classes/RichEditorView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "370"
+            endingLineNumber = "370"
+            landmarkName = "RichEditorView"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "9D7F56F2-5BBB-47EA-9105-BA9229DD300D - 2436835968c284e2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Any&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in RichEditorView.RichEditorView.runJS(Swift.String) -&gt; Swift.String"
+                  moduleName = "RichEditorView"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/radokuzor@pgatourhq.com/Desktop/Notebook360/Pods/RichEditorView/RichEditorView/Classes/RichEditorView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "370"
+                  endingLineNumber = "370"
+                  offsetFromSymbolStart = "424">
+               </Location>
+               <Location
+                  uuid = "9D7F56F2-5BBB-47EA-9105-BA9229DD300D - 2436835968c284e2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Any&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in RichEditorView.RichEditorView.runJS(Swift.String) -&gt; Swift.String"
+                  moduleName = "RichEditorView"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/radokuzor@pgatourhq.com/Desktop/Notebook360/Pods/RichEditorView/RichEditorView/Classes/RichEditorView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "370"
+                  endingLineNumber = "370"
+                  offsetFromSymbolStart = "76">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "37692A3B-AE6D-4CEB-9159-08A70200ED9A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/RichEditorView/RichEditorView/Classes/RichEditorView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "372"
+            endingLineNumber = "372"
+            landmarkName = "webView(_:shouldStartLoadWith:navigationType:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

@@ -178,12 +178,10 @@ code_sign_if_enabled() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/DrawableView/DrawableView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/KCLoginSDK/KCLoginSDK.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/RichEditorView/RichEditorView.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/DrawableView/DrawableView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/KCLoginSDK/KCLoginSDK.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/RichEditorView/RichEditorView.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

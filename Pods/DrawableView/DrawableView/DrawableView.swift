@@ -50,7 +50,7 @@ public class DrawableView: UIView {
     }
     
     /// The width of the current brush.
-    public var strokeWidth: CGFloat = 2.0
+    public var strokeWidth: CGFloat = 4.0
     
     /// The color of the current brush.
     public var strokeColor: UIColor = .red
