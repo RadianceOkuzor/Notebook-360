@@ -18,7 +18,7 @@ class SignIn_SignUpVC: UIViewController {
     @IBOutlet weak var confPasswordField: UITextField!
     @IBOutlet weak var kcPressed: KCLoginButton!
     
-    var signUpPressed = false
+    var signUpPressed = true
     
     var pageVM: PageViewModel!
     
@@ -34,6 +34,18 @@ class SignIn_SignUpVC: UIViewController {
                 self.performSegue(withIdentifier: "showHomeFromSignIn", sender: self)
             }
             
+        }
+        
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            return .portrait
+        } else {
+            return .portrait
         }
     }
     
@@ -59,7 +71,10 @@ class SignIn_SignUpVC: UIViewController {
             {
             pageVM.signUpPressed(em: em, pass: pass, conPass: conPass, firstName: firstName, lastName: lastName) {
                 // perform segue
-                self.performSegue(withIdentifier: "showHomeFromSignIn", sender: nil)
+                
+                DispatchQueue.main.async {
+                    self.performSegue(withIdentifier: "showHomeFromSignIn", sender: nil)
+                }
             }
         }
     }

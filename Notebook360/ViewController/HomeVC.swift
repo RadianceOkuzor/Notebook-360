@@ -19,12 +19,17 @@ class HomeVC: UIViewController {
     @IBOutlet weak var createdAtFilterBtn: UIButton!
     @IBOutlet weak var editedAtFilterBtn: UIButton!
     @IBOutlet weak var aToZFilterBtn: UIButton!
+    @IBOutlet weak var searchTextField: UITextField!
     
     
     
     var pageVM: PageViewModel!
     var pages = [Page]()
     var selectedPage = Page(data: [:])
+    
+    var filtertAtoZUp = false
+    var filterAgeUp = false
+    var filterRecentUp = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +43,8 @@ class HomeVC: UIViewController {
         let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
+        
+        searchTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,6 +55,10 @@ class HomeVC: UIViewController {
         newBookBtn.setImage(UIImage(systemName: "folder.fill"), for: .normal)
         
         collection.reloadData()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        searchTextField.text = ""
     }
     
     
@@ -64,17 +75,23 @@ class HomeVC: UIViewController {
     
     @IBAction func drawTypePrsd(_ sender: UIButton) {
         openCloseMenu()
-        selectedPage = Page(data: [:])
         switch sender.accessibilityIdentifier {
         case "DrawAndType":
-            performSegue(withIdentifier: "showDrawFromHome", sender: self)
+            showAlert(type: .drawType) { [weak self] title in
+                self?.selectedPage = Page(data: [:])
+                self?.selectedPage.title = title
+                self?.performSegue(withIdentifier: "showDrawFromHome", sender: self)
+            }
         case "Draw":
-            performSegue(withIdentifier: "showDrawFromHome", sender: self)
+            showAlert(type: .draw) { [weak self]  title in
+                self?.selectedPage.title = title
+                self?.performSegue(withIdentifier: "showDrawFromHome", sender: self)
+            }
         case "Type":
             performSegue(withIdentifier: "showTypeFromHome", sender: self)
         case "newBook":
             // refresh page list
-            showAlert { self.pageVM.createNewBook(title: $0) }
+            showAlert(type: .book) { self.pageVM.createNewBook(title: $0, initialDate: nil) }
         default:
             //
             ()
@@ -84,7 +101,6 @@ class HomeVC: UIViewController {
     @IBAction func filterPressed(_ sender: Any) {
         openCloseFilterBtns()
     }
-    
     
     func callToVMForUIUpdate() {
         self.pageVM.bindPageViewModelToController = {self.updateDataSource()}
@@ -101,14 +117,44 @@ class HomeVC: UIViewController {
     
     @IBAction func aToZpressed(_ sender: Any) {
         openCloseFilterBtns()
+        filtertAtoZUp.toggle()
+        pageVM.filterAtoZ(orderUp: filtertAtoZUp)
+        collection.reloadData()
+        
+        let title = filtertAtoZUp ? "A ↗ Z" : "A ↘︎ Z"
+        
+        aToZFilterBtn.setTitle(title, for: .normal)
     }
     
     @IBAction func createdAtPrsd(_ sender: Any) {
         openCloseFilterBtns()
+        pageVM.filterAge(orderUp: filterAgeUp)
+        collection.reloadData()
+        filterAgeUp.toggle()
+        
+        let title = filterAgeUp ? "Created  At  ↗" : "Created  At  ↘︎"
+        
+        createdAtFilterBtn.setTitle(title, for: .normal)
     }
     
     @IBAction func editFilterPrsd(_ sender: Any) {
-       openCloseFilterBtns()
+        openCloseFilterBtns()
+        pageVM.filterMostRecent(orderUp: filterRecentUp)
+        collection.reloadData()
+        filterRecentUp.toggle()
+        
+        let title = filterRecentUp ? "Recently Edited ↗" : "Recently Edited ↘︎"
+        editedAtFilterBtn.setTitle(title, for: .normal)
+    }
+    
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        
+        self.pages = self.pageVM.pageData.filter({$0.notes.contains(textField.text ?? "")})
+        collection.reloadData()
+        if textField.text == "" {
+            self.pages = self.pageVM.pageData
+        }
+
     }
     
     func openCloseFilterBtns() {
@@ -149,10 +195,10 @@ class HomeVC: UIViewController {
         
     }
     
-    func showAlert(completion: @escaping (String) -> ()) {
-        let alert = UIAlertController(title: "Enter Book Title", message: "", preferredStyle: .alert)
+    func showAlert(type: PageType, completion: @escaping (String) -> ()) {
+        let alert = UIAlertController(title: "Enter \(type.rawValue) title", message: "", preferredStyle: .alert)
         alert.addTextField()
-        alert.textFields?.first?.placeholder = "Book title"
+        alert.textFields?.first?.placeholder = "\(type.rawValue) title"
         let ok = UIAlertAction(title: "create", style: .default) {_ in
             let bookTitle = alert.textFields?.first?.text ?? ""
             completion(bookTitle)
@@ -164,6 +210,14 @@ class HomeVC: UIViewController {
         alert.addAction(cancel)
         
         present(alert, animated: true)
+    }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            return .allButUpsideDown
+        } else {
+            return .all
+        }
     }
     
 }
@@ -212,6 +266,7 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UITextFi
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         //
+        self.pages = self.pageVM.pageData.filter({$0.notes.contains(textField.text ?? "")})
     }
 }
 

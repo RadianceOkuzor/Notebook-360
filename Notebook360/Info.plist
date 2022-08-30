@@ -36,11 +36,5 @@
 			</array>
 		</dict>
 	</dict>
-	<key>CFBundleIdentifier</key>
-	<string></string>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Permission needed to save your writings to your phone</string>
-	<key>NSRemindersUsageDescription</key>
-	<string>Permission to remind you of your notes</string>
 </dict>
 </plist>

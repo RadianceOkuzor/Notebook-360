@@ -47,6 +47,14 @@ class DrawVC: UIViewController {
         }
     }
     
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            return .portrait
+        } else {
+            return .portrait
+        }
+    }
+    
     @IBAction func finishTapped(_ sender: Any) {
         if page.drawing.isEmpty {
             saveDrawingToPhotoLibrary()
@@ -84,7 +92,7 @@ extension DrawVC: DrawableViewDelegate {
     
     func saveDrawingToPhotoLibrary() {
         guard let drawnImage = drawableView.image else {return }
-        pageVM.uploadDrawing(imageRef: page.imageRef, documentId: page.id, image: drawnImage) {
+        pageVM.uploadDrawing(initialDate: page.date, title: page.title, imageRef: page.imageRef, documentId: page.id, image: drawnImage) {
             self.dismiss(animated: true)
         }
     }

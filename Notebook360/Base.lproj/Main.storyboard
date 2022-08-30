@@ -317,9 +317,9 @@
                                 <rect key="frame" x="399" y="100" width="0.0" height="0.0"/>
                                 <subviews>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gaL-q8-i2Y">
-                                        <rect key="frame" x="0.0" y="0.0" width="130" height="31"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="220" height="31"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Edited ↗">
+                                        <buttonConfiguration key="configuration" style="plain" title="Recently Edited ↗">
                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                         <userDefinedRuntimeAttributes>
@@ -335,13 +335,13 @@
                                         </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nwz-3H-cuh">
-                                        <rect key="frame" x="0.0" y="0.0" width="130" height="31"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="220" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="31" id="Jbs-F0-sEC"/>
-                                            <constraint firstAttribute="width" constant="130" id="Phq-eQ-uXE"/>
+                                            <constraint firstAttribute="width" constant="220" id="Phq-eQ-uXE"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Created ↗">
+                                        <buttonConfiguration key="configuration" style="plain" title="Created  At  ↗">
                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                         <userDefinedRuntimeAttributes>
@@ -357,7 +357,7 @@
                                         </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9s-si-f2h">
-                                        <rect key="frame" x="0.0" y="0.0" width="130" height="31"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="220" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="A ↗ Z">
                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -416,6 +416,7 @@
                         <outlet property="editedAtFilterBtn" destination="gaL-q8-i2Y" id="Lci-IC-SuR"/>
                         <outlet property="menuBtn" destination="blo-mq-suR" id="yqm-OQ-9gL"/>
                         <outlet property="newBookBtn" destination="apq-Hg-QPP" id="9sF-jk-4rh"/>
+                        <outlet property="searchTextField" destination="Lzj-a8-jen" id="dKm-nO-Nfe"/>
                         <outlet property="typeBtn" destination="n79-g0-uNh" id="Scu-uM-jC6"/>
                         <segue destination="V4p-Y4-NU9" kind="presentation" identifier="showTypeFromHome" modalPresentationStyle="fullScreen" id="Axd-iD-2rS"/>
                         <segue destination="m9g-bn-Y3y" kind="modal" identifier="showDrawFromHome" modalPresentationStyle="fullScreen" id="5F4-Qr-ABj"/>

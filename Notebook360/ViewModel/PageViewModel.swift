@@ -28,8 +28,8 @@ class PageViewModel: NSObject {
         self.pageData = []
     }
     
-    public func saveUserData(firstName: String, lastName: String, email: String) {
-        dataBaselayer.saveUserData(firstName: firstName, lastName: lastName, email: email)
+    public func saveUserData(firstName: String, lastName: String, email: String, userId: String) {
+        dataBaselayer.saveUserData(firstName: firstName, lastName: lastName, email: email, userId: userId)
     }
     
     public func isUserLogedIn() -> Bool {
@@ -55,7 +55,7 @@ class PageViewModel: NSObject {
                 return
             } else {
                 completion()
-                self?.saveUserData(firstName: firstName, lastName: lastName, email: em)
+                self?.saveUserData(firstName: firstName, lastName: lastName, email: em, userId: response?.user.uid ?? "")
                 print("Signed up")
                 
             }
@@ -70,24 +70,18 @@ class PageViewModel: NSObject {
 
                 self?.pageData.append(page)
             }
+            self?.pageData = self?.pageData.filter({$0.authorId == self?.dataBaselayer.auth.currentUser?.uid})
             self?.pageData = self?.pageData.sorted(by: {$0.date < $1.date}) ?? []
         }
     }
     
-    func uploadDrawing(imageRef: String, documentId: String, image: UIImage, completion: @escaping () -> Void) {
-        dataBaselayer.uploadUploadDrawing(imageRef: imageRef, documentId: documentId, title: randomString(of: 7), image: image) {
+    func uploadDrawing(initialDate: Date?, title: String, imageRef: String, documentId: String, image: UIImage, completion: @escaping () -> Void) {
+        dataBaselayer.uploadUploadDrawing(initialDate: initialDate, imageRef: imageRef, documentId: documentId, title: title, image: image) {
             completion()
         }
     }
     
-    func randomString(of length: Int) -> String {
-        let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-        var s = ""
-        for _ in 0 ..< length {
-            s.append(letters.randomElement()!)
-        }
-        return s
-    }
+    
     
     func downloadImage(url: String, completion: @escaping (UIImage?) -> Void) {
         dataBaselayer.downloadImage(url: url) { image in
@@ -95,15 +89,15 @@ class PageViewModel: NSObject {
         }
     }
     
-    func createNewBook(title: String) {
-        dataBaselayer.createNewBook(title: title) { [weak self]  bookId in
+    func createNewBook(title: String, initialDate: Date?) {
+        dataBaselayer.createNewBook(initialDate: initialDate, title: title) { [weak self]  bookId in
             self?.filterPagesByBook(bookId: bookId)
             self?.bookId = bookId
         }
     }
     
-    func createNewTyping(documentId: String, title: String, note: String, completion: @escaping () -> Void) {
-        dataBaselayer.saveTyping(documentId: documentId, title: title, note: note) {
+    func createNewTyping(initialDate: Date, documentId: String, title: String, note: String, completion: @escaping () -> Void) {
+        dataBaselayer.saveTyping(initialDate: initialDate, documentId: documentId, title: title, note: note) {
             completion()
         }
     }
@@ -140,7 +134,42 @@ class PageViewModel: NSObject {
 
         
         try! store.save(newReminder, commit: true)
-
-
+    }
+    
+    func filterAtoZ(orderUp: Bool) {
+        
+        if orderUp {
+            self.pageData = self.pageData.sorted(by: {$0.title > $1.title})
+        } else {
+            self.pageData = self.pageData.sorted(by: {$0.title < $1.title})
+        }
+    }
+    
+    func filterMostRecent(orderUp: Bool) {
+        if orderUp {
+            self.pageData = self.pageData.sorted(by: { page1, page2 in
+                if let fEdit = page1.editedAt, let sEdit = page2.editedAt {
+                    return fEdit > sEdit
+                } else {
+                    return false
+                }
+            })
+        } else {
+            self.pageData = self.pageData.sorted(by: { page1, page2 in
+                if let fEdit = page1.editedAt, let sEdit = page2.editedAt {
+                    return fEdit < sEdit
+                } else {
+                    return false
+                }
+            })
+        }
+    }
+    
+    func filterAge(orderUp: Bool) {
+        if orderUp {
+            self.pageData = self.pageData.sorted(by: {$0.date > $1.date})
+        } else {
+            self.pageData = self.pageData.sorted(by: {$0.date < $1.date})
+        }
     }
 }

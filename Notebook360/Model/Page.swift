@@ -36,10 +36,12 @@ class Page {
     var title: String
     var id: String
     var date: Date
+    var editedAt: Date?
     var notes: String
     var drawing = ""
     var bookId: String = ""
     var imageRef = ""
+    var authorId = ""
     
     init(pageType: PageType, title: String, id: String, date: Date, notes: String, drawing: String) {
         self.pageType = pageType
@@ -48,6 +50,7 @@ class Page {
         self.date = date
         self.notes = notes
         self.drawing = drawing
+        self.editedAt = nil
     }
     
     init(data: [String: Any]){
@@ -78,10 +81,27 @@ class Page {
             self.date = Date.now
         }
         
+        if let date = data["editedAt"] as? String {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ssZZZ"
+            let dates = dateFormatter.date(from: date)
+            
+            self.editedAt = dates ?? nil
+        } else {
+            self.editedAt = nil
+        }
+        
         if let notes = data["note"] as? String {
             self.notes = notes
+            if self.pageType == .type {
+                self.title = notes 
+            }
         } else {
             self.notes = ""
+        }
+        
+        if let authorId = data["authorId"] as? String {
+            self.authorId = authorId
         }
         
         if let bookId = data["bookId"] as? String {

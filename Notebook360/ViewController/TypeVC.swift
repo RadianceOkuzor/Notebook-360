@@ -53,6 +53,14 @@ class TypeVC: UIViewController {
         htmlView.inputAccessoryView = toolbar
     }
     
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            return .portrait
+        } else {
+            return .portrait
+        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         htmlView.html = page.notes
     }
@@ -60,7 +68,10 @@ class TypeVC: UIViewController {
     @IBAction func donePrsd(_ sender: Any) {
         if !htmlView.html.isEmpty {
             let title = "<H3> Type Note </H3> \n\(Date.now) "
-            pageVM.createNewTyping(documentId: page.id, title: title, note: htmlView.html) {
+            if page.title == "" {
+                page.title = title
+            }
+            pageVM.createNewTyping(initialDate: page.date, documentId: page.id, title: page.title, note: htmlView.html) {
                 DispatchQueue.main.async {
                     self.dismiss(animated: true)
                 }

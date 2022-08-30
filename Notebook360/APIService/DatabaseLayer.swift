@@ -27,7 +27,7 @@ public class DataBaseLayer : NSObject {
         documentID = db.collection("Users").document().documentID
     }
     
-    public func saveUserData(firstName: String, lastName: String, email: String) {
+    public func saveUserData(firstName: String, lastName: String, email: String, userId: String) {
         setup()
         
         db.collection("Users").addDocument(data: ["firstName":firstName,
@@ -40,11 +40,11 @@ public class DataBaseLayer : NSObject {
             }
         }
         
-        ref.child("Users").child(documentID).updateChildValues(
+        ref.child("Users").child(userId).updateChildValues(
             ["firstName":firstName,
              "lastName":lastName,
              "email":email,
-             "id":documentID]) { error, snapShot in
+             "id":userId]) { error, snapShot in
                  if error != nil {
                      
                  } else {
@@ -65,11 +65,11 @@ public class DataBaseLayer : NSObject {
         }
     }
     
-    func uploadUploadDrawing(imageRef: String, documentId: String, title: String, image: UIImage, completion: @escaping () -> Void) {
+    func uploadUploadDrawing(initialDate: Date?, imageRef: String, documentId: String, title: String, image: UIImage, completion: @escaping () -> Void) {
         let metadata = StorageMetadata()
         metadata.contentType = "image/jpg"
         
-        var imageRef1 = "\(title)_notes.png"
+        var imageRef1 = "\(randomString(of: 7))_notes.png"
         if imageRef != "" {
             imageRef1 = imageRef
         }
@@ -81,7 +81,7 @@ public class DataBaseLayer : NSObject {
                     storageRef.downloadURL { url, err in
                         if err == nil {
                             print("Upload successful\n\n\n\nupload located at \n\(url?.absoluteString ?? "" )")
-                            self.saveDrawing(documentId: documentId, title: title, url: url, imageRef: imageRef1) {
+                            self.saveDrawing(initialDate: initialDate, documentId: documentId, title: title, url: url, imageRef: imageRef1) {
                                 completion()
                             }
                         } else {
@@ -114,17 +114,21 @@ public class DataBaseLayer : NSObject {
         }
     }
     
-    func saveDrawing(documentId: String, title: String, url: URL?, imageRef: String, completion: @escaping () -> Void) {
+    func saveDrawing(initialDate: Date?, documentId: String, title: String, url: URL?, imageRef: String, completion: @escaping () -> Void) {
         
         setup()
         
+        var initialDate: Date?
+        
         if documentId != "" {
             documentID = documentId
+            initialDate = Date.now
         }
         
        let docData: [String: Any] = [
            "title": title,
-           "date": "\(Date.now)",
+           "date": "\(initialDate ?? Date.now)",
+           "editedAt" : "\(Date.now)",
            "id": documentID,
            "noteType": "draw",
            "drawUrl": url?.absoluteString ?? "",
@@ -146,7 +150,7 @@ public class DataBaseLayer : NSObject {
        }
     }
     
-    func saveTyping(documentId: String, title: String, note: String, completion: @escaping () -> Void) {
+    func saveTyping(initialDate: Date?, documentId: String, title: String, note: String, completion: @escaping () -> Void) {
         
         setup()
         
@@ -156,7 +160,8 @@ public class DataBaseLayer : NSObject {
         
        let docData: [String: Any] = [
            "title": title,
-           "date": "\(Date.now)",
+           "date": "\(initialDate ?? Date.now)",
+           "editedAt" : "\(Date.now)",
            "id": documentID,
            "noteType": "type",
            "note": note,
@@ -178,14 +183,15 @@ public class DataBaseLayer : NSObject {
        }
     }
     
-    func createNewBook(title: String, completion: @escaping (String) -> Void) {
+    func createNewBook(initialDate: Date?, title: String, completion: @escaping (String) -> Void) {
         
         setup()
         
        let docData: [String: Any] = [
            "title": title,
-           "date": "\(Date.now)",
+           "date": "\(initialDate ?? Date.now)",
            "id": documentID,
+           "editedAt" : "\(Date.now)",
            "noteType": "book",
            "authorId":Auth.auth().currentUser?.uid ?? "nil",
            "bookId": ""
@@ -211,5 +217,14 @@ public class DataBaseLayer : NSObject {
         } catch let signOutError as NSError {
           print("Error signing out: %@", signOutError)
         }
+    }
+    
+    func randomString(of length: Int) -> String {
+        let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        var s = ""
+        for _ in 0 ..< length {
+            s.append(letters.randomElement()!)
+        }
+        return s
     }
 }
