@@ -6,16 +6,32 @@
 //
 
 import UIKit
+import KCLoginSDK
+import FirebaseCore
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
+class AppDelegate: UIResponder, UIApplicationDelegate, KCLoginManagerDelegate {
+    func login(succeededWith response: KCLoginResponse) {
+        print(response.authCode)
+    }
+    
+    func login(failedWithError error: KCLoginError) {
+        print(error.message)
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        LoginManager.delegate = self
+        FirebaseApp.configure()
+        
         return true
     }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
+          let sourceAppName = options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String
+          let handled = LoginManager.handle(url, sourceAppName: sourceAppName)
+          return handled
+      }
 
     // MARK: UISceneSession Lifecycle
 
@@ -30,7 +46,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
-
-
 }
 

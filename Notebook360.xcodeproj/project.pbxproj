@@ -7,15 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		62959FC1FCBF2E44E83E4699 /* Pods_Notebook360_Notebook360UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF9ED8D3A3B6D8FC3B52EE8A /* Pods_Notebook360_Notebook360UITests.framework */; };
 		6DBDEC7328BD1E1B0057CA5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBDEC7228BD1E1B0057CA5C /* AppDelegate.swift */; };
 		6DBDEC7528BD1E1B0057CA5C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBDEC7428BD1E1B0057CA5C /* SceneDelegate.swift */; };
-		6DBDEC7728BD1E1B0057CA5C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBDEC7628BD1E1B0057CA5C /* ViewController.swift */; };
+		6DBDEC7728BD1E1B0057CA5C /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBDEC7628BD1E1B0057CA5C /* HomeVC.swift */; };
 		6DBDEC7A28BD1E1B0057CA5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DBDEC7828BD1E1B0057CA5C /* Main.storyboard */; };
 		6DBDEC7C28BD1E1B0057CA5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DBDEC7B28BD1E1B0057CA5C /* Assets.xcassets */; };
 		6DBDEC7F28BD1E1B0057CA5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DBDEC7D28BD1E1B0057CA5C /* LaunchScreen.storyboard */; };
 		6DBDEC8A28BD1E1B0057CA5C /* Notebook360Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBDEC8928BD1E1B0057CA5C /* Notebook360Tests.swift */; };
 		6DBDEC9428BD1E1B0057CA5C /* Notebook360UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBDEC9328BD1E1B0057CA5C /* Notebook360UITests.swift */; };
 		6DBDEC9628BD1E1B0057CA5C /* Notebook360UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBDEC9528BD1E1B0057CA5C /* Notebook360UITestsLaunchTests.swift */; };
+		6DBDECA628BD22F70057CA5C /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 6DBDECA528BD22F70057CA5C /* FirebaseAuth */; };
+		6DBDECA828BD22F70057CA5C /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 6DBDECA728BD22F70057CA5C /* FirebaseAuthCombine-Community */; };
+		6DBDECAA28BD22F70057CA5C /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 6DBDECA928BD22F70057CA5C /* FirebaseDatabase */; };
+		6DBDECAC28BD22F70057CA5C /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 6DBDECAB28BD22F70057CA5C /* FirebaseDatabaseSwift */; };
+		6DBDECAE28BD22F70057CA5C /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 6DBDECAD28BD22F70057CA5C /* FirebaseFirestore */; };
+		6DBDECB028BD22F70057CA5C /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 6DBDECAF28BD22F70057CA5C /* FirebaseFirestoreSwift */; };
+		6DBDECB228BD22F70057CA5C /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = 6DBDECB128BD22F70057CA5C /* FirebaseFunctions */; };
+		6DBDECB428BD22F70057CA5C /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 6DBDECB328BD22F70057CA5C /* FirebaseMessaging */; };
+		6DBDECB628BD22F70057CA5C /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 6DBDECB528BD22F70057CA5C /* FirebaseStorage */; };
+		6DBDECB828BD233B0057CA5C /* SignIn_SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBDECB728BD233B0057CA5C /* SignIn_SignUpVC.swift */; };
+		6DBDECBA28BD29490057CA5C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6DBDECB928BD29490057CA5C /* GoogleService-Info.plist */; };
+		6DBDECBC28BD2E550057CA5C /* DatabaseLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBDECBB28BD2E550057CA5C /* DatabaseLayer.swift */; };
+		6DBDECC028BD325D0057CA5C /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBDECBF28BD325D0057CA5C /* Page.swift */; };
+		6DBDECC428BD33340057CA5C /* PageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBDECC328BD33340057CA5C /* PageViewModel.swift */; };
+		6DBDECC628BD6D620057CA5C /* Draw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBDECC528BD6D620057CA5C /* Draw.swift */; };
+		6DBDECC828BD73100057CA5C /* PageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBDECC728BD73100057CA5C /* PageCollectionViewCell.swift */; };
+		6DBDECCD28BD7C8A0057CA5C /* TypeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBDECCC28BD7C8A0057CA5C /* TypeVC.swift */; };
+		6DBDECD128BD87860057CA5C /* DrawVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBDECD028BD87860057CA5C /* DrawVC.swift */; };
+		8ECB30D3FE818CCE1D730C69 /* Pods_Notebook360.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 375EDE1F8E8F264590131AF3 /* Pods_Notebook360.framework */; };
+		E666D66345D3F088EC5A9186 /* Pods_Notebook360Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06B6CB0A1EE4F1F873CCA7A5 /* Pods_Notebook360Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,10 +57,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		06B6CB0A1EE4F1F873CCA7A5 /* Pods_Notebook360Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Notebook360Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C8289F9D9487F18405E1012 /* Pods-Notebook360.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notebook360.release.xcconfig"; path = "Target Support Files/Pods-Notebook360/Pods-Notebook360.release.xcconfig"; sourceTree = "<group>"; };
+		135212ED9406708E619C00E1 /* Pods-Notebook360-Notebook360UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notebook360-Notebook360UITests.release.xcconfig"; path = "Target Support Files/Pods-Notebook360-Notebook360UITests/Pods-Notebook360-Notebook360UITests.release.xcconfig"; sourceTree = "<group>"; };
+		375EDE1F8E8F264590131AF3 /* Pods_Notebook360.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Notebook360.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C74BC1A5841429B5FE28972 /* Pods-Notebook360.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notebook360.debug.xcconfig"; path = "Target Support Files/Pods-Notebook360/Pods-Notebook360.debug.xcconfig"; sourceTree = "<group>"; };
 		6DBDEC6F28BD1E1B0057CA5C /* Notebook360.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notebook360.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DBDEC7228BD1E1B0057CA5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6DBDEC7428BD1E1B0057CA5C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6DBDEC7628BD1E1B0057CA5C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6DBDEC7628BD1E1B0057CA5C /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		6DBDEC7928BD1E1B0057CA5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6DBDEC7B28BD1E1B0057CA5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6DBDEC7E28BD1E1B0057CA5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +75,19 @@
 		6DBDEC8F28BD1E1B0057CA5C /* Notebook360UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Notebook360UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DBDEC9328BD1E1B0057CA5C /* Notebook360UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notebook360UITests.swift; sourceTree = "<group>"; };
 		6DBDEC9528BD1E1B0057CA5C /* Notebook360UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notebook360UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		6DBDECB728BD233B0057CA5C /* SignIn_SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn_SignUpVC.swift; sourceTree = "<group>"; };
+		6DBDECB928BD29490057CA5C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6DBDECBB28BD2E550057CA5C /* DatabaseLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseLayer.swift; sourceTree = "<group>"; };
+		6DBDECBF28BD325D0057CA5C /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
+		6DBDECC328BD33340057CA5C /* PageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewModel.swift; sourceTree = "<group>"; };
+		6DBDECC528BD6D620057CA5C /* Draw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Draw.swift; sourceTree = "<group>"; };
+		6DBDECC728BD73100057CA5C /* PageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCollectionViewCell.swift; sourceTree = "<group>"; };
+		6DBDECCC28BD7C8A0057CA5C /* TypeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeVC.swift; sourceTree = "<group>"; };
+		6DBDECD028BD87860057CA5C /* DrawVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawVC.swift; sourceTree = "<group>"; };
+		6F42305F176CA5F79C7C361A /* Pods-Notebook360Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notebook360Tests.release.xcconfig"; path = "Target Support Files/Pods-Notebook360Tests/Pods-Notebook360Tests.release.xcconfig"; sourceTree = "<group>"; };
+		8EAA74317BECCBCEA631D2D2 /* Pods-Notebook360Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notebook360Tests.debug.xcconfig"; path = "Target Support Files/Pods-Notebook360Tests/Pods-Notebook360Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		BE845AE4630B08EB3AB6C768 /* Pods-Notebook360-Notebook360UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notebook360-Notebook360UITests.debug.xcconfig"; path = "Target Support Files/Pods-Notebook360-Notebook360UITests/Pods-Notebook360-Notebook360UITests.debug.xcconfig"; sourceTree = "<group>"; };
+		FF9ED8D3A3B6D8FC3B52EE8A /* Pods_Notebook360_Notebook360UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Notebook360_Notebook360UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +95,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DBDECB428BD22F70057CA5C /* FirebaseMessaging in Frameworks */,
+				6DBDECAC28BD22F70057CA5C /* FirebaseDatabaseSwift in Frameworks */,
+				8ECB30D3FE818CCE1D730C69 /* Pods_Notebook360.framework in Frameworks */,
+				6DBDECB628BD22F70057CA5C /* FirebaseStorage in Frameworks */,
+				6DBDECA828BD22F70057CA5C /* FirebaseAuthCombine-Community in Frameworks */,
+				6DBDECB228BD22F70057CA5C /* FirebaseFunctions in Frameworks */,
+				6DBDECB028BD22F70057CA5C /* FirebaseFirestoreSwift in Frameworks */,
+				6DBDECAA28BD22F70057CA5C /* FirebaseDatabase in Frameworks */,
+				6DBDECA628BD22F70057CA5C /* FirebaseAuth in Frameworks */,
+				6DBDECAE28BD22F70057CA5C /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E666D66345D3F088EC5A9186 /* Pods_Notebook360Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +120,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62959FC1FCBF2E44E83E4699 /* Pods_Notebook360_Notebook360UITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		35DFE8FB5787DE1E3115F15E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				375EDE1F8E8F264590131AF3 /* Pods_Notebook360.framework */,
+				FF9ED8D3A3B6D8FC3B52EE8A /* Pods_Notebook360_Notebook360UITests.framework */,
+				06B6CB0A1EE4F1F873CCA7A5 /* Pods_Notebook360Tests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		53AB5193342E2625BAD5DBDD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6C74BC1A5841429B5FE28972 /* Pods-Notebook360.debug.xcconfig */,
+				0C8289F9D9487F18405E1012 /* Pods-Notebook360.release.xcconfig */,
+				BE845AE4630B08EB3AB6C768 /* Pods-Notebook360-Notebook360UITests.debug.xcconfig */,
+				135212ED9406708E619C00E1 /* Pods-Notebook360-Notebook360UITests.release.xcconfig */,
+				8EAA74317BECCBCEA631D2D2 /* Pods-Notebook360Tests.debug.xcconfig */,
+				6F42305F176CA5F79C7C361A /* Pods-Notebook360Tests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		6DBDEC6628BD1E1A0057CA5C = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +157,8 @@
 				6DBDEC8828BD1E1B0057CA5C /* Notebook360Tests */,
 				6DBDEC9228BD1E1B0057CA5C /* Notebook360UITests */,
 				6DBDEC7028BD1E1B0057CA5C /* Products */,
+				53AB5193342E2625BAD5DBDD /* Pods */,
+				35DFE8FB5787DE1E3115F15E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,12 +176,17 @@
 			isa = PBXGroup;
 			children = (
 				6DBDEC7228BD1E1B0057CA5C /* AppDelegate.swift */,
+				6DBDECC128BD32770057CA5C /* ViewModel */,
+				6DBDECBE28BD324B0057CA5C /* Model */,
+				6DBDECC928BD73170057CA5C /* View */,
+				6DBDECBD28BD31280057CA5C /* ViewController */,
+				6DBDECC228BD32990057CA5C /* APIService */,
 				6DBDEC7428BD1E1B0057CA5C /* SceneDelegate.swift */,
-				6DBDEC7628BD1E1B0057CA5C /* ViewController.swift */,
 				6DBDEC7828BD1E1B0057CA5C /* Main.storyboard */,
 				6DBDEC7B28BD1E1B0057CA5C /* Assets.xcassets */,
 				6DBDEC7D28BD1E1B0057CA5C /* LaunchScreen.storyboard */,
 				6DBDEC8028BD1E1B0057CA5C /* Info.plist */,
+				6DBDECB928BD29490057CA5C /* GoogleService-Info.plist */,
 			);
 			path = Notebook360;
 			sourceTree = "<group>";
@@ -127,6 +208,50 @@
 			path = Notebook360UITests;
 			sourceTree = "<group>";
 		};
+		6DBDECBD28BD31280057CA5C /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6DBDECB728BD233B0057CA5C /* SignIn_SignUpVC.swift */,
+				6DBDEC7628BD1E1B0057CA5C /* HomeVC.swift */,
+				6DBDECCC28BD7C8A0057CA5C /* TypeVC.swift */,
+				6DBDECD028BD87860057CA5C /* DrawVC.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		6DBDECBE28BD324B0057CA5C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6DBDECBF28BD325D0057CA5C /* Page.swift */,
+				6DBDECC528BD6D620057CA5C /* Draw.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6DBDECC128BD32770057CA5C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6DBDECC328BD33340057CA5C /* PageViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6DBDECC228BD32990057CA5C /* APIService */ = {
+			isa = PBXGroup;
+			children = (
+				6DBDECBB28BD2E550057CA5C /* DatabaseLayer.swift */,
+			);
+			path = APIService;
+			sourceTree = "<group>";
+		};
+		6DBDECC928BD73170057CA5C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6DBDECC728BD73100057CA5C /* PageCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,15 +259,28 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6DBDEC9928BD1E1B0057CA5C /* Build configuration list for PBXNativeTarget "Notebook360" */;
 			buildPhases = (
+				13AAE05D23675F1BCD50928E /* [CP] Check Pods Manifest.lock */,
 				6DBDEC6B28BD1E1B0057CA5C /* Sources */,
 				6DBDEC6C28BD1E1B0057CA5C /* Frameworks */,
 				6DBDEC6D28BD1E1B0057CA5C /* Resources */,
+				B101140885F97FC38B3F0A66 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Notebook360;
+			packageProductDependencies = (
+				6DBDECA528BD22F70057CA5C /* FirebaseAuth */,
+				6DBDECA728BD22F70057CA5C /* FirebaseAuthCombine-Community */,
+				6DBDECA928BD22F70057CA5C /* FirebaseDatabase */,
+				6DBDECAB28BD22F70057CA5C /* FirebaseDatabaseSwift */,
+				6DBDECAD28BD22F70057CA5C /* FirebaseFirestore */,
+				6DBDECAF28BD22F70057CA5C /* FirebaseFirestoreSwift */,
+				6DBDECB128BD22F70057CA5C /* FirebaseFunctions */,
+				6DBDECB328BD22F70057CA5C /* FirebaseMessaging */,
+				6DBDECB528BD22F70057CA5C /* FirebaseStorage */,
+			);
 			productName = Notebook360;
 			productReference = 6DBDEC6F28BD1E1B0057CA5C /* Notebook360.app */;
 			productType = "com.apple.product-type.application";
@@ -151,6 +289,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6DBDEC9C28BD1E1B0057CA5C /* Build configuration list for PBXNativeTarget "Notebook360Tests" */;
 			buildPhases = (
+				6B501ACB72FE9CC06A991CB7 /* [CP] Check Pods Manifest.lock */,
 				6DBDEC8128BD1E1B0057CA5C /* Sources */,
 				6DBDEC8228BD1E1B0057CA5C /* Frameworks */,
 				6DBDEC8328BD1E1B0057CA5C /* Resources */,
@@ -169,9 +308,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6DBDEC9F28BD1E1B0057CA5C /* Build configuration list for PBXNativeTarget "Notebook360UITests" */;
 			buildPhases = (
+				6F9A69764C17E38190EFCDA6 /* [CP] Check Pods Manifest.lock */,
 				6DBDEC8B28BD1E1B0057CA5C /* Sources */,
 				6DBDEC8C28BD1E1B0057CA5C /* Frameworks */,
 				6DBDEC8D28BD1E1B0057CA5C /* Resources */,
+				E6AAA378AA825598F7C8DE7D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -215,6 +356,9 @@
 				Base,
 			);
 			mainGroup = 6DBDEC6628BD1E1A0057CA5C;
+			packageReferences = (
+				6DBDECA428BD22F60057CA5C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 6DBDEC7028BD1E1B0057CA5C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -232,6 +376,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DBDEC7F28BD1E1B0057CA5C /* LaunchScreen.storyboard in Resources */,
+				6DBDECBA28BD29490057CA5C /* GoogleService-Info.plist in Resources */,
 				6DBDEC7C28BD1E1B0057CA5C /* Assets.xcassets in Resources */,
 				6DBDEC7A28BD1E1B0057CA5C /* Main.storyboard in Resources */,
 			);
@@ -253,14 +398,125 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		13AAE05D23675F1BCD50928E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Notebook360-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6B501ACB72FE9CC06A991CB7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Notebook360Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6F9A69764C17E38190EFCDA6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Notebook360-Notebook360UITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B101140885F97FC38B3F0A66 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Notebook360/Pods-Notebook360-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Notebook360/Pods-Notebook360-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Notebook360/Pods-Notebook360-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E6AAA378AA825598F7C8DE7D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Notebook360-Notebook360UITests/Pods-Notebook360-Notebook360UITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Notebook360-Notebook360UITests/Pods-Notebook360-Notebook360UITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Notebook360-Notebook360UITests/Pods-Notebook360-Notebook360UITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6DBDEC6B28BD1E1B0057CA5C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DBDEC7728BD1E1B0057CA5C /* ViewController.swift in Sources */,
+				6DBDEC7728BD1E1B0057CA5C /* HomeVC.swift in Sources */,
 				6DBDEC7328BD1E1B0057CA5C /* AppDelegate.swift in Sources */,
+				6DBDECC828BD73100057CA5C /* PageCollectionViewCell.swift in Sources */,
+				6DBDECC028BD325D0057CA5C /* Page.swift in Sources */,
+				6DBDECC628BD6D620057CA5C /* Draw.swift in Sources */,
+				6DBDECC428BD33340057CA5C /* PageViewModel.swift in Sources */,
+				6DBDECBC28BD2E550057CA5C /* DatabaseLayer.swift in Sources */,
+				6DBDECB828BD233B0057CA5C /* SignIn_SignUpVC.swift in Sources */,
+				6DBDECCD28BD7C8A0057CA5C /* TypeVC.swift in Sources */,
 				6DBDEC7528BD1E1B0057CA5C /* SceneDelegate.swift in Sources */,
+				6DBDECD128BD87860057CA5C /* DrawVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,7 +622,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -420,7 +676,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -432,12 +688,13 @@
 		};
 		6DBDEC9A28BD1E1B0057CA5C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C74BC1A5841429B5FE28972 /* Pods-Notebook360.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = X646ZXATUB;
+				DEVELOPMENT_TEAM = F2B5QD97WH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Notebook360/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -460,12 +717,13 @@
 		};
 		6DBDEC9B28BD1E1B0057CA5C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C8289F9D9487F18405E1012 /* Pods-Notebook360.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = X646ZXATUB;
+				DEVELOPMENT_TEAM = F2B5QD97WH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Notebook360/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -488,6 +746,7 @@
 		};
 		6DBDEC9D28BD1E1B0057CA5C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8EAA74317BECCBCEA631D2D2 /* Pods-Notebook360Tests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -508,6 +767,7 @@
 		};
 		6DBDEC9E28BD1E1B0057CA5C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F42305F176CA5F79C7C361A /* Pods-Notebook360Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -528,6 +788,7 @@
 		};
 		6DBDECA028BD1E1B0057CA5C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE845AE4630B08EB3AB6C768 /* Pods-Notebook360-Notebook360UITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -546,6 +807,7 @@
 		};
 		6DBDECA128BD1E1B0057CA5C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 135212ED9406708E619C00E1 /* Pods-Notebook360-Notebook360UITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -602,6 +864,65 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6DBDECA428BD22F60057CA5C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6DBDECA528BD22F70057CA5C /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6DBDECA428BD22F60057CA5C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		6DBDECA728BD22F70057CA5C /* FirebaseAuthCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6DBDECA428BD22F60057CA5C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseAuthCombine-Community";
+		};
+		6DBDECA928BD22F70057CA5C /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6DBDECA428BD22F60057CA5C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		6DBDECAB28BD22F70057CA5C /* FirebaseDatabaseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6DBDECA428BD22F60057CA5C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabaseSwift;
+		};
+		6DBDECAD28BD22F70057CA5C /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6DBDECA428BD22F60057CA5C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		6DBDECAF28BD22F70057CA5C /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6DBDECA428BD22F60057CA5C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		6DBDECB128BD22F70057CA5C /* FirebaseFunctions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6DBDECA428BD22F60057CA5C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFunctions;
+		};
+		6DBDECB328BD22F70057CA5C /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6DBDECA428BD22F60057CA5C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+		6DBDECB528BD22F70057CA5C /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6DBDECA428BD22F60057CA5C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6DBDEC6728BD1E1A0057CA5C /* Project object */;
 }

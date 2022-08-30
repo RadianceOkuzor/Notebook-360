@@ -1,0 +1,6 @@
+framework module Pods_Notebook360_Notebook360UITests {
+  umbrella header "Pods-Notebook360-Notebook360UITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

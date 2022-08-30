@@ -1,0 +1,6 @@
+framework module KCLoginSDK {
+  umbrella header "KCLoginSDK-umbrella.h"
+
+  export *
+  module * { export * }
+}

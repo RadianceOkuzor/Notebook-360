@@ -1,0 +1,24 @@
+PODS:
+  - DrawableView (0.0.4)
+  - KCLoginSDK (0.1)
+  - RichEditorView (5.0.0)
+
+DEPENDENCIES:
+  - DrawableView
+  - KCLoginSDK
+  - RichEditorView
+
+SPEC REPOS:
+  trunk:
+    - DrawableView
+    - KCLoginSDK
+    - RichEditorView
+
+SPEC CHECKSUMS:
+  DrawableView: 1c3063732af5beb67b22a9e895683bfe5216f173
+  KCLoginSDK: 0ad3bb98037a00c1718dff26faec51d1fedf9ea6
+  RichEditorView: 1bbb07b87ca2d479ac29a6877014b38b8df233ef
+
+PODFILE CHECKSUM: 471218d7fa8ff016207fd8cc936b0965947ceed1
+
+COCOAPODS: 1.11.3
