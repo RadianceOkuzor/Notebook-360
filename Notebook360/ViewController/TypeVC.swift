@@ -17,11 +17,22 @@ class TypeVC: UIViewController {
     @IBOutlet weak var datePicker: UIDatePicker!
     
     @IBOutlet weak var htmlView: RichEditorView!
-
+    
+    let toolbar = RichEditorToolbar()
+    
+    var noteToBeSave = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         pageVM = PageViewModel()
+        
+//        additionalSafeAreaInsets = .init(top: 6, left: 12, bottom: 0, right: 12)
+        htmlView.translatesAutoresizingMaskIntoConstraints = false
+        htmlView.delegate = self
+        htmlView.editingEnabled = true
+        htmlView.placeholder = "Press to start typing"
+        
         
         let toolbar = RichEditorToolbar(frame: CGRect(x: 0, y: 0, width: 150, height: 44))
         let greenColor = RichEditorOptionItem(image: UIImage(named: "Pick Color"), title: "🟢") { toolbar in
@@ -66,12 +77,12 @@ class TypeVC: UIViewController {
     }
     
     @IBAction func donePrsd(_ sender: Any) {
-        if !htmlView.html.isEmpty {
+        if !noteToBeSave.isEmpty {
             let title = "<H3> Type Note </H3> \n\(Date.now) "
             if page.title == "" {
                 page.title = title
             }
-            pageVM.createNewTyping(initialDate: page.date, documentId: page.id, title: page.title, note: htmlView.html) {
+            pageVM.createNewTyping(initialDate: page.date, documentId: page.id, title: page.title, note: noteToBeSave) {
                 DispatchQueue.main.async {
                     self.dismiss(animated: true)
                 }
@@ -97,15 +108,22 @@ class TypeVC: UIViewController {
 }
 
 extension TypeVC: RichEditorDelegate, RichEditorToolbarDelegate  {
+    
+    func richEditor(_ editor: RichEditorView, contentDidChange content: String) {
+        // This is meant to act as a text cap
+//        if content.count > 40000 {
+//            editor.html = prevText
+//        } else {
+//            prevText = content
+//        }
+        noteToBeSave = content
+    }
+    
     func richEditorTookFocus(_ editor: RichEditorView) {
         
     }
     
     func richEditorLostFocus(_ editor: RichEditorView) {
-        
-    }
-    
-    func richEditor(_ editor: RichEditorView, contentDidChange content: String) {
         
     }
     

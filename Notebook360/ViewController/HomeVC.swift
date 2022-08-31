@@ -11,16 +11,17 @@ class HomeVC: UIViewController {
     
     @IBOutlet weak var menuBtn: UIButton!
     @IBOutlet weak var collection: UICollectionView!
-    @IBOutlet weak var drawTypeBtn: UIButton!
-    @IBOutlet weak var drawBtn: UIButton!
-    @IBOutlet weak var typeBtn: UIButton!
-    @IBOutlet weak var newBookBtn: UIButton!
+    @IBOutlet weak var drawTypeBtn: UIView!
+    @IBOutlet weak var drawBtn: UIView!
+    @IBOutlet weak var typeBtn: UIView!
+    @IBOutlet weak var newBookBtn: UIView!
     // filter buttons
     @IBOutlet weak var createdAtFilterBtn: UIButton!
     @IBOutlet weak var editedAtFilterBtn: UIButton!
     @IBOutlet weak var aToZFilterBtn: UIButton!
     @IBOutlet weak var searchTextField: UITextField!
     
+    @IBOutlet weak var menuView: UIView!
     
     
     var pageVM: PageViewModel!
@@ -30,7 +31,7 @@ class HomeVC: UIViewController {
     var filtertAtoZUp = false
     var filterAgeUp = false
     var filterRecentUp = false
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -48,12 +49,6 @@ class HomeVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        menuBtn.setImage(UIImage(systemName: "plus.circle.fill"), for: .normal)
-        drawTypeBtn.setImage(UIImage(systemName: "doc.text.fill"), for: .normal)
-        typeBtn.setImage(UIImage(systemName: "t.circle"), for: .normal)
-        drawBtn.setImage(UIImage(systemName: "pencil.and.outline"), for: .normal)
-        newBookBtn.setImage(UIImage(systemName: "folder.fill"), for: .normal)
-        
         collection.reloadData()
     }
     
@@ -68,9 +63,14 @@ class HomeVC: UIViewController {
             self.dismiss(animated: true)
         }
     }
+    @IBOutlet weak var menuBtnImage: UIImageView!
     
     @IBAction func menuPrsd(_ sender: Any) {
         openCloseMenu()
+        let angle = newBookBtn.isHidden ? CGFloat.pi/4 : -(CGFloat.pi/4)
+        UIView.animate(withDuration: 0.5) {
+            self.menuBtnImage.transform = CGAffineTransform(rotationAngle: angle)
+        }
     }
     
     @IBAction func drawTypePrsd(_ sender: UIButton) {
@@ -88,6 +88,7 @@ class HomeVC: UIViewController {
                 self?.performSegue(withIdentifier: "showDrawFromHome", sender: self)
             }
         case "Type":
+            self.selectedPage = Page(data: [:])
             performSegue(withIdentifier: "showTypeFromHome", sender: self)
         case "newBook":
             // refresh page list
@@ -154,7 +155,7 @@ class HomeVC: UIViewController {
         if textField.text == "" {
             self.pages = self.pageVM.pageData
         }
-
+        
     }
     
     func openCloseFilterBtns() {
@@ -166,11 +167,11 @@ class HomeVC: UIViewController {
     }
     
     func openCloseMenu() {
-        UIView.animate(withDuration: 1, delay: 0.0) {
-            self.drawTypeBtn.isHidden.toggle()
-            self.drawBtn.isHidden.toggle()
-            self.typeBtn.isHidden.toggle()
+        UIView.animate(withDuration: 0.5, delay: 0.0) {
             self.newBookBtn.isHidden.toggle()
+            self.typeBtn.isHidden.toggle()
+            self.drawBtn.isHidden.toggle()
+            self.drawTypeBtn.isHidden.toggle()
         }
     }
     
@@ -270,3 +271,14 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UITextFi
     }
 }
 
+extension UIView {
+    @IBInspectable
+    var cornerRadius: CGFloat {
+        get {
+            return layer.cornerRadius
+        }
+        set {
+            layer.cornerRadius = newValue
+        }
+    }
+}
