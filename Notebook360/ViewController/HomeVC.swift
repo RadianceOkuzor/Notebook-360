@@ -19,6 +19,7 @@ class HomeVC: UIViewController {
     @IBOutlet weak var createdAtFilterBtn: UIButton!
     @IBOutlet weak var editedAtFilterBtn: UIButton!
     @IBOutlet weak var aToZFilterBtn: UIButton!
+    @IBOutlet weak var showAllFilterBtn: UIButton!
     @IBOutlet weak var searchTextField: UITextField!
     
     @IBOutlet weak var menuView: UIView!
@@ -26,7 +27,7 @@ class HomeVC: UIViewController {
     
     var pageVM: PageViewModel!
     var pages = [Page]()
-    var selectedPage = Page(data: [:])
+    var selectedPage = Page()
     
     var filtertAtoZUp = false
     var filterAgeUp = false
@@ -37,7 +38,9 @@ class HomeVC: UIViewController {
         // Do any additional setup after loading the view.
         self.pageVM = PageViewModel()
         callToVMForUIUpdate()
-        pageVM.getAllUserNotes()
+        pageVM.getAllUserNotes() {
+            self.collection.reloadData()
+        }
         
         collection.keyboardDismissMode = .onDrag
         
@@ -78,7 +81,7 @@ class HomeVC: UIViewController {
         switch sender.accessibilityIdentifier {
         case "DrawAndType":
             showAlert(type: .drawType) { [weak self] title in
-                self?.selectedPage = Page(data: [:])
+                self?.selectedPage = Page()
                 self?.selectedPage.title = title
                 self?.performSegue(withIdentifier: "showDrawFromHome", sender: self)
             }
@@ -88,7 +91,7 @@ class HomeVC: UIViewController {
                 self?.performSegue(withIdentifier: "showDrawFromHome", sender: self)
             }
         case "Type":
-            self.selectedPage = Page(data: [:])
+            self.selectedPage = Page()
             performSegue(withIdentifier: "showTypeFromHome", sender: self)
         case "newBook":
             // refresh page list
@@ -118,13 +121,21 @@ class HomeVC: UIViewController {
     
     @IBAction func aToZpressed(_ sender: Any) {
         openCloseFilterBtns()
-        filtertAtoZUp.toggle()
+//        filtertAtoZUp.toggle()
         pageVM.filterAtoZ(orderUp: filtertAtoZUp)
         collection.reloadData()
         
         let title = filtertAtoZUp ? "A ↗ Z" : "A ↘︎ Z"
         
         aToZFilterBtn.setTitle(title, for: .normal)
+    }
+    
+    @IBAction func allNotesFilterPrsd(_ sender: Any) {
+        openCloseFilterBtns()
+        
+        self.pageVM.filterPagesByBook(bookId: "all") {
+            self.collection.reloadData()
+        }
     }
     
     @IBAction func createdAtPrsd(_ sender: Any) {
@@ -159,15 +170,16 @@ class HomeVC: UIViewController {
     }
     
     func openCloseFilterBtns() {
-        UIView.animate(withDuration: 1, delay: 0.0) {
+        UIView.animate(withDuration: 0.25, delay: 0.0) {
             self.createdAtFilterBtn.isHidden.toggle()
             self.editedAtFilterBtn.isHidden.toggle()
             self.aToZFilterBtn.isHidden.toggle()
+            self.showAllFilterBtn.isHidden.toggle()
         }
     }
     
     func openCloseMenu() {
-        UIView.animate(withDuration: 0.5, delay: 0.0) {
+        UIView.animate(withDuration: 0.25, delay: 0.0) {
             self.newBookBtn.isHidden.toggle()
             self.typeBtn.isHidden.toggle()
             self.drawBtn.isHidden.toggle()
@@ -256,6 +268,11 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UITextFi
             self.performSegue(withIdentifier: "showTypeFromHome", sender: self)
         } else if pages[indexPath.row].pageType == .draw || pages[indexPath.row].pageType == .drawType {
             self.performSegue(withIdentifier: "showDrawFromHome", sender: self)
+        } else if pages[indexPath.row].pageType == .book {
+            Singleton.shared.bookId = pages[indexPath.row].id
+            self.pageVM.filterPagesByBook(bookId: pages[indexPath.row].id) {
+                self.collection.reloadData()
+            }
         }
     }
     

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 enum PageType: String, Codable {
     case draw
@@ -53,7 +54,12 @@ class Page {
         self.editedAt = nil
     }
     
-    init(data: [String: Any]){
+    init() {
+        title  = ""; id  = ""; notes = ""
+        date = Date(); editedAt = Date()
+    }
+    
+    init(data: QueryDocumentSnapshot){
         
         if let title = data["title"] as? String {
             self.title = title

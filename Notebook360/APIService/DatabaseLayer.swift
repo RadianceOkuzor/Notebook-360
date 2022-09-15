@@ -27,45 +27,35 @@ public class DataBaseLayer : NSObject {
         documentID = db.collection("Users").document().documentID
     }
     
-    public func saveUserData(firstName: String, lastName: String, email: String, userId: String) {
+    public func saveUserData(firstName: String, lastName: String, email: String, userId: String, completion: @escaping (Bool, String) -> Void) {
         setup()
         
-        db.collection("Users").addDocument(data: ["firstName":firstName,
+        db.collection("users").addDocument(data: ["firstName":firstName,
                                                   "lastName":lastName,
                                                   "email":email]) { err in
             if let err = err {
                 print("Error adding document: \(err)")
+                completion(false, err.localizedDescription)
             } else {
                 print("Document added with ID: ")
+                completion(true, "Success")
             }
         }
-        
-//        ref.child("Users").child(userId).updateChildValues(
-//            ["firstName":firstName,
-//             "lastName":lastName,
-//             "email":email,
-//             "id":userId]) { error, snapShot in
-//                 if error != nil {
-//                     
-//                 } else {
-//                 }
-//             }
     }
     
-    func getNotes(bookId: String = "", completion: @escaping ([String:[String:Any]]) -> ()) {
-        ref = Database.database().reference()
+    func getNotes(completion: @escaping ([QueryDocumentSnapshot]) -> ()) {
         
-        _ = ref.child("Notes").observe(.value) { snapShot in
-            let d = snapShot.value as? [String:[String:Any]] ?? [:]
-            
-            completion(d)
-        } withCancel: { error in
-            //
-            print(error)
+        db.collection("notes").whereField("authorId", isEqualTo: auth.currentUser?.uid ?? "").addSnapshotListener { snapshot, error in
+            if error == nil {
+                guard let docs = snapshot?.documents else {
+                    return
+                }
+                completion(docs)
+            }
         }
     }
     
-    func uploadUploadDrawing(initialDate: Date?, imageRef: String, documentId: String, title: String, image: UIImage, completion: @escaping () -> Void) {
+    func uploadUploadDrawing(bookId: String?, initialDate: Date?, imageRef: String, documentId: String, title: String, image: UIImage, completion: @escaping (Bool, String) -> Void) {
         let metadata = StorageMetadata()
         metadata.contentType = "image/jpg"
         
@@ -81,14 +71,20 @@ public class DataBaseLayer : NSObject {
                     storageRef.downloadURL { url, err in
                         if err == nil {
                             print("Upload successful\n\n\n\nupload located at \n\(url?.absoluteString ?? "" )")
-                            self.saveDrawing(initialDate: initialDate, documentId: documentId, title: title, url: url, imageRef: imageRef1) {
-                                completion()
+                            self.saveDrawing(bookId: bookId, initialDate: initialDate, documentId: documentId, title: title, url: url, imageRef: imageRef1) {pass,msg in
+                                if pass {
+                                    completion(pass, msg)
+                                } else {
+                                    completion(false, "failed to save drawing to your file")
+                                }
                             }
                         } else {
+                            completion(false, err?.localizedDescription ?? "")
                             print(err?.localizedDescription ?? "unknown error for upload of image")
                         }
                     }
                 } else {
+                    completion(false, error?.localizedDescription ?? "")
                     print(error?.localizedDescription ?? "unknown error for upload of image")
                 }
             }
@@ -114,7 +110,7 @@ public class DataBaseLayer : NSObject {
         }
     }
     
-    func saveDrawing(initialDate: Date?, documentId: String, title: String, url: URL?, imageRef: String, completion: @escaping () -> Void) {
+    func saveDrawing(bookId: String?, initialDate: Date?, documentId: String, title: String, url: URL?, imageRef: String, completion: @escaping (Bool, String) -> Void) {
         
         setup()
         
@@ -134,23 +130,19 @@ public class DataBaseLayer : NSObject {
            "drawUrl": url?.absoluteString ?? "",
            "imageRef": imageRef,
            "authorId":Auth.auth().currentUser?.uid ?? "nil",
-           "bookId": ""
+           "bookId": bookId ?? "all"
        ]
-       
-       var ref: DatabaseReference!
-       
-       ref = Database.database().reference()
-       
-       ref.child("Notes").child(documentID).updateChildValues(docData) { error, snapShot in
-           if let err = error {
-               print(err.localizedDescription)
-           } else {
-               completion()
-           }
-       }
+        
+        db.collection("notes").document(documentID).setData(docData) { err in
+            if let err = err {
+                completion(false, err.localizedDescription)
+            } else {
+                completion(true, "Success")
+            }
+        }
     }
     
-    func saveTyping(initialDate: Date?, documentId: String, title: String, note: String, completion: @escaping () -> Void) {
+    func saveTyping(bookId: String?, initialDate: Date?, documentId: String, title: String, note: String, completion: @escaping (Bool, String) -> Void) {
         
         setup()
         
@@ -166,24 +158,32 @@ public class DataBaseLayer : NSObject {
            "noteType": "type",
            "note": note,
            "authorId":Auth.auth().currentUser?.uid ?? "nil",
-           "bookId": ""
+           "bookId": bookId ?? "all"
        ]
        
-       var ref: DatabaseReference!
-       
-       ref = Database.database().reference()
-       
-       ref.child("Notes").child(documentID).updateChildValues(docData) { error, snapShot in
-           if let err = error {
-               print(err.localizedDescription)
-               completion()
-           } else {
-               completion()
-           }
-       }
+//       var ref: DatabaseReference!
+//
+//       ref = Database.database().reference()
+//
+//       ref.child("Notes").child(documentID).updateChildValues(docData) { error, snapShot in
+//           if let err = error {
+//               print(err.localizedDescription)
+//               completion()
+//           } else {
+//               completion()
+//           }
+//       }
+        
+        db.collection("notes").document(documentID).setData(docData) { err in
+            if let err = err {
+                completion(false, err.localizedDescription)
+            } else {
+                completion(true, "Success")
+            }
+        }
     }
     
-    func createNewBook(initialDate: Date?, title: String, completion: @escaping (String) -> Void) {
+    func createNewBook(bookId: String?, initialDate: Date?, title: String, completion: @escaping (Bool, String) -> Void) {
         
         setup()
         
@@ -194,20 +194,28 @@ public class DataBaseLayer : NSObject {
            "editedAt" : "\(Date.now)",
            "noteType": "book",
            "authorId":Auth.auth().currentUser?.uid ?? "nil",
-           "bookId": ""
+           "bookId": bookId ?? "all"
        ]
        
-       var ref: DatabaseReference!
-       
-       ref = Database.database().reference()
-       
-       ref.child("Notes").child(documentID).updateChildValues(docData) { error, snapShot in
-           if let err = error {
-               print(err.localizedDescription)
-           } else {
-               completion(self.documentID)
-           }
-       }
+//       var ref: DatabaseReference!
+//
+//       ref = Database.database().reference()
+//
+//       ref.child("Notes").child(documentID).updateChildValues(docData) { error, snapShot in
+//           if let err = error {
+//               print(err.localizedDescription)
+//           } else {
+//               completion(self.documentID)
+//           }
+//       }
+        
+        db.collection("notes").document(documentID).setData(docData) { err in
+            if let err = err {
+                completion(false, err.localizedDescription)
+            } else {
+                completion(true, self.documentID)
+            }
+        }
     }
     
     func signOut(completion: @escaping () -> ()) {

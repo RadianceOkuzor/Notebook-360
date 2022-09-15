@@ -119,32 +119,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C6E0BC57-C1A2-4897-8602-5F0E3D368CD1"
+            uuid = "D9B84D52-B628-4748-B7EB-5000DF31CDE3"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Notebook360/ViewController/DrawVC.swift"
+            filePath = "Notebook360/ViewModel/PageViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "viewWillAppear(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "8433135E-8606-496D-8976-3C060C86B2A9"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Notebook360/ViewController/TypeVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
-            landmarkName = "richEditor(_:contentDidChange:)"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
+            landmarkName = "createNewTyping(initialDate:documentId:title:note:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

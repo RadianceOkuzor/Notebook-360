@@ -25,7 +25,7 @@ class DrawVC: UIViewController {
     
     let picker = UIColorPickerViewController()
 
-    var page = Page(data: [:])
+    var page = Page()
     
     var pageVM: PageViewModel!
     
@@ -92,8 +92,14 @@ extension DrawVC: DrawableViewDelegate {
     
     func saveDrawingToPhotoLibrary() {
         guard let drawnImage = drawableView.image else {return }
-        pageVM.uploadDrawing(initialDate: page.date, title: page.title, imageRef: page.imageRef, documentId: page.id, image: drawnImage) {
-            self.dismiss(animated: true)
+        pageVM.uploadDrawing(initialDate: page.date, title: page.title, imageRef: page.imageRef, documentId: page.id, image: drawnImage) {pass, msg in
+            if pass {
+                self.dismiss(animated: true)
+            } else {
+                self.pageVM.showAlert(vc: self, msg: "Sorry failed to save", msgBody: "") {
+                    self.dismiss(animated: true)
+                }
+            }
         }
     }
 }

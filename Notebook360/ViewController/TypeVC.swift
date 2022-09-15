@@ -10,7 +10,7 @@ import RichEditorView
 
 class TypeVC: UIViewController {
     
-    var page = Page(data: [:])
+    var page = Page()
     
     var pageVM: PageViewModel!
     
@@ -82,11 +82,18 @@ class TypeVC: UIViewController {
             if page.title == "" {
                 page.title = title
             }
-            pageVM.createNewTyping(initialDate: page.date, documentId: page.id, title: page.title, note: noteToBeSave) {
-                DispatchQueue.main.async {
-                    self.dismiss(animated: true)
+            pageVM.createNewTyping(initialDate: page.date, documentId: page.id, title: page.title, note: noteToBeSave) {pass, msg in
+                if pass {
+                    DispatchQueue.main.async {
+                        self.dismiss(animated: true)
+                    }
+                } else {
+                    self.pageVM.showAlert(vc: self, msg: "Error", msgBody: "Failed to save new note") {
+                        DispatchQueue.main.async {
+                            self.dismiss(animated: true)
+                        }
+                    }
                 }
-                
             }
         } else {
             DispatchQueue.main.async {

@@ -17,8 +17,10 @@ class PageViewModel: NSObject {
         }
     }
     
+    var pageDataCache: [Page] = []
+    
     var bindPageViewModelToController : (() -> ()) = {}
-    var bookId = ""
+    static public var bookId: String?
     
     let store = EKEventStore()
     
@@ -28,60 +30,81 @@ class PageViewModel: NSObject {
         self.pageData = []
     }
     
-    public func saveUserData(firstName: String, lastName: String, email: String, userId: String) {
-        dataBaselayer.saveUserData(firstName: firstName, lastName: lastName, email: email, userId: userId)
+    public func saveUserData(firstName: String, lastName: String, email: String, userId: String, completion: @escaping (Bool, String) -> Void) {
+        dataBaselayer.saveUserData(firstName: firstName, lastName: lastName, email: email, userId: userId) { pass, msg in
+            completion(pass, msg)
+        }
     }
     
     public func isUserLogedIn() -> Bool {
         return dataBaselayer.auth.currentUser != nil
     }
     
-    func signInPressed(em: String, pass: String, completion: @escaping () -> Void) {
+    func signInPressed(em: String, pass: String, completion: @escaping (Bool, String) -> Void) {
         dataBaselayer.auth.signIn(withEmail: em , password: pass) { res, err in
             if let error = err {
                 print(error.localizedDescription)
-                return
+                completion(false, error.localizedDescription)
             } else {
-                completion()
+                completion(true, "Success")
                 print("Signed in ")
             }
         }
     }
     
-    func signUpPressed(em: String, pass: String, conPass: String, firstName: String, lastName: String, completion: @escaping () -> ()) {
+    func showAlert(vc: UIViewController, msg: String, msgBody: String, completion: @escaping () -> Void) {
+        let alert = UIAlertController(title: msg, message: msgBody, preferredStyle: .alert)
+        
+        let ok = UIAlertAction(title: "ok", style: .default) { _ in
+            completion()
+        }
+        
+        alert.addAction(ok)
+        
+        vc.present(alert, animated: true)
+    }
+    
+    func signUpPressed(em: String, pass: String, conPass: String, firstName: String, lastName: String, completion: @escaping (Bool, String) -> ()) {
         dataBaselayer.auth.createUser(withEmail: em, password: pass) { [weak self] response, error in
             if let error = error {
                 print(error.localizedDescription)
-                return
+                completion(false, error.localizedDescription)
             } else {
-                completion()
-                self?.saveUserData(firstName: firstName, lastName: lastName, email: em, userId: response?.user.uid ?? "")
-                print("Signed up")
-                
+                self?.saveUserData(firstName: firstName, lastName: lastName, email: em, userId: response?.user.uid ?? "", completion: { pass, msg in
+                    if pass {
+                        completion(true, "Success")
+                    } else {
+                        completion(false, "PLEASE CONTACT ADMIN radianceokuzor@gmail.com \nI created your account but your data is missing because \n\(msg)")
+                    }
+                })
             }
         }
     }
     
-    func getAllUserNotes() {
+    func getAllUserNotes( completion: @escaping () -> Void) {
         dataBaselayer.getNotes { [weak self] response in
             self?.pageData.removeAll()
-            for (_,y) in response {
-                let page = Page(data: y)
+            for doc in response {
+                let page = Page(data: doc)
 
                 self?.pageData.append(page)
+                
+                print(doc)
             }
-            self?.pageData = self?.pageData.filter({$0.authorId == self?.dataBaselayer.auth.currentUser?.uid})
+
             self?.pageData = self?.pageData.sorted(by: {$0.date < $1.date}) ?? []
+            self?.pageDataCache = self?.pageData ?? []
+            self?.filterPagesByBook(bookId: "all") {
+                completion()
+            }
         }
     }
     
-    func uploadDrawing(initialDate: Date?, title: String, imageRef: String, documentId: String, image: UIImage, completion: @escaping () -> Void) {
-        dataBaselayer.uploadUploadDrawing(initialDate: initialDate, imageRef: imageRef, documentId: documentId, title: title, image: image) {
-            completion()
+    func uploadDrawing(initialDate: Date?, title: String, imageRef: String, documentId: String, image: UIImage, completion: @escaping (Bool, String) -> Void) {
+        dataBaselayer.uploadUploadDrawing(bookId: Self.bookId, initialDate: initialDate, imageRef: imageRef, documentId: documentId, title: title, image: image) {pass, msg in
+            completion(pass, msg)
         }
     }
-    
-    
     
     func downloadImage(url: String, completion: @escaping (UIImage?) -> Void) {
         dataBaselayer.downloadImage(url: url) { image in
@@ -90,20 +113,27 @@ class PageViewModel: NSObject {
     }
     
     func createNewBook(title: String, initialDate: Date?) {
-        dataBaselayer.createNewBook(initialDate: initialDate, title: title) { [weak self]  bookId in
-            self?.filterPagesByBook(bookId: bookId)
-            self?.bookId = bookId
+        dataBaselayer.createNewBook(bookId: Self.bookId, initialDate: initialDate, title: title) { [weak self]  pass, bookId  in
+            if pass {
+                self?.filterPagesByBook(bookId: bookId) {
+                    
+                }
+                Self.bookId = bookId
+            } else {
+                // show error here that book never got created
+            }
         }
     }
     
-    func createNewTyping(initialDate: Date, documentId: String, title: String, note: String, completion: @escaping () -> Void) {
-        dataBaselayer.saveTyping(initialDate: initialDate, documentId: documentId, title: title, note: note) {
-            completion()
+    func createNewTyping(initialDate: Date, documentId: String, title: String, note: String, completion: @escaping (Bool, String) -> Void) {
+        dataBaselayer.saveTyping(bookId: Singleton.shared.bookId, initialDate: initialDate, documentId: documentId, title: title, note: note) {pass, msg in
+            completion(pass, msg)
         }
     }
     
-    func filterPagesByBook(bookId: String) {
-        self.pageData = self.pageData.filter({$0.bookId == bookId})
+    func filterPagesByBook(bookId: String, completion: @escaping () -> Void) {
+        self.pageData = self.pageDataCache.filter({$0.bookId == bookId})
+        completion()
     }
     
     func signOut(completion: @escaping () -> ()) {
