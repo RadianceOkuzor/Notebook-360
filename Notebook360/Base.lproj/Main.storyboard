@@ -654,8 +654,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AS5-Y8-wwK">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="81"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="doO-Rr-Vig">
-                                        <rect key="frame" x="2" y="46" width="410" height="31"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="doO-Rr-Vig">
+                                        <rect key="frame" x="22" y="46" width="370" height="31"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sd1-os-DUJ">
                                                 <rect key="frame" x="0.0" y="0.0" width="70" height="31"/>
@@ -669,7 +669,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="247" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PXQ-Pp-v58">
-                                                <rect key="frame" x="85" y="0.0" width="70" height="31"/>
+                                                <rect key="frame" x="85" y="0.0" width="54.5" height="31"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="↪️"/>
                                                 <connections>
@@ -677,7 +677,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KEN-jj-SQe">
-                                                <rect key="frame" x="170" y="0.0" width="70" height="31"/>
+                                                <rect key="frame" x="154.5" y="0.0" width="55" height="31"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="↩️"/>
                                                 <connections>
@@ -685,7 +685,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bu2-9Y-ytj">
-                                                <rect key="frame" x="255" y="0.0" width="70" height="31"/>
+                                                <rect key="frame" x="224.5" y="0.0" width="54.5" height="31"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="🎨"/>
                                                 <connections>
@@ -693,7 +693,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gX0-Qz-aiF">
-                                                <rect key="frame" x="340" y="0.0" width="70" height="31"/>
+                                                <rect key="frame" x="294" y="0.0" width="76" height="31"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="🖋"/>
                                                 <connections>
@@ -763,13 +763,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ehG-i8-E36" customClass="RichEditorView" customModule="RichEditorView">
-                                <rect key="frame" x="0.0" y="121" width="414" height="775"/>
+                                <rect key="frame" x="10" y="121" width="394" height="775"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sGj-nY-Gev">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="113"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="275" translatesAutoresizingMaskIntoConstraints="NO" id="TdI-pq-UzV">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TdI-pq-UzV">
                                         <rect key="frame" x="11" y="78" width="392" height="31"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tJW-x6-B2U">
@@ -781,7 +781,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEG-dO-1Vj">
-                                                <rect key="frame" x="333.5" y="0.0" width="58.5" height="31"/>
+                                                <rect key="frame" x="348" y="0.0" width="44" height="31"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="⏱"/>
                                                 <connections>
@@ -795,6 +795,8 @@
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="TdI-pq-UzV" secondAttribute="bottom" constant="4" id="8Ur-Vu-cOC"/>
                                     <constraint firstItem="TdI-pq-UzV" firstAttribute="centerX" secondItem="sGj-nY-Gev" secondAttribute="centerX" id="BD8-wi-uBN"/>
+                                    <constraint firstItem="TdI-pq-UzV" firstAttribute="leading" secondItem="sGj-nY-Gev" secondAttribute="leading" constant="11" id="C62-XI-iLr"/>
+                                    <constraint firstAttribute="trailing" secondItem="TdI-pq-UzV" secondAttribute="trailing" constant="11" id="xj5-x2-aKK"/>
                                 </constraints>
                             </view>
                             <datePicker hidden="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="hB6-Xj-OeB">
@@ -805,16 +807,16 @@
                             </datePicker>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0WS-IC-Gof"/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="ehG-i8-E36" secondAttribute="bottom" id="EMl-Wa-n7M"/>
                             <constraint firstItem="sGj-nY-Gev" firstAttribute="trailing" secondItem="0WS-IC-Gof" secondAttribute="trailing" id="KuW-9h-u5R"/>
                             <constraint firstItem="ehG-i8-E36" firstAttribute="top" secondItem="sGj-nY-Gev" secondAttribute="bottom" constant="8" symbolic="YES" id="Sz9-AS-h6e"/>
                             <constraint firstItem="ehG-i8-E36" firstAttribute="top" secondItem="0WS-IC-Gof" secondAttribute="top" constant="77" id="ZdV-vi-pyN"/>
-                            <constraint firstItem="ehG-i8-E36" firstAttribute="trailing" secondItem="0WS-IC-Gof" secondAttribute="trailing" id="gYq-8q-7BQ"/>
+                            <constraint firstItem="ehG-i8-E36" firstAttribute="trailing" secondItem="0WS-IC-Gof" secondAttribute="trailing" constant="-10" id="gYq-8q-7BQ"/>
                             <constraint firstItem="hB6-Xj-OeB" firstAttribute="top" secondItem="sGj-nY-Gev" secondAttribute="bottom" constant="8" symbolic="YES" id="kSg-l2-8Is"/>
                             <constraint firstItem="hB6-Xj-OeB" firstAttribute="trailing" secondItem="0WS-IC-Gof" secondAttribute="trailing" id="uJQ-H1-8Om"/>
-                            <constraint firstItem="ehG-i8-E36" firstAttribute="leading" secondItem="0WS-IC-Gof" secondAttribute="leading" id="uin-Og-zaK"/>
+                            <constraint firstItem="ehG-i8-E36" firstAttribute="leading" secondItem="0WS-IC-Gof" secondAttribute="leading" constant="10" id="uin-Og-zaK"/>
                             <constraint firstItem="sGj-nY-Gev" firstAttribute="top" secondItem="eiq-Gj-Qie" secondAttribute="top" id="vWZ-L6-pJD"/>
                             <constraint firstItem="hB6-Xj-OeB" firstAttribute="leading" secondItem="eiq-Gj-Qie" secondAttribute="leading" constant="188" id="yEA-n3-nPt"/>
                             <constraint firstItem="sGj-nY-Gev" firstAttribute="leading" secondItem="0WS-IC-Gof" secondAttribute="leading" id="zvj-rI-kDR"/>

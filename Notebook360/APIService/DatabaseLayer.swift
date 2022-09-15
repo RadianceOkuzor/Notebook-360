@@ -160,19 +160,6 @@ public class DataBaseLayer : NSObject {
            "authorId":Auth.auth().currentUser?.uid ?? "nil",
            "bookId": bookId ?? "all"
        ]
-       
-//       var ref: DatabaseReference!
-//
-//       ref = Database.database().reference()
-//
-//       ref.child("Notes").child(documentID).updateChildValues(docData) { error, snapShot in
-//           if let err = error {
-//               print(err.localizedDescription)
-//               completion()
-//           } else {
-//               completion()
-//           }
-//       }
         
         db.collection("notes").document(documentID).setData(docData) { err in
             if let err = err {
@@ -197,18 +184,6 @@ public class DataBaseLayer : NSObject {
            "bookId": bookId ?? "all"
        ]
        
-//       var ref: DatabaseReference!
-//
-//       ref = Database.database().reference()
-//
-//       ref.child("Notes").child(documentID).updateChildValues(docData) { error, snapShot in
-//           if let err = error {
-//               print(err.localizedDescription)
-//           } else {
-//               completion(self.documentID)
-//           }
-//       }
-        
         db.collection("notes").document(documentID).setData(docData) { err in
             if let err = err {
                 completion(false, err.localizedDescription)

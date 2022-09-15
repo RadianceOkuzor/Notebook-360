@@ -59,7 +59,7 @@ class TypeVC: UIViewController {
         toolbar.options.append(greenColor)
         toolbar.options.append(blackColor)
         toolbar.editor = htmlView
-        toolbar.backgroundColor = .white
+        toolbar.backgroundColor = .darkGray
         
         htmlView.inputAccessoryView = toolbar
     }
@@ -95,10 +95,10 @@ class TypeVC: UIViewController {
                     }
                 }
             }
-        } else {
-            DispatchQueue.main.async {
-                self.dismiss(animated: true)
-            }
+        }
+        
+        DispatchQueue.main.async {
+            self.dismiss(animated: true)
         }
     }
     

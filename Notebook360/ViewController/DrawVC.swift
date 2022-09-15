@@ -56,7 +56,7 @@ class DrawVC: UIViewController {
     }
     
     @IBAction func finishTapped(_ sender: Any) {
-        if page.drawing.isEmpty {
+        if !page.drawing.isEmpty {
             saveDrawingToPhotoLibrary()
         } else {
             self.dismiss(animated: true)
