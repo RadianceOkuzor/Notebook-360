@@ -181,7 +181,6 @@ class HomeVC: UIViewController {
         DispatchQueue.main.async {
             // Updat UI here
             self.collection.reloadData()
-            print(self.pages)
         }
     }
     

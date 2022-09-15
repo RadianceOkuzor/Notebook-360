@@ -40,16 +40,16 @@ public class DataBaseLayer : NSObject {
             }
         }
         
-        ref.child("Users").child(userId).updateChildValues(
-            ["firstName":firstName,
-             "lastName":lastName,
-             "email":email,
-             "id":userId]) { error, snapShot in
-                 if error != nil {
-                     
-                 } else {
-                 }
-             }
+//        ref.child("Users").child(userId).updateChildValues(
+//            ["firstName":firstName,
+//             "lastName":lastName,
+//             "email":email,
+//             "id":userId]) { error, snapShot in
+//                 if error != nil {
+//                     
+//                 } else {
+//                 }
+//             }
     }
     
     func getNotes(bookId: String = "", completion: @escaping ([String:[String:Any]]) -> ()) {

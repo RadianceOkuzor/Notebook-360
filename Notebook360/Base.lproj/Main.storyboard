@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -125,10 +124,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homeBackGround" translatesAutoresizingMaskIntoConstraints="NO" id="wYa-cF-yes">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="4965"/>
                             </imageView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="VFG-HT-hUx">
-                                <rect key="frame" x="10" y="108" width="404" height="788"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="VFG-HT-hUx">
+                                <rect key="frame" x="10" y="100" width="404" height="3985"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pvm-EK-pst">
@@ -208,7 +207,7 @@
                                 </connections>
                             </collectionView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="2cJ-2c-Ow2">
-                                <rect key="frame" x="354" y="746" width="0.0" height="0.0"/>
+                                <rect key="frame" x="354" y="3935" width="0.0" height="0.0"/>
                                 <subviews>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a6m-3F-LjB">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
@@ -405,7 +404,7 @@
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YLd-aM-MEi">
-                                <rect key="frame" x="304" y="766" width="100" height="100"/>
+                                <rect key="frame" x="304" y="3955" width="100" height="100"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuIcon" translatesAutoresizingMaskIntoConstraints="NO" id="5e7-s4-aT9">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -588,6 +587,7 @@
                             <constraint firstItem="DFb-LO-YnF" firstAttribute="top" secondItem="57U-ND-0Nh" secondAttribute="top" id="h5d-5c-0MI"/>
                             <constraint firstItem="DFb-LO-YnF" firstAttribute="trailing" secondItem="eEK-zQ-Yyc" secondAttribute="trailing" id="i4Q-BC-JAk"/>
                             <constraint firstAttribute="bottom" secondItem="YLd-aM-MEi" secondAttribute="bottom" constant="30" id="k6n-Zl-44Y"/>
+                            <constraint firstItem="VFG-HT-hUx" firstAttribute="top" secondItem="DFb-LO-YnF" secondAttribute="bottom" id="nYx-bR-AXm"/>
                             <constraint firstItem="YLd-aM-MEi" firstAttribute="trailing" secondItem="eEK-zQ-Yyc" secondAttribute="trailing" constant="-10" id="rI3-Rh-66j"/>
                             <constraint firstItem="VFG-HT-hUx" firstAttribute="trailing" secondItem="eEK-zQ-Yyc" secondAttribute="trailing" id="vqt-fC-XxC"/>
                             <constraint firstItem="VFG-HT-hUx" firstAttribute="height" secondItem="wYa-cF-yes" secondAttribute="height" multiplier="0.785714" constant="84" id="xu0-x9-a0d"/>
