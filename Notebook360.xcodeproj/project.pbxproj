@@ -705,6 +705,7 @@
 				DEVELOPMENT_TEAM = F2B5QD97WH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Notebook360/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "360 Notebooks";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Permission needed to save your writings to your phone";
 				INFOPLIST_KEY_NSRemindersUsageDescription = "Permission to remind you of your notes";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -737,6 +738,7 @@
 				DEVELOPMENT_TEAM = F2B5QD97WH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Notebook360/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "360 Notebooks";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Permission needed to save your writings to your phone";
 				INFOPLIST_KEY_NSRemindersUsageDescription = "Permission to remind you of your notes";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
