@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeVC: UIViewController {
+class HomeVC: UIViewController, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var menuBtn: UIButton!
     @IBOutlet weak var collection: UICollectionView!
@@ -28,6 +28,7 @@ class HomeVC: UIViewController {
     var pageVM: PageViewModel!
     var pages = [Page]()
     var corePages = [CorePage]()
+    var corePagesPreFilter = [CorePage]()
     var selectedPage = Page()
     var cPageIndex = Int()
     var corePage = CorePage()
@@ -57,20 +58,16 @@ class HomeVC: UIViewController {
         searchTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
     }
     
-//    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-//       get {
-//          return .portrait
-//       }
-//    }
-    
     override open var shouldAutorotate: Bool {
         return false
     }
     
     override func viewWillAppear(_ animated: Bool) {
         corePages.removeAll()
+        corePagesPreFilter.removeAll()
         if let book = Singleton.shared.coreBooks.first {
             corePages = DataManager.shared.corePages(coreBook: book)
+            corePagesPreFilter = corePages
         }
         collection.reloadData()
     }
@@ -150,51 +147,74 @@ class HomeVC: UIViewController {
     
     @IBAction func aToZpressed(_ sender: Any) {
         openCloseFilterBtns()
-//        filtertAtoZUp.toggle()
         
-//        pageVM.filterAtoZ(orderUp: filtertAtoZUp)
+        if filtertAtoZUp {
+            corePages = corePages.sorted(by: {$0.title ?? "" > $1.title ?? ""})
+        } else {
+            corePages = corePages.sorted(by: {$0.title ?? "" < $1.title ?? ""})
+        }
+        
         collection.reloadData()
         
         let title = filtertAtoZUp ? "A ↗ Z" : "A ↘︎ Z"
         
         aToZFilterBtn.setTitle(title, for: .normal)
+        filtertAtoZUp.toggle()
     }
     
     @IBAction func allNotesFilterPrsd(_ sender: Any) {
         openCloseFilterBtns()
         
-        self.pageVM.filterPagesByBook(bookId: "all") {
-            self.collection.reloadData()
-        }
+        corePages.removeAll()
+        corePages = corePagesPreFilter
+        collection.reloadData()
+//        self.pageVM.filterPagesByBook(bookId: "all") {
+//            self.collection.reloadData()
+//        }
     }
     
     @IBAction func createdAtPrsd(_ sender: Any) {
         openCloseFilterBtns()
-        pageVM.filterAge(orderUp: filterAgeUp)
+//        pageVM.filterAge(orderUp: filterAgeUp)
+        
+        if filterAgeUp {
+            corePages = corePages.sorted(by: {$0.dateCreated ?? .now > $1.dateCreated ?? .now})
+        } else {
+            corePages = corePages.sorted(by: {$0.dateCreated ?? .now < $1.dateCreated ?? .now})
+        }
+        
         collection.reloadData()
-        filterAgeUp.toggle()
         
         let title = filterAgeUp ? "Created  At  ↗" : "Created  At  ↘︎"
         
         createdAtFilterBtn.setTitle(title, for: .normal)
+        filterAgeUp.toggle()
     }
     
     @IBAction func editFilterPrsd(_ sender: Any) {
         openCloseFilterBtns()
-        pageVM.filterMostRecent(orderUp: filterRecentUp)
+//        pageVM.filterMostRecent(orderUp: filterRecentUp)
+//        corePages.removeAll()
+        if filterRecentUp {
+            corePages = corePages.sorted(by: {$0.dateEdited ?? .now > $1.dateEdited ?? .now})
+        } else {
+            corePages = corePages.sorted(by: {$0.dateEdited ?? .now < $1.dateEdited ?? .now})
+        }
+ 
         collection.reloadData()
-        filterRecentUp.toggle()
         
         let title = filterRecentUp ? "Recently Edited ↗" : "Recently Edited ↘︎"
         editedAtFilterBtn.setTitle(title, for: .normal)
+        filterRecentUp.toggle()
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
         
-        self.pages = self.pageVM.pageData.filter({$0.notes.contains(textField.text ?? "")})
+//        self.pages = self.pageVM.pageData.filter({$0.notes.contains(textField.text ?? "")})
+        self.corePages = self.corePagesPreFilter.filter({$0.notes?.contains(textField.text ?? "") ?? false})
         collection.reloadData()
         if textField.text == "" {
-            self.pages = self.pageVM.pageData
+            self.corePages = corePagesPreFilter
         }
         
     }
@@ -323,7 +343,6 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UITextFi
         selectedPage = Page(cPage: corePages[indexPath.row])
         corePage = corePages[indexPath.row]
         cPageIndex = indexPath.row
-
         if corePages[indexPath.row].pageType == "type" {
             self.performSegue(withIdentifier: "showTypeFromHome", sender: self)
         } else if corePages[indexPath.row].pageType == "draw" || corePages[indexPath.row].pageType == "drawType" {
@@ -347,6 +366,37 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UITextFi
         //
 //        self.pages = self.pageVM.pageData.filter({$0.notes.contains(textField.text ?? "")})
     }
+    
+    func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+        configureContextMenu(index: indexPath.row)
+    }
+    
+    func configureContextMenu(index: Int) -> UIContextMenuConfiguration{
+        let context = UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { (action) -> UIMenu? in
+            
+            let edit = UIAction(title: "Edit", image: UIImage(systemName: "square.and.pencil"), identifier: nil, discoverabilityTitle: nil, state: .off) {[weak self] (_) in
+                self?.selectedPage = Page(cPage: self?.corePages[index] ?? .init())
+                self?.corePage = self?.corePages[index] ?? .init()
+                self?.cPageIndex = index
+                if self?.corePages[index].pageType == "type" {
+                    self?.performSegue(withIdentifier: "showTypeFromHome", sender: self)
+                } else if self?.corePages[index].pageType == "draw" || self?.corePages[index].pageType == "drawType" {
+                    self?.performSegue(withIdentifier: "showDrawFromHome", sender: self)
+                } else if self?.corePages[index].pageType == "book" {
+                }
+            }
+            let delete = UIAction(title: "Delete", image: UIImage(systemName: "trash"), identifier: nil, discoverabilityTitle: nil,attributes: .destructive, state: .off) { [weak self] (_) in
+                DataManager.shared.deletePage(corePage: self?.corePages[index] ?? .init())
+                self?.corePages.remove(at: index)
+                self?.corePagesPreFilter.remove(at: index)
+                self?.collection.reloadData()
+            }
+            
+            return UIMenu(title: "Options", image: nil, identifier: nil, options: UIMenu.Options.displayInline, children: [edit,delete])
+            
+        }
+        return context
+    }
 }
 
 extension UIView {
@@ -357,6 +407,38 @@ extension UIView {
         }
         set {
             layer.cornerRadius = newValue
+        }
+    }
+}
+
+@IBDesignable extension UIButton {
+
+    @IBInspectable var borderWidth: CGFloat {
+        set {
+            layer.borderWidth = newValue
+        }
+        get {
+            return layer.borderWidth
+        }
+    }
+
+    @IBInspectable override var cornerRadius: CGFloat {
+        set {
+            layer.cornerRadius = newValue
+        }
+        get {
+            return layer.cornerRadius
+        }
+    }
+
+    @IBInspectable var borderColor: UIColor? {
+        set {
+            guard let uiColor = newValue else { return }
+            layer.borderColor = uiColor.cgColor
+        }
+        get {
+            guard let color = layer.borderColor else { return nil }
+            return UIColor(cgColor: color)
         }
     }
 }

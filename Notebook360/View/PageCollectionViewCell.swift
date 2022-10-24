@@ -8,7 +8,7 @@
 import UIKit
 import RichEditorView
 
-class PageCollectionViewCell: UICollectionViewCell {
+class PageCollectionViewCell: UICollectionViewCell, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var bkGdImage: UIImageView!
     @IBOutlet weak var htmlView: RichEditorView!

@@ -95,6 +95,8 @@ class DrawTypeViewController: UIViewController {
 //        let activity = UIActivityViewController(activityItems: [image], applicationActivities: nil)
 //        present(activity, animated: true)
         
+        guard let _ = mainImageView.image else { self.dismiss(animated: true); return }
+        
         saveDrawing()
     }
     

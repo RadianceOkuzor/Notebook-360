@@ -797,16 +797,46 @@
                                                 <buttonConfiguration key="configuration" style="plain" title="Set Timer">
                                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="reminderPrsd:" destination="V4p-Y4-NU9" eventType="touchUpInside" id="K56-fg-ZyK"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tJW-x6-B2U">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tJW-x6-B2U">
                                                 <rect key="frame" x="333.5" y="0.0" width="58.5" height="31"/>
-                                                <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Done">
                                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius2">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                        <integer key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="donePrsd:" destination="V4p-Y4-NU9" eventType="touchUpInside" id="2A3-Lr-AGf"/>
                                                 </connections>
@@ -876,9 +906,29 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FBE-BG-BDr">
                                 <rect key="frame" x="345" y="54" width="37" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="37" id="iFg-rL-9tX">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="57"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="30" id="mb4-nR-6sc">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                                    </constraint>
+                                </constraints>
                                 <state key="normal" title="Done">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="sharePressed:" destination="rJP-tX-M7e" eventType="touchUpInside" id="JkG-N6-FNn"/>
                                 </connections>
@@ -978,10 +1028,10 @@
                                 </constraints>
                             </stackView>
                             <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="b3D-e5-Hc1">
-                                <rect key="frame" x="-127.5" y="130.5" width="669" height="149"/>
+                                <rect key="frame" x="-155.5" y="130.5" width="725" height="149"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="IuP-AQ-5Iq">
-                                        <rect key="frame" x="0.0" y="0.0" width="669" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="725" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brush" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZL-Ql-QV2">
                                                 <rect key="frame" x="0.0" y="0.0" width="48.5" height="30"/>
@@ -990,7 +1040,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <slider opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="754" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="1" maxValue="80" translatesAutoresizingMaskIntoConstraints="NO" id="mgf-nt-vJ0">
-                                                <rect key="frame" x="53.5" y="0.0" width="570.5" height="31"/>
+                                                <rect key="frame" x="53.5" y="0.0" width="626.5" height="31"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="jXX-h2-Bl1">
                                                         <variation key="heightClass=regular-widthClass=regular" constant="350"/>
@@ -1001,7 +1051,7 @@
                                                 </connections>
                                             </slider>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10.0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SRP-dm-1MI">
-                                                <rect key="frame" x="629" y="0.0" width="40" height="30"/>
+                                                <rect key="frame" x="685" y="0.0" width="40" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="dRW-Jm-ksI"/>
                                                 </constraints>
@@ -1012,7 +1062,7 @@
                                         </subviews>
                                     </stackView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1sJ-hO-1pu">
-                                        <rect key="frame" x="284.5" y="49" width="100" height="100"/>
+                                        <rect key="frame" x="312.5" y="49" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="CM7-No-fc6"/>
                                             <constraint firstAttribute="width" constant="100" id="Uir-oQ-1mb"/>
@@ -1024,16 +1074,15 @@
                         <viewLayoutGuide key="safeArea" id="owF-D8-I88"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="FBE-BG-BDr" secondAttribute="trailing" constant="32" id="5t9-hO-HJW"/>
-                            <constraint firstItem="FBE-BG-BDr" firstAttribute="top" secondItem="owF-D8-I88" secondAttribute="top" constant="10" id="7m3-NP-Xad"/>
                             <constraint firstAttribute="trailing" secondItem="3lw-Sn-Xre" secondAttribute="trailing" id="9sW-d6-jT7"/>
                             <constraint firstItem="b3D-e5-Hc1" firstAttribute="top" secondItem="kLp-Dn-0bj" secondAttribute="bottom" constant="26.5" id="CE2-qV-4Ji"/>
-                            <constraint firstItem="FBE-BG-BDr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ftP-9j-3Zc" secondAttribute="leading" constant="20" symbolic="YES" id="N6r-AY-Yid"/>
                             <constraint firstItem="3lw-Sn-Xre" firstAttribute="leading" secondItem="ftP-9j-3Zc" secondAttribute="leading" id="P3U-px-QSO"/>
                             <constraint firstItem="b3D-e5-Hc1" firstAttribute="centerX" secondItem="ftP-9j-3Zc" secondAttribute="centerX" id="Soh-b0-Icp"/>
                             <constraint firstAttribute="trailing" secondItem="vuh-5y-1o5" secondAttribute="trailing" id="WpA-UV-Rg1"/>
                             <constraint firstItem="kLp-Dn-0bj" firstAttribute="centerX" secondItem="ftP-9j-3Zc" secondAttribute="centerX" id="YmN-z2-5WZ"/>
+                            <constraint firstItem="owF-D8-I88" firstAttribute="trailing" secondItem="FBE-BG-BDr" secondAttribute="trailing" constant="32" id="bsP-wR-Gmt"/>
                             <constraint firstItem="vuh-5y-1o5" firstAttribute="top" secondItem="ftP-9j-3Zc" secondAttribute="top" id="fwv-8Y-iTT"/>
+                            <constraint firstItem="FBE-BG-BDr" firstAttribute="top" secondItem="owF-D8-I88" secondAttribute="top" constant="10" id="hhn-pJ-92D"/>
                             <constraint firstItem="3lw-Sn-Xre" firstAttribute="top" secondItem="ftP-9j-3Zc" secondAttribute="top" id="jzF-ac-Og5"/>
                             <constraint firstItem="vuh-5y-1o5" firstAttribute="leading" secondItem="ftP-9j-3Zc" secondAttribute="leading" id="qUF-Me-64u"/>
                             <constraint firstItem="kLp-Dn-0bj" firstAttribute="top" secondItem="owF-D8-I88" secondAttribute="top" constant="10" id="st2-lH-SDK"/>
@@ -1058,6 +1107,11 @@
             <point key="canvasLocation" x="2040.5797101449277" y="362.94642857142856"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="ZGR-tr-MWd">
+            <size key="intrinsicContentSize" width="24" height="14"/>
+        </designable>
+    </designables>
     <resources>
         <image name="book" width="512" height="512"/>
         <image name="drawTypeIcon" width="512" height="512"/>
