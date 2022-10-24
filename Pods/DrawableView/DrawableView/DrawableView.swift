@@ -42,11 +42,46 @@ public class DrawableView: UIView {
     
     /// An optional UIImage of the current drawing.
     public var image: UIImage? {
-        UIGraphicsBeginImageContextWithOptions(bounds.size, false, UIScreen.main.scale)
-        drawHierarchy(in: bounds, afterScreenUpdates: true)
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return image
+        get {
+            UIGraphicsBeginImageContextWithOptions(bounds.size, false, UIScreen.main.scale)
+            drawHierarchy(in: bounds, afterScreenUpdates: true)
+            let image = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            return image
+        }
+        set {
+//            guard let context = UIGraphicsGetCurrentContext() else { return }
+//
+//            if let cgImage = newValue?.cgImage {
+//                drawImageFlipped(image: cgImage, in: context)
+//            }
+            
+//            let requestID = nextImageCreationRequestId
+//            let strokesToMakeImage = latestStrokes.splitInTwo(numPoints: latestStrokes.transferrablePointCount)
+//
+//            let imageCreationBlock: CreationCallback = { response in
+//                DispatchQueue.main.async {
+//                    if self.undoWasTapped {
+//                        self.drawBackBuffer()
+//                        return
+//                    }
+//                    // Check if the request coming back is the latest one we care about
+//                    if requestID == response.requestID {
+//                        // Clear out the "strokes waiting for image" and "pending request ID"
+//                        self.strokesWaitingForImage = nil
+//                        self.pendingImageCreationRequestId = nil
+//                        self.previousStrokesImage = response.image
+//                    }
+//                }
+//            }
+//
+//            pendingImageCreationRequestId = requestID
+//            strokesWaitingForImage = strokesToMakeImage
+//            nextImageCreationRequestId += 1
+//
+//            createImageAsynchronously(from: strokesToMakeImage, image: newValue, size: CGSize(width: 39.3, height: 74.8), requestID: requestID, callback: imageCreationBlock)
+            
+        }
     }
     
     /// The width of the current brush.
@@ -245,6 +280,21 @@ extension DrawableView {
         
         strokes.draw(in: context)
         return UIGraphicsGetImageFromCurrentImageContext()
+    }
+    
+    public func updateImage(image: UIImage) -> UIImage? {
+        UIGraphicsBeginImageContext(bounds.size)
+        
+        defer { UIGraphicsEndImageContext() }
+        guard let context = UIGraphicsGetCurrentContext() else { return nil }
+        
+        if let cgImage = image.cgImage {
+            drawImageFlipped(image: cgImage, in: context)
+        }
+        
+        strokes.draw(in: context)
+        return UIGraphicsGetImageFromCurrentImageContext()
+        
     }
     
     fileprivate func createImageAsynchronously(from strokes: StrokeCollection, image: UIImage? = nil, size: CGSize, requestID: ImageCreationRequestIdentifier, callback: @escaping CreationCallback)

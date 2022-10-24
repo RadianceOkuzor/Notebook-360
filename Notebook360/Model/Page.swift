@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import CoreData
 
 enum PageType: String, Codable {
     case draw
@@ -32,6 +33,12 @@ private enum Width {
     }
 }
 
+struct Book {
+    var color: String?
+    var id: String
+    var title: String
+}
+
 class Page {
     var pageType: PageType = .none
     var title: String
@@ -39,7 +46,7 @@ class Page {
     var date: Date
     var editedAt: Date?
     var notes: String
-    var drawing = ""
+    var drawing: Data? = nil
     var bookId: String = ""
     var imageRef = ""
     var authorId = ""
@@ -50,8 +57,18 @@ class Page {
         self.id = id
         self.date = date
         self.notes = notes
-        self.drawing = drawing
         self.editedAt = nil
+    }
+    
+    init(cPage: CorePage) {
+        self.pageType = PageType(rawValue: cPage.pageType ?? "") ?? .none
+        self.title = cPage.pageType ?? ""
+        self.id = cPage.id ?? ""
+        self.date = cPage.dateCreated ?? Date.now
+        self.notes = cPage.notes ?? ""
+        self.drawing = cPage.drawing
+        self.bookId = cPage.book?.id ?? ""
+        self.authorId = cPage.authorId ?? ""
     }
     
     init() {
@@ -100,7 +117,7 @@ class Page {
         if let notes = data["note"] as? String {
             self.notes = notes
             if self.pageType == .type {
-                self.title = notes 
+                self.title = notes
             }
         } else {
             self.notes = ""
@@ -117,13 +134,99 @@ class Page {
         }
         
         if let imageRef = data["imageRef"] as? String {
-           
+            
             self.imageRef = imageRef
         }
         
         if let url = data["drawUrl"] as? String {
-           
-            self.drawing = url
+            
+//            self.drawing = url
         }
+    }
+}
+
+class DataManager {
+    static let shared = DataManager()
+    
+    lazy var persistentContainer: NSPersistentContainer = {
+        let container = NSPersistentContainer(name: "PersistentCoreModel")
+        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+            if let error = error as NSError? {
+                fatalError("Unresolved error \(error), \(error.userInfo)")
+            }
+        })
+        return container
+    }()
+    //Core Data Saving support
+    func save () {
+        let context = persistentContainer.viewContext
+        if context.hasChanges {
+            do {
+                try context.save()
+            } catch {
+                let nserror = error as NSError
+                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+            }
+        }
+    }
+    
+    func coreBook(book: Book) -> CoreBook {
+        let cbook = CoreBook(context: persistentContainer.viewContext)
+        cbook.id = book.id
+        cbook.color = book.color
+        cbook.title = book.title
+        return cbook
+    }
+    
+    func corePage(page: Page, cBook: CoreBook) -> CorePage {
+        let cPage = CorePage(context: persistentContainer.viewContext)
+        cPage.title = page.title
+        cPage.id = page.id
+        cPage.authorId = page.authorId
+        cPage.dateCreated = page.date
+        cPage.drawing = page.drawing
+        cPage.notes = page.notes
+        cPage.pageType = page.pageType.rawValue
+        cBook.addToPages(cPage)
+        return cPage
+    }
+    
+    func coreBooks() -> [CoreBook] {
+      let request: NSFetchRequest<CoreBook> = CoreBook.fetchRequest()
+      var fetchedCoreBooks: [CoreBook] = []
+      do {
+          fetchedCoreBooks = try persistentContainer.viewContext.fetch(request)
+      } catch let error {
+         print("Error fetching core books \(error)")
+      }
+      return fetchedCoreBooks
+    }
+    
+    func updateCorePage(corePage: CorePage) {
+        
+    }
+    
+    func corePages(coreBook: CoreBook) -> [CorePage] {
+      let request: NSFetchRequest<CorePage> = CorePage.fetchRequest()
+      request.predicate = NSPredicate(format: "book = %@", coreBook)
+//      request.sortDescriptors = [NSSortDescriptor(key: "releaseDate", ascending: false)]
+      var fetchedPages: [CorePage] = []
+      do {
+          fetchedPages = try persistentContainer.viewContext.fetch(request)
+      } catch let error {
+        print("Error fetching pages \(error)")
+      }
+      return fetchedPages
+    }
+    
+    func deletePage(corePage: CorePage) {
+      let context = persistentContainer.viewContext
+      context.delete(corePage)
+      save()
+    }
+    func deleteBook(coreBook: CoreBook) {
+      let context = persistentContainer.viewContext
+      context.delete(coreBook)
+      save()
     }
 }

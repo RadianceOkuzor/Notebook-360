@@ -26,6 +26,7 @@ class DrawVC: UIViewController {
     let picker = UIColorPickerViewController()
 
     var page = Page()
+    var cPage = CorePage()
     
     var pageVM: PageViewModel!
     
@@ -37,13 +38,9 @@ class DrawVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if !page.drawing.isEmpty {
-            imageBKGD.isHidden = false
-            pageVM.downloadImage(url: page.imageRef) { image in
-                DispatchQueue.main.async {
-                    self.imageBKGD.image = image
-                }
-            }
+        if !(page.drawing?.isEmpty ?? false) {
+//            drawableView.image = UIImage(data: page.drawing ?? .init())
+            drawableView.updateImage(image: UIImage(data: page.drawing ?? .init()) ?? .init())
         }
     }
     
@@ -88,20 +85,26 @@ class DrawVC: UIViewController {
 
 extension DrawVC: DrawableViewDelegate {
     func setDrawing(_ isDrawing: Bool) {
-        //
+        if isDrawing {
+//            imageBKGD.image = drawableView.image
+        }
     }
     
     func saveDrawingToPhotoLibrary() {
         guard let drawnImage = drawableView.image else {return }
-        pageVM.uploadDrawing(initialDate: page.date, title: page.title, imageRef: page.imageRef, documentId: page.id, image: drawnImage) {pass, msg in
-            if pass {
-                self.dismiss(animated: true)
-            } else {
-                self.pageVM.showAlert(vc: self, msg: "Sorry failed to save", msgBody: "") {
-                    self.dismiss(animated: true)
-                }
+        if page.drawing == nil {
+            // save new drawing
+            page.drawing = drawnImage.jpegData(compressionQuality: 0.2)
+            if let book = Singleton.shared.coreBooks.first {
+                let cpage = DataManager.shared.corePage(page: page, cBook: book)
+                DataManager.shared.save()
             }
+        } else {
+            // update current drawing
+            cPage.drawing = drawnImage.pngData()
+            DataManager.shared.save()
         }
+        self.dismiss(animated: true)
     }
 }
 

@@ -12,6 +12,8 @@ class TypeVC: UIViewController {
     
     var page = Page()
     
+    var cPage = CorePage()
+    
     var pageVM: PageViewModel!
     
     @IBOutlet weak var datePicker: UIDatePicker!
@@ -73,7 +75,7 @@ class TypeVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        htmlView.html = page.notes
+        htmlView.html = page.notes ?? ""
     }
     
     @IBAction func donePrsd(_ sender: Any) {
@@ -82,24 +84,23 @@ class TypeVC: UIViewController {
             if page.title == "" {
                 page.title = title
             }
-            pageVM.createNewTyping(initialDate: page.date, documentId: page.id, title: page.title, note: noteToBeSave) {pass, msg in
-                if pass {
-                    DispatchQueue.main.async {
-                        self.dismiss(animated: true)
-                    }
-                } else {
-                    self.pageVM.showAlert(vc: self, msg: "Error", msgBody: "Failed to save new note") {
-                        DispatchQueue.main.async {
-                            self.dismiss(animated: true)
-                        }
-                    }
+            if page.notes.isEmpty {
+                // new note save here
+                page.notes = noteToBeSave
+    //            let page = Page(cPage: page)
+                if let book = Singleton.shared.coreBooks.first {
+                    let cpage = DataManager.shared.corePage(page: page, cBook: book)
+                    DataManager.shared.save()
+                    self.dismiss(animated: true)
                 }
             }
+            if page.notes != noteToBeSave {
+                // note changes update here
+                cPage.notes = noteToBeSave
+                DataManager.shared.save()
+            }
         }
-        
-        DispatchQueue.main.async {
-            self.dismiss(animated: true)
-        }
+        self.dismiss(animated: true)
     }
     
     @IBAction func reminderPrsd(_ sender: Any) {
@@ -108,7 +109,7 @@ class TypeVC: UIViewController {
         datePicker.isHidden.toggle()
         
         if datePicker.isHidden {
-            pageVM.setNoteReminder(date: datePicker.date, title: page.title)
+            pageVM.setNoteReminder(date: datePicker.date, title: page.title ?? "")
         }
     }
 

@@ -13,6 +13,10 @@ class Singleton {
     
     var bookId: String = "all"
     
+    var coreBooks = [CoreBook]()
+    
+//    var currentBook = CoreBook()
+    
     init() {
         
     }
