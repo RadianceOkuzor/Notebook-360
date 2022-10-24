@@ -69,6 +69,7 @@ class Page {
         self.drawing = cPage.drawing
         self.bookId = cPage.book?.id ?? ""
         self.authorId = cPage.authorId ?? ""
+        self.editedAt = cPage.dateEdited ?? Date.now
     }
     
     init() {
@@ -187,6 +188,7 @@ class DataManager {
         cPage.drawing = page.drawing
         cPage.notes = page.notes
         cPage.pageType = page.pageType.rawValue
+        cPage.dateEdited = page.editedAt
         cBook.addToPages(cPage)
         return cPage
     }
@@ -202,14 +204,22 @@ class DataManager {
       return fetchedCoreBooks
     }
     
-    func updateCorePage(corePage: CorePage) {
-        
+    func updateCorePage(book: CoreBook, index: Int, notes: String?, drawing: Data?, isNotes: Bool) {
+        var page = book.pages?.allObjects[index] as? CorePage
+        if isNotes {
+//            page?.notes = notes
+            page?.setValuesForKeys(["notes":notes ?? [:]])
+        } else {
+//            page?.drawing = drawing
+            page?.setValuesForKeys(["drawing":drawing ?? [:]])
+        }
+//        DataManager.shared.save()
     }
     
-    func corePages(coreBook: CoreBook) -> [CorePage] {
+    func corePages(coreBook: CoreBook, filter: String = "dateEdited") -> [CorePage] {
       let request: NSFetchRequest<CorePage> = CorePage.fetchRequest()
       request.predicate = NSPredicate(format: "book = %@", coreBook)
-//      request.sortDescriptors = [NSSortDescriptor(key: "releaseDate", ascending: false)]
+      request.sortDescriptors = [NSSortDescriptor(key: filter, ascending: false)]
       var fetchedPages: [CorePage] = []
       do {
           fetchedPages = try persistentContainer.viewContext.fetch(request)

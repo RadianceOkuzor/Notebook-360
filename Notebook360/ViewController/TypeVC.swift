@@ -7,18 +7,22 @@
 
 import UIKit
 import RichEditorView
+import SwiftUI
 
 class TypeVC: UIViewController {
     
     var page = Page()
     
     var cPage = CorePage()
+    var cPageIndex = Int()
     
     var pageVM: PageViewModel!
     
     @IBOutlet weak var datePicker: UIDatePicker!
     
     @IBOutlet weak var htmlView: RichEditorView!
+    
+    @IBOutlet weak var setTimerBtn: UIButton!
     
     let toolbar = RichEditorToolbar()
     
@@ -87,7 +91,7 @@ class TypeVC: UIViewController {
             if page.notes.isEmpty {
                 // new note save here
                 page.notes = noteToBeSave
-    //            let page = Page(cPage: page)
+                //            let page = Page(cPage: page)
                 if let book = Singleton.shared.coreBooks.first {
                     let cpage = DataManager.shared.corePage(page: page, cBook: book)
                     DataManager.shared.save()
@@ -97,7 +101,11 @@ class TypeVC: UIViewController {
             if page.notes != noteToBeSave {
                 // note changes update here
                 cPage.notes = noteToBeSave
+                cPage.dateEdited = Date.now
                 DataManager.shared.save()
+                if let book = Singleton.shared.coreBooks.first {
+                    DataManager.shared.updateCorePage(book: book, index: cPageIndex, notes: noteToBeSave, drawing: nil, isNotes: true)
+                }
             }
         }
         self.dismiss(animated: true)
@@ -107,7 +115,7 @@ class TypeVC: UIViewController {
         //do reminder
         view.endEditing(true)
         datePicker.isHidden.toggle()
-        
+        setTimerBtn.setTitle(datePicker.isHidden ? "Set Timer" : "Save Timer" , for: .normal)
         if datePicker.isHidden {
             pageVM.setNoteReminder(date: datePicker.date, title: page.title ?? "")
         }

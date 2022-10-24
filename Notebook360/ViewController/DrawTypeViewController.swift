@@ -21,8 +21,17 @@ class DrawTypeViewController: UIViewController {
     
     @IBOutlet weak var labelBrush: UILabel!
     
-    var page = Page()
+    @IBOutlet weak var eraserBtn: UIButton!
+    @IBOutlet weak var eraserBtnImg: UIImageView!
+    
+    var eraserBtnIsOn: Bool = false
+    
     var cPage = CorePage()
+    var page = Page()
+    var cPageIndex = Int()
+    
+    var erasedColor = UIColor.black
+    var erasedWidth: CGFloat = 10
     
     var lastPoint = CGPoint.zero
     var color = UIColor.black
@@ -58,9 +67,22 @@ class DrawTypeViewController: UIViewController {
         settingsController.blue = blue
     }
     
-    @IBAction func resetPressed(_ sender: Any) {
-        // cancel pressed
-        self.dismiss(animated: true)
+    @IBAction func setEraser(_ sender: Any) {
+        
+        eraserBtnIsOn = eraserBtnIsOn ? false : true
+        if eraserBtnIsOn {
+            erasedColor = color
+            erasedWidth = brushWidth
+            
+            color = self.view.backgroundColor ?? .black
+            brushWidth = 14
+            eraserBtnImg.image = UIImage(named: "eraserOn")
+//            eraserBtn.setImage(UIImage(named: "eraserOn"), for: .normal)
+        } else {
+            color = erasedColor
+            brushWidth = erasedWidth
+            eraserBtnImg.image = UIImage(named: "eraser")
+        }
     }
     
     @IBAction func changeBrushWidthPressed(_ sender: Any) {
@@ -148,6 +170,8 @@ class DrawTypeViewController: UIViewController {
         }
         swiped = false
         lastPoint = touch.location(in: view)
+        
+        changeBrushWidthView.isHidden = true
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -188,8 +212,12 @@ class DrawTypeViewController: UIViewController {
             }
         } else {
             // update current drawing
-            cPage.drawing = drawnImage.pngData()
+            cPage.drawing = drawnImage.jpegData(compressionQuality: 0.2)
+            cPage.dateEdited = Date.now
             DataManager.shared.save()
+//            if let book = Singleton.shared.coreBooks.first {
+//                DataManager.shared.updateCorePage(book: book, index: cPageIndex, notes: nil, drawing: drawnImage.jpegData(compressionQuality: 0.2), isNotes: false)
+//            }
         }
         self.dismiss(animated: true)
     }

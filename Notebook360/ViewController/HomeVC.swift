@@ -29,8 +29,8 @@ class HomeVC: UIViewController {
     var pages = [Page]()
     var corePages = [CorePage]()
     var selectedPage = Page()
+    var cPageIndex = Int()
     var corePage = CorePage()
-    
     var filtertAtoZUp = false
     var filterAgeUp = false
     var filterRecentUp = false
@@ -57,6 +57,16 @@ class HomeVC: UIViewController {
         searchTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
     }
     
+//    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+//       get {
+//          return .portrait
+//       }
+//    }
+    
+    override open var shouldAutorotate: Bool {
+        return false
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         corePages.removeAll()
         if let book = Singleton.shared.coreBooks.first {
@@ -72,18 +82,14 @@ class HomeVC: UIViewController {
     
     @IBAction func signOutPrsd(_ sender: Any) {
         // sign out
-        pageVM.signOut {
-            self.dismiss(animated: true)
-        }
+//        pageVM.signOut {
+//            self.dismiss(animated: true)
+//        }
     }
     @IBOutlet weak var menuBtnImage: UIImageView!
     
     @IBAction func menuPrsd(_ sender: Any) {
         openCloseMenu()
-        let angle = newBookBtn.isHidden ? CGFloat.pi/4 : -(CGFloat.pi/4)
-        UIView.animate(withDuration: 0.5) {
-            self.menuBtnImage.transform = CGAffineTransform(rotationAngle: angle)
-        }
     }
     
     @IBAction func drawTypePrsd(_ sender: UIButton) {
@@ -98,6 +104,7 @@ class HomeVC: UIViewController {
             }
         case "Draw":
             showAlert(type: .draw) { [weak self]  title in
+                self?.selectedPage = Page()
                 self?.selectedPage.title = title
                 self?.selectedPage.pageType = .draw
                 self?.performSegue(withIdentifier: "showDrawFromHome", sender: self)
@@ -106,18 +113,18 @@ class HomeVC: UIViewController {
             self.selectedPage = Page()
             self.selectedPage.pageType = .type
             performSegue(withIdentifier: "showTypeFromHome", sender: self)
-        case "newBook":
+        case "newBook": ()
             // refresh page list
-            showAlert(type: .book) {
-                self.selectedPage.pageType = .book
-                self.pageVM.createNewBook(title: $0, initialDate: nil)
-                let cbook = DataManager.shared.coreBook(book: .init(id: UUID().uuidString, title: $0))
-                Singleton.shared.coreBooks.append(cbook)
-                DataManager.shared.save()
-                
-                // Clean the pages and show pages array for this book
-//                Singleton.shared.currentBook = cbook
-            }
+//            showAlert(type: .book) {
+////                self.selectedPage.pageType = .book
+////                self.pageVM.createNewBook(title: $0, initialDate: nil)
+//                let cbook = DataManager.shared.coreBook(book: .init(id: UUID().uuidString, title: $0))
+//                Singleton.shared.coreBooks.append(cbook)
+//                DataManager.shared.save()
+//
+//                // Clean the pages and show pages array for this book
+////                Singleton.shared.currentBook = cbook
+//            }
         default:
             //
             ()
@@ -144,7 +151,8 @@ class HomeVC: UIViewController {
     @IBAction func aToZpressed(_ sender: Any) {
         openCloseFilterBtns()
 //        filtertAtoZUp.toggle()
-        pageVM.filterAtoZ(orderUp: filtertAtoZUp)
+        
+//        pageVM.filterAtoZ(orderUp: filtertAtoZUp)
         collection.reloadData()
         
         let title = filtertAtoZUp ? "A ↗ Z" : "A ↘︎ Z"
@@ -207,6 +215,10 @@ class HomeVC: UIViewController {
             self.drawBtn.isHidden.toggle()
             self.drawTypeBtn.isHidden.toggle()
         }
+        let angle = newBookBtn.isHidden ? 0 : -(CGFloat.pi/4)
+        UIView.animate(withDuration: 0.35) {
+            self.menuBtnImage.transform = CGAffineTransform(rotationAngle: angle)
+        }
     }
     
     func updateDataSource() {
@@ -222,19 +234,37 @@ class HomeVC: UIViewController {
         if let vc = segue.destination as? TypeVC {
             vc.page = selectedPage
             vc.cPage = corePage
+            vc.cPageIndex = cPageIndex
         }
         
         if let vc = segue.destination as? DrawTypeViewController {
             vc.page = selectedPage
+            vc.cPageIndex = cPageIndex
             vc.cPage = corePage
         }
         
     }
     
     func showAlert(type: PageType, completion: @escaping (String) -> ()) {
-        let alert = UIAlertController(title: "Enter \(type.rawValue) title", message: "", preferredStyle: .alert)
+        var label: String {
+            switch type {
+            case .draw:
+                return "Draw"
+            case .drawType:
+                return "Draw & Type"
+            case .type:
+                return "Type"
+            case .read:
+                return "Read"
+            case .none:
+                return "None"
+            case .book:
+                return "Book"
+            }
+        }
+        let alert = UIAlertController(title: "Enter \(label) Title", message: "", preferredStyle: .alert)
         alert.addTextField()
-        alert.textFields?.first?.placeholder = "\(type.rawValue) title"
+        alert.textFields?.first?.placeholder = "\(label) Title"
         let ok = UIAlertAction(title: "create", style: .default) {_ in
             let bookTitle = alert.textFields?.first?.text ?? ""
             completion(bookTitle)
@@ -249,10 +279,10 @@ class HomeVC: UIViewController {
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            return .allButUpsideDown
+        if UIDevice.current.userInterfaceIdiom == .phone || UIDevice.current.userInterfaceIdiom == .pad {
+            return .portrait
         } else {
-            return .all
+            return .portrait
         }
     }
     
@@ -292,6 +322,7 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UITextFi
 //        DataManager.shared.deletePage(corePage: corePages[indexPath.row])
         selectedPage = Page(cPage: corePages[indexPath.row])
         corePage = corePages[indexPath.row]
+        cPageIndex = indexPath.row
 
         if corePages[indexPath.row].pageType == "type" {
             self.performSegue(withIdentifier: "showTypeFromHome", sender: self)

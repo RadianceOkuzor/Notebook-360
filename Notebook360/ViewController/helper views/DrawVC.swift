@@ -26,7 +26,7 @@ class DrawVC: UIViewController {
     let picker = UIColorPickerViewController()
 
     var page = Page()
-    var cPage = CorePage()
+    var cPageIndex = Int()
     
     var pageVM: PageViewModel!
     
@@ -101,8 +101,9 @@ extension DrawVC: DrawableViewDelegate {
             }
         } else {
             // update current drawing
-            cPage.drawing = drawnImage.pngData()
-            DataManager.shared.save()
+            if let book = Singleton.shared.coreBooks.first {
+                DataManager.shared.updateCorePage(book: book, index: cPageIndex, notes: nil, drawing: drawnImage.pngData(), isNotes: false)
+            }
         }
         self.dismiss(animated: true)
     }
