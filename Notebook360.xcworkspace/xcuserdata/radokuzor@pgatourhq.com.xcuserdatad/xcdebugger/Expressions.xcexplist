@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "PageViewModel.filterPagesByBook(bookId:completion:):PageViewModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "pageData">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

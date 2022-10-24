@@ -1,0 +1,20 @@
+PODS:
+  - DrawableView (0.0.4)
+  - KCLoginSDK (0.1)
+
+DEPENDENCIES:
+  - DrawableView
+  - KCLoginSDK
+
+SPEC REPOS:
+  trunk:
+    - DrawableView
+    - KCLoginSDK
+
+SPEC CHECKSUMS:
+  DrawableView: 1c3063732af5beb67b22a9e895683bfe5216f173
+  KCLoginSDK: 0ad3bb98037a00c1718dff26faec51d1fedf9ea6
+
+PODFILE CHECKSUM: bd4b9066605f342d5e41527d7dba52ee6d611f86
+
+COCOAPODS: 1.11.3
