@@ -33,10 +33,30 @@ private enum Width {
     }
 }
 
+enum RowType {
+    case page(CorePage)
+    case book(CoreBook)
+    
+    var page: CorePage? {
+        switch self {
+        case .page(let page): return page
+        case .book( _): return nil
+        }
+    }
+    
+    var book: CoreBook? {
+        switch self {
+        case .page( _): return nil
+        case .book(let book): return book
+        }
+    }
+}
+
 struct Book {
     var color: String?
     var id: String
     var title: String
+    var bookIds: [String]
 }
 
 class Page {
@@ -139,7 +159,7 @@ class Page {
             self.imageRef = imageRef
         }
         
-        if let url = data["drawUrl"] as? String {
+        if let _ = data["drawUrl"] as? String {
             
 //            self.drawing = url
         }
@@ -204,8 +224,14 @@ class DataManager {
       return fetchedCoreBooks
     }
     
+    func updateCoreBookBookList(book: CoreBook, idToAdd: String) {
+        let string = StringHolder(context: persistentContainer.viewContext)
+        string.string = idToAdd
+        book.addToBookIds(string)
+    }
+    
     func updateCorePage(book: CoreBook, index: Int, notes: String?, drawing: Data?, isNotes: Bool) {
-        var page = book.pages?.allObjects[index] as? CorePage
+        let page = book.pages?.allObjects[index] as? CorePage
         if isNotes {
 //            page?.notes = notes
             page?.setValuesForKeys(["notes":notes ?? [:]])
@@ -227,6 +253,19 @@ class DataManager {
         print("Error fetching pages \(error)")
       }
       return fetchedPages
+    }
+    
+    func bookIds(coreBook: CoreBook) -> [StringHolder] {
+      let request: NSFetchRequest<StringHolder> = StringHolder.fetchRequest()
+      request.predicate = NSPredicate(format: "book = %@", coreBook)
+      
+      var fetchedIds: [StringHolder] = []
+      do {
+          fetchedIds = try persistentContainer.viewContext.fetch(request)
+      } catch let error {
+        print("Error fetching pages \(error)")
+      }
+      return fetchedIds
     }
     
     func deletePage(corePage: CorePage) {

@@ -14,6 +14,7 @@ class TypeVC: UIViewController {
     var page = Page()
     
     var cPage = CorePage()
+    var cBook = CoreBook()
     var cPageIndex = Int()
     
     var pageVM: PageViewModel!
@@ -92,20 +93,16 @@ class TypeVC: UIViewController {
                 // new note save here
                 page.notes = noteToBeSave
                 //            let page = Page(cPage: page)
-                if let book = Singleton.shared.coreBooks.first {
-                    let cpage = DataManager.shared.corePage(page: page, cBook: book)
-                    DataManager.shared.save()
-                    self.dismiss(animated: true)
-                }
+                let cpage = DataManager.shared.corePage(page: page, cBook: cBook)
+                DataManager.shared.save()
+                self.dismiss(animated: true)
             }
             if page.notes != noteToBeSave {
                 // note changes update here
                 cPage.notes = noteToBeSave
                 cPage.dateEdited = Date.now
+                DataManager.shared.updateCorePage(book: cBook, index: cPageIndex, notes: noteToBeSave, drawing: nil, isNotes: true)
                 DataManager.shared.save()
-                if let book = Singleton.shared.coreBooks.first {
-                    DataManager.shared.updateCorePage(book: book, index: cPageIndex, notes: noteToBeSave, drawing: nil, isNotes: true)
-                }
             }
         }
         self.dismiss(animated: true)

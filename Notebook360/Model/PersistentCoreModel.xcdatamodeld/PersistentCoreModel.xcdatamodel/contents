@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21279" systemVersion="21G72" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21512" systemVersion="21G72" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="CoreBook" representedClassName="CoreBook" syncable="YES">
         <attribute name="color" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="bookIds" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="StringHolder" inverseName="book" inverseEntity="StringHolder"/>
         <relationship name="pages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CorePage" inverseName="book" inverseEntity="CorePage"/>
     </entity>
     <entity name="CorePage" representedClassName="CorePage" syncable="YES">
@@ -16,5 +17,9 @@
         <attribute name="pageType" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <relationship name="book" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CoreBook" inverseName="pages" inverseEntity="CoreBook"/>
+    </entity>
+    <entity name="StringHolder" representedClassName="StringHolder" syncable="YES">
+        <attribute name="string" optional="YES" attributeType="String"/>
+        <relationship name="book" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CoreBook" inverseName="bookIds" inverseEntity="CoreBook"/>
     </entity>
 </model>

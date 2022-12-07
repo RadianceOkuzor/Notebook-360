@@ -35,20 +35,13 @@ class HomeVC: UIViewController, UIGestureRecognizerDelegate {
     var filtertAtoZUp = false
     var filterAgeUp = false
     var filterRecentUp = false
+    var coreBook = CoreBook()
+    var bookIndex = [0]
+    var rowType = [RowType]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-//        self.pageVM = PageViewModel()
-//        callToVMForUIUpdate()
-//        pageVM.getAllUserNotes() {
-//            self.collection.reloadData()
-//        }
-        
-        if let book = Singleton.shared.coreBooks.first {
-            corePages = DataManager.shared.corePages(coreBook: book)
-        }
-        
+
         collection.keyboardDismissMode = .onDrag
         
         let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
@@ -63,17 +56,30 @@ class HomeVC: UIViewController, UIGestureRecognizerDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        corePages.removeAll()
-        corePagesPreFilter.removeAll()
-        if let book = Singleton.shared.coreBooks.first {
-            corePages = DataManager.shared.corePages(coreBook: book)
-            corePagesPreFilter = corePages
-        }
-        collection.reloadData()
+        ressetView()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         searchTextField.text = ""
+    }
+    
+    func ressetView() {
+        coreBook = Singleton.shared.coreBooks[bookIndex.last ?? 0]
+        corePages = DataManager.shared.corePages(coreBook: coreBook)
+        
+        rowType.removeAll()
+        
+        for x in corePages {
+            rowType.insert(.page(x), at: 0)
+        }
+        let bookIds = DataManager.shared.bookIds(coreBook: coreBook)
+        for x in DataManager.shared.coreBooks() {
+            
+            if bookIds.contains(where: {$0.string == x.id}) {
+                rowType.insert(.book(x), at: 0)
+            }
+        }
+        collection.reloadData()
     }
     
     
@@ -111,17 +117,11 @@ class HomeVC: UIViewController, UIGestureRecognizerDelegate {
             self.selectedPage.pageType = .type
             performSegue(withIdentifier: "showTypeFromHome", sender: self)
         case "newBook": ()
-            // refresh page list
-//            showAlert(type: .book) {
-////                self.selectedPage.pageType = .book
-////                self.pageVM.createNewBook(title: $0, initialDate: nil)
-//                let cbook = DataManager.shared.coreBook(book: .init(id: UUID().uuidString, title: $0))
-//                Singleton.shared.coreBooks.append(cbook)
-//                DataManager.shared.save()
-//
-//                // Clean the pages and show pages array for this book
-////                Singleton.shared.currentBook = cbook
-//            }
+            showAlert(type: .book) { [weak self]  string in
+                let cbook = DataManager.shared.coreBook(book: .init(id: UUID().uuidString, title: string, bookIds: []))
+                DataManager.shared.updateCoreBookBookList(book: self?.coreBook ?? .init(), idToAdd: cbook.id ?? "null")
+                DataManager.shared.save()
+            }
         default:
             //
             ()
@@ -254,6 +254,7 @@ class HomeVC: UIViewController, UIGestureRecognizerDelegate {
         if let vc = segue.destination as? TypeVC {
             vc.page = selectedPage
             vc.cPage = corePage
+            vc.cBook = coreBook
             vc.cPageIndex = cPageIndex
         }
         
@@ -314,45 +315,60 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UITextFi
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return corePages.count
+        return rowType.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "homePageCell", for: indexPath) as! PageCollectionViewCell
-        if corePages[indexPath.row].pageType == "book" {
+        
+        switch rowType[indexPath.row] {
+        case .book(let book):
             cell.unSetupView()
-            cell.htmlView.html = "<h3> \(corePages[indexPath.row].title ?? "") </h3>"
-        } else if corePages[indexPath.row].pageType == "draw" || corePages[indexPath.row].pageType == "drawType"   {
-            cell.bkGdImage.image = UIImage(data: corePages[indexPath.row].drawing ?? .init())
-            cell.setupView()
-//            pageVM.downloadImage(url: pages[indexPath.row].imageRef) { image in
-//                DispatchQueue.main.async {
-//                    cell.bkGdImage.image = image
-//                    cell.setupView()
-//                }
-//            }
-        } else if corePages[indexPath.row].pageType == "type" {
-            cell.unSetupView()
-            cell.htmlView.html = corePages[indexPath.row].notes ?? ""
+            cell.htmlView.html = "<h3> \(book.title ?? "") </h3>"
+        case .page(let page):
+            if page.pageType == "draw" || page.pageType == "drawType"  {
+                cell.bkGdImage.image = UIImage(data: page.drawing ?? .init())
+                cell.setupView()
+            } else if page.pageType == "type" {
+                cell.unSetupView()
+                cell.htmlView.html = page.notes ?? ""
+            }
         }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 //        DataManager.shared.deletePage(corePage: corePages[indexPath.row])
-        selectedPage = Page(cPage: corePages[indexPath.row])
-        corePage = corePages[indexPath.row]
-        cPageIndex = indexPath.row
-        if corePages[indexPath.row].pageType == "type" {
-            self.performSegue(withIdentifier: "showTypeFromHome", sender: self)
-        } else if corePages[indexPath.row].pageType == "draw" || corePages[indexPath.row].pageType == "drawType" {
-            self.performSegue(withIdentifier: "showDrawFromHome", sender: self)
-        } else if corePages[indexPath.row].pageType == "book" {
-//            Singleton.shared.bookId = pages[indexPath.row].id
-//            self.pageVM.filterPagesByBook(bookId: pages[indexPath.row].id) {
-//                self.collection.reloadData()
-//            }
+        
+        switch rowType[indexPath.row] {
+        case .book(let book):
+            let index = Singleton.shared.coreBooks.firstIndex(where: {$0 == book})
+            bookIndex.append(index ?? 0)
+            ressetView()
+        case .page(let page):
+            selectedPage = Page(cPage: page)
+            if page.pageType == "type" {
+                self.performSegue(withIdentifier: "showTypeFromHome", sender: self)
+            } else if page.pageType == "draw" || page.pageType == "drawType" {
+                self.performSegue(withIdentifier: "showDrawFromHome", sender: self)
+            }
         }
+        
+//
+//        corePage = corePages[indexPath.row]
+//        cPageIndex = indexPath.row
+//        if corePages[indexPath.row].pageType == "type" {
+//            self.performSegue(withIdentifier: "showTypeFromHome", sender: self)
+//        } else if corePages[indexPath.row].pageType == "draw" || corePages[indexPath.row].pageType == "drawType" {
+//            self.performSegue(withIdentifier: "showDrawFromHome", sender: self)
+//        } else if corePages[indexPath.row].pageType == "book" {
+////            Singleton.shared.bookId = pages[indexPath.row].id
+////            self.pageVM.filterPagesByBook(bookId: pages[indexPath.row].id) {
+////                self.collection.reloadData()
+////            }
+//        }
+//
+//
     }
     
     
