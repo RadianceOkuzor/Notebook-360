@@ -29,6 +29,7 @@ class DrawTypeViewController: UIViewController {
     var cPage = CorePage()
     var page = Page()
     var cPageIndex = Int()
+    var cBook = CoreBook()
     
     var erasedColor = UIColor.black
     var erasedWidth: CGFloat = 10
@@ -208,18 +209,13 @@ class DrawTypeViewController: UIViewController {
         if page.drawing == nil {
             // save new drawing
             page.drawing = drawnImage.jpegData(compressionQuality: 0.2)
-            if let book = Singleton.shared.coreBooks.first {
-                let cpage = DataManager.shared.corePage(page: page, cBook: book)
-                DataManager.shared.save()
-            }
+            let _ = DataManager.shared.corePage(page: page, cBook: cBook)
+            DataManager.shared.save()
         } else {
             // update current drawing
             cPage.drawing = drawnImage.jpegData(compressionQuality: 0.2)
             cPage.dateEdited = Date.now
             DataManager.shared.save()
-//            if let book = Singleton.shared.coreBooks.first {
-//                DataManager.shared.updateCorePage(book: book, index: cPageIndex, notes: nil, drawing: drawnImage.jpegData(compressionQuality: 0.2), isNotes: false)
-//            }
         }
         self.dismiss(animated: true)
     }

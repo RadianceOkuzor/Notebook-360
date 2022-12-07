@@ -260,6 +260,7 @@ class HomeVC: UIViewController, UIGestureRecognizerDelegate {
         
         if let vc = segue.destination as? DrawTypeViewController {
             vc.page = selectedPage
+            vc.cBook = coreBook
             vc.cPageIndex = cPageIndex
             vc.cPage = corePage
         }
