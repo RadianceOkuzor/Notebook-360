@@ -339,7 +339,6 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UITextFi
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        DataManager.shared.deletePage(corePage: corePages[indexPath.row])
         
         switch rowType[indexPath.row] {
         case .book(let book):
@@ -354,22 +353,6 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UITextFi
                 self.performSegue(withIdentifier: "showDrawFromHome", sender: self)
             }
         }
-        
-//
-//        corePage = corePages[indexPath.row]
-//        cPageIndex = indexPath.row
-//        if corePages[indexPath.row].pageType == "type" {
-//            self.performSegue(withIdentifier: "showTypeFromHome", sender: self)
-//        } else if corePages[indexPath.row].pageType == "draw" || corePages[indexPath.row].pageType == "drawType" {
-//            self.performSegue(withIdentifier: "showDrawFromHome", sender: self)
-//        } else if corePages[indexPath.row].pageType == "book" {
-////            Singleton.shared.bookId = pages[indexPath.row].id
-////            self.pageVM.filterPagesByBook(bookId: pages[indexPath.row].id) {
-////                self.collection.reloadData()
-////            }
-//        }
-//
-//
     }
     
     
@@ -392,20 +375,37 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UITextFi
         let context = UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { (action) -> UIMenu? in
             
             let edit = UIAction(title: "Edit", image: UIImage(systemName: "square.and.pencil"), identifier: nil, discoverabilityTitle: nil, state: .off) {[weak self] (_) in
-                self?.selectedPage = Page(cPage: self?.corePages[index] ?? .init())
-                self?.corePage = self?.corePages[index] ?? .init()
                 self?.cPageIndex = index
-                if self?.corePages[index].pageType == "type" {
-                    self?.performSegue(withIdentifier: "showTypeFromHome", sender: self)
-                } else if self?.corePages[index].pageType == "draw" || self?.corePages[index].pageType == "drawType" {
-                    self?.performSegue(withIdentifier: "showDrawFromHome", sender: self)
-                } else if self?.corePages[index].pageType == "book" {
+                switch self?.rowType[index] {
+                case .book(let book):
+                    let index = Singleton.shared.coreBooks.firstIndex(where: {$0 == book})
+                    self?.bookIndex.append(index ?? 0)
+                    self?.ressetView()
+                case .page(let page):
+                    self?.selectedPage = Page(cPage: self?.corePages[index] ?? .init())
+                    self?.corePage = self?.corePages[index] ?? .init()
+                    
+                    if page.pageType == "type" {
+                        self?.performSegue(withIdentifier: "showTypeFromHome", sender: self)
+                    } else if page.pageType == "draw" || page.pageType == "drawType" {
+                        self?.performSegue(withIdentifier: "showDrawFromHome", sender: self)
+                    }
+                case .none:
+                    ()
                 }
             }
             let delete = UIAction(title: "Delete", image: UIImage(systemName: "trash"), identifier: nil, discoverabilityTitle: nil,attributes: .destructive, state: .off) { [weak self] (_) in
-                DataManager.shared.deletePage(corePage: self?.corePages[index] ?? .init())
-                self?.corePages.remove(at: index)
-                self?.corePagesPreFilter.remove(at: index)
+                switch self?.rowType[index] {
+                case .page(let page):
+                    DataManager.shared.deletePage(corePage: page )
+                    self?.rowType.remove(at: index)
+//                    self?.corePagesPreFilter.remove(at: index)
+                case .book(let book):
+                    DataManager.shared.deleteBook(coreBook: book )
+                    self?.rowType.remove(at: index)
+//                    self?.corePagesPreFilter.remove(at: index)
+                case .none: ()
+                }
                 self?.collection.reloadData()
             }
             
