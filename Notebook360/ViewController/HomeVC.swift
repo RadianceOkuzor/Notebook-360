@@ -20,14 +20,21 @@ class HomeVC: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var editedAtFilterBtn: UIButton!
     @IBOutlet weak var aToZFilterBtn: UIButton!
     @IBOutlet weak var showAllFilterBtn: UIButton!
-    @IBOutlet weak var searchTextField: UITextField!
-    
     @IBOutlet weak var menuView: UIView!
+    
+    //Show Side Bar
+    @IBOutlet weak var sideBarMenuViewBG: UIView!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var sideBarMenuView: UIView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    @IBOutlet weak var sideMenuLeftConstraint: NSLayoutConstraint!
     
     
     var pageVM: PageViewModel!
     var pages = [Page]()
     var corePages = [CorePage]()
+    var coreBook = CoreBook()
     var corePagesPreFilter = [CorePage]()
     var selectedPage = Page()
     var cPageIndex = Int()
@@ -35,20 +42,25 @@ class HomeVC: UIViewController, UIGestureRecognizerDelegate {
     var filtertAtoZUp = false
     var filterAgeUp = false
     var filterRecentUp = false
-    var coreBook = CoreBook()
     var bookIndex = [0]
     var rowType = [RowType]()
+    var allRowTypes = [RowType]()
+    var allRowTypesPreSearchState = [RowType]()
+    
+    let searchController = UISearchController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         collection.keyboardDismissMode = .onDrag
         
+        navigationItem.searchController = searchController
+        
         let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
         
-        searchTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+//        searchTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
     }
     
     override open var shouldAutorotate: Bool {
@@ -56,15 +68,40 @@ class HomeVC: UIViewController, UIGestureRecognizerDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        ressetView()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        searchTextField.text = ""
-    }
-    
-    func ressetView() {
+        sideBarMenuView.translatesAutoresizingMaskIntoConstraints = false
+        let tapOut = UITapGestureRecognizer(target: self, action: #selector(tap))
+        sideBarMenuViewBG.addGestureRecognizer(tapOut)
+        
+        sideMenuLeftConstraint.constant = view.frame.maxX
+        
         coreBook = Singleton.shared.coreBooks[bookIndex.last ?? 0]
+        ressetView(cBook: coreBook)
+    }
+    
+    @objc func tap() {
+        NSLayoutConstraint.deactivate([sideMenuLeftConstraint])
+    }
+    
+    func animateSideMenu() {
+        sideMenuLeftConstraint.constant = (self.sideBarMenuViewBG.layer.opacity == 0.3) ? view.frame.maxX : 122
+    
+        UIView.animate(withDuration: 0.35) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    func showSideBarMenu() {
+        animateSideMenu()
+
+        UIView.animate(withDuration: 0.3, delay: 0, animations: {
+            self.sideBarMenuViewBG.layer.opacity = (self.sideBarMenuViewBG.layer.opacity == 0.3) ? 0 : 0.3
+        }) { bool in
+            
+        }
+    }
+    
+    func ressetView(cBook: CoreBook) {
+        coreBook = cBook // Singleton.shared.coreBooks[bookIndex.last ?? 0]
         corePages = DataManager.shared.corePages(coreBook: coreBook)
         
         rowType.removeAll()
@@ -80,6 +117,21 @@ class HomeVC: UIViewController, UIGestureRecognizerDelegate {
             }
         }
         collection.reloadData()
+        
+        getAllBooksAndPages()
+    }
+    
+    func getAllBooksAndPages() {
+        allRowTypes.removeAll()
+        for x in DataManager.shared.coreBooks() {
+            allRowTypes.insert(.book(x), at: 0)
+            
+            for y in DataManager.shared.corePages(coreBook: x) {
+                allRowTypes.insert(.page(y), at: 0)
+            }
+        }
+        allRowTypesPreSearchState = allRowTypes
+        tableView.reloadData()
     }
     
     
@@ -121,6 +173,7 @@ class HomeVC: UIViewController, UIGestureRecognizerDelegate {
                 let cbook = DataManager.shared.coreBook(book: .init(id: UUID().uuidString, title: string, bookIds: []))
                 DataManager.shared.updateCoreBookBookList(book: self?.coreBook ?? .init(), idToAdd: cbook.id ?? "null")
                 DataManager.shared.save()
+                self?.ressetView(cBook: self?.coreBook ?? .init())
             }
         default:
             //
@@ -128,8 +181,8 @@ class HomeVC: UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
-    @IBAction func filterPressed(_ sender: Any) {
-        openCloseFilterBtns()
+    @IBAction func showSideBarMenu(_ sender: Any) {
+        self.showSideBarMenu()
     }
     
     func callToVMForUIUpdate() {
@@ -344,7 +397,9 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UITextFi
         case .book(let book):
             let index = Singleton.shared.coreBooks.firstIndex(where: {$0 == book})
             bookIndex.append(index ?? 0)
-            ressetView()
+            UIView.animate(withDuration: 20) {
+                self.ressetView(cBook: book)
+            }
         case .page(let page):
             selectedPage = Page(cPage: page)
             if page.pageType == "type" {
@@ -380,10 +435,10 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UITextFi
                 case .book(let book):
                     let index = Singleton.shared.coreBooks.firstIndex(where: {$0 == book})
                     self?.bookIndex.append(index ?? 0)
-                    self?.ressetView()
+                    self?.ressetView(cBook: book)
                 case .page(let page):
-                    self?.selectedPage = Page(cPage: self?.corePages[index] ?? .init())
-                    self?.corePage = self?.corePages[index] ?? .init()
+                    self?.selectedPage = Page(cPage: page)
+                    self?.corePage = page
                     
                     if page.pageType == "type" {
                         self?.performSegue(withIdentifier: "showTypeFromHome", sender: self)
@@ -414,6 +469,58 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UITextFi
         }
         return context
     }
+}
+
+extension HomeVC: UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return allRowTypes.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "listOfBooks", for: indexPath)
+        
+        switch allRowTypes[indexPath.row] {
+        case .page(let page):
+            cell.textLabel?.text = page.title
+        case .book(let book):
+            cell.textLabel?.text = book.title
+        }
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch allRowTypes[indexPath.row] {
+        case .page(let page):
+            self.selectedPage = Page(cPage: page)
+            self.corePage = page
+            self.coreBook = page.book ?? .init()
+            
+            if page.pageType == "type" {
+                self.performSegue(withIdentifier: "showTypeFromHome", sender: self)
+            } else if page.pageType == "draw" || page.pageType == "drawType" {
+                self.performSegue(withIdentifier: "showDrawFromHome", sender: self)
+            }
+        case .book(let book):
+            ressetView(cBook: book)
+            showSideBarMenu()
+        }
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText == "" {
+            allRowTypes = allRowTypesPreSearchState
+            tableView.reloadData()
+        } else {
+            allRowTypes = allRowTypesPreSearchState.filter({$0.title.contains(searchText)})
+            tableView.reloadData()
+        }
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        //
+    }
+    
 }
 
 extension UIView {

@@ -37,6 +37,12 @@ enum RowType {
     case page(CorePage)
     case book(CoreBook)
     
+    var title: String {
+        switch self {
+        case .book(let book): return book.title ?? ""
+        case .page(let page): return page.title ?? ""
+        }
+    }
     var page: CorePage? {
         switch self {
         case .page(let page): return page

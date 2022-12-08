@@ -92,7 +92,6 @@ class TypeVC: UIViewController {
             if page.notes.isEmpty {
                 // new note save here
                 page.notes = noteToBeSave
-                //            let page = Page(cPage: page)
                 let cpage = DataManager.shared.corePage(page: page, cBook: cBook)
                 DataManager.shared.save()
                 self.dismiss(animated: true)
@@ -101,7 +100,7 @@ class TypeVC: UIViewController {
                 // note changes update here
                 cPage.notes = noteToBeSave
                 cPage.dateEdited = Date.now
-                DataManager.shared.updateCorePage(book: cBook, index: cPageIndex, notes: noteToBeSave, drawing: nil, isNotes: true)
+                DataManager.shared.updateCorePage(book: cPage.book ?? .init(), index: cPageIndex, notes: noteToBeSave, drawing: nil, isNotes: true)
                 DataManager.shared.save()
             }
         }
