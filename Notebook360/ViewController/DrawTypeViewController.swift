@@ -69,8 +69,12 @@ class DrawTypeViewController: UIViewController {
     }
     
     @IBAction func setEraser(_ sender: Any) {
-        
-        eraserBtnIsOn = eraserBtnIsOn ? false : true
+        eraserBtnIsOn.toggle()
+        clickEraser()
+        changeBrushWidthView.isHidden = true
+    }
+    
+    func clickEraser() {
         if eraserBtnIsOn {
             erasedColor = color
             erasedWidth = brushWidth
@@ -87,7 +91,9 @@ class DrawTypeViewController: UIViewController {
     }
     
     @IBAction func changeBrushWidthPressed(_ sender: Any) {
-        changeBrushWidthView.isHidden = changeBrushWidthView.isHidden ? false : true
+        changeBrushWidthView.isHidden.toggle() // = changeBrushWidthView.isHidden ? false : true
+        eraserBtnIsOn = false
+        clickEraser()
     }
     @IBAction func sharePressed(_ sender: Any) {
 //        guard let image = mainImageView.image else {
@@ -124,14 +130,9 @@ class DrawTypeViewController: UIViewController {
     }
     
     @IBAction func pencilPressed(_ sender: UIButton) {
-//        guard let pencil = Pencil(tag: sender.tag) else {
-//            return
-//        }
-//        color = pencil.color
-//        if pencil == .eraser {
-//            opacity = 1.0
-//        }
-        
+        changeBrushWidthView.isHidden = true
+        eraserBtnIsOn = false
+        clickEraser()
         let picker = UIColorPickerViewController()
 
         // Setting the Initial Color of the Picker

@@ -79,7 +79,7 @@ class HomeVC: UIViewController, UIGestureRecognizerDelegate {
     }
     
     @objc func tap() {
-        NSLayoutConstraint.deactivate([sideMenuLeftConstraint])
+        showSideBarMenu()
     }
     
     func animateSideMenu() {
@@ -321,25 +321,9 @@ class HomeVC: UIViewController, UIGestureRecognizerDelegate {
     }
     
     func showAlert(type: PageType, completion: @escaping (String) -> ()) {
-        var label: String {
-            switch type {
-            case .draw:
-                return "Draw"
-            case .drawType:
-                return "Draw & Type"
-            case .type:
-                return "Type"
-            case .read:
-                return "Read"
-            case .none:
-                return "None"
-            case .book:
-                return "Book"
-            }
-        }
-        let alert = UIAlertController(title: "Enter \(label) Title", message: "", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Enter Title", message: "", preferredStyle: .alert)
         alert.addTextField()
-        alert.textFields?.first?.placeholder = "\(label) Title"
+        alert.textFields?.first?.placeholder = "Title"
         let ok = UIAlertAction(title: "create", style: .default) {_ in
             let bookTitle = alert.textFields?.first?.text ?? ""
             completion(bookTitle)
@@ -481,7 +465,11 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource, UISearchBarDelegat
         
         switch allRowTypes[indexPath.row] {
         case .page(let page):
-            cell.textLabel?.text = page.title
+            if page.pageType == "type" {
+                cell.textLabel?.text = page.notes ?? ""
+            } else {
+                cell.textLabel?.text = page.title
+            }
         case .book(let book):
             cell.textLabel?.text = book.title
         }
@@ -501,6 +489,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource, UISearchBarDelegat
             } else if page.pageType == "draw" || page.pageType == "drawType" {
                 self.performSegue(withIdentifier: "showDrawFromHome", sender: self)
             }
+            showSideBarMenu()
         case .book(let book):
             ressetView(cBook: book)
             showSideBarMenu()
@@ -512,7 +501,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource, UISearchBarDelegat
             allRowTypes = allRowTypesPreSearchState
             tableView.reloadData()
         } else {
-            allRowTypes = allRowTypesPreSearchState.filter({$0.title.contains(searchText)})
+            allRowTypes = allRowTypesPreSearchState.filter({$0.title.lowercased().contains(searchText.lowercased())})
             tableView.reloadData()
         }
     }
