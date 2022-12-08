@@ -25,7 +25,9 @@ class TypeVC: UIViewController {
     
     @IBOutlet weak var setTimerBtn: UIButton!
     
-    let toolbar = RichEditorToolbar()
+    var toolbar = RichEditorToolbar()
+    
+    var textFont = 17
     
     var noteToBeSave = ""
     
@@ -33,25 +35,34 @@ class TypeVC: UIViewController {
         super.viewDidLoad()
 
         pageVM = PageViewModel()
-        
-//        additionalSafeAreaInsets = .init(top: 6, left: 12, bottom: 0, right: 12)
         htmlView.translatesAutoresizingMaskIntoConstraints = false
         htmlView.delegate = self
         htmlView.editingEnabled = true
         htmlView.placeholder = "Press to start typing"
         
-        
-        let toolbar = RichEditorToolbar(frame: CGRect(x: 0, y: 0, width: 150, height: 44))
-        let greenColor = RichEditorOptionItem(image: UIImage(named: "Pick Color"), title: "🟢") { toolbar in
-            toolbar.editor?.setTextColor(.green)
+        toolbar.editor?.setFontSize(textFont)
+        toolbar = RichEditorToolbar(frame: CGRect(x: 0, y: 0, width: 150, height: 44))
+        let reduceFont = RichEditorOptionItem(image: UIImage(named: "Pick Color"), title: "▽") { toolbar in
+            self.textFont -= 1
+            toolbar.editor?.setFontSize(self.textFont)
             return
         }
-        let blueColor = RichEditorOptionItem(image: UIImage(named: "Pick Color"), title: "🔵") { toolbar in
-            toolbar.editor?.setTextColor(.blue)
+        let increaseFont = RichEditorOptionItem(image: UIImage(named: "Pick Color"), title: "▲") { toolbar in
+            self.textFont += 1
+            toolbar.editor?.setFontSize(self.textFont)
             return
         }
-        let redColor = RichEditorOptionItem(image: UIImage(named: "Pick Color"), title: "🔴") { toolbar in
-            toolbar.editor?.setTextColor(.red)
+        let setColor = RichEditorOptionItem(image: UIImage(named: "Pick Color"), title: "🎨") { toolbar in
+            let picker = UIColorPickerViewController()
+
+            // Setting the Initial Color of the Picker
+            picker.selectedColor = self.view.backgroundColor!
+
+            // Setting Delegate
+            picker.delegate = self
+
+            // Presenting the Color Picker
+            self.present(picker, animated: true, completion: nil)
             return
         }
         
@@ -60,11 +71,10 @@ class TypeVC: UIViewController {
             return
         }
         
-        toolbar.options = RichEditorDefaultOption.all
-        toolbar.options.append(blueColor)
-        toolbar.options.append(redColor)
-        toolbar.options.append(greenColor)
-        toolbar.options.append(blackColor)
+        toolbar.options =  [RichEditorDefaultOption.header(1), RichEditorDefaultOption.header(3), RichEditorDefaultOption.bold, RichEditorDefaultOption.italic, RichEditorDefaultOption.underline, RichEditorDefaultOption.strike, RichEditorDefaultOption.unorderedList, RichEditorDefaultOption.orderedList, RichEditorDefaultOption.indent, RichEditorDefaultOption.outdent, RichEditorDefaultOption.alignLeft, RichEditorDefaultOption.alignCenter, RichEditorDefaultOption.alignRight]
+        toolbar.options.append(setColor)
+        toolbar.options.append(increaseFont)
+        toolbar.options.append(reduceFont)
         toolbar.editor = htmlView
         toolbar.backgroundColor = .darkGray
         
@@ -80,7 +90,7 @@ class TypeVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        htmlView.html = page.notes ?? ""
+        htmlView.html = page.notes
     }
     
     @IBAction func donePrsd(_ sender: Any) {
@@ -92,7 +102,7 @@ class TypeVC: UIViewController {
             if page.notes.isEmpty {
                 // new note save here
                 page.notes = noteToBeSave
-                let cpage = DataManager.shared.corePage(page: page, cBook: cBook)
+                let _ = DataManager.shared.corePage(page: page, cBook: cBook)
                 DataManager.shared.save()
                 self.dismiss(animated: true)
             }
@@ -113,7 +123,7 @@ class TypeVC: UIViewController {
         datePicker.isHidden.toggle()
         setTimerBtn.setTitle(datePicker.isHidden ? "Set Timer" : "Save Timer" , for: .normal)
         if datePicker.isHidden {
-            pageVM.setNoteReminder(date: datePicker.date, title: page.title ?? "")
+            pageVM.setNoteReminder(date: datePicker.date, title: page.title)
         }
     }
 
@@ -122,12 +132,6 @@ class TypeVC: UIViewController {
 extension TypeVC: RichEditorDelegate, RichEditorToolbarDelegate  {
     
     func richEditor(_ editor: RichEditorView, contentDidChange content: String) {
-        // This is meant to act as a text cap
-//        if content.count > 40000 {
-//            editor.html = prevText
-//        } else {
-//            prevText = content
-//        }
         noteToBeSave = content
     }
     
@@ -145,5 +149,18 @@ extension TypeVC: RichEditorDelegate, RichEditorToolbarDelegate  {
     
     func richEditorToolbarInsertImage(_ toolbar: RichEditorToolbar) {
         //
+    }
+}
+
+extension TypeVC: UIColorPickerViewControllerDelegate {
+    
+    //  Called once you have finished picking the color.
+    func colorPickerViewControllerDidFinish(_ viewController: UIColorPickerViewController) {
+        toolbar.editor?.setTextColor(viewController.selectedColor)
+    }
+    
+    //  Called on every color selection done in the picker.
+    func colorPickerViewControllerDidSelectColor(_ viewController: UIColorPickerViewController) {
+            
     }
 }
