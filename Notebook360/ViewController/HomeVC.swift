@@ -22,6 +22,7 @@ class HomeVC: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var showAllFilterBtn: UIButton!
     @IBOutlet weak var menuView: UIView!
     
+    @IBOutlet weak var bookTitle: UILabel!
     //Show Side Bar
     @IBOutlet weak var sideBarMenuViewBG: UIView!
     @IBOutlet weak var tableView: UITableView!
@@ -30,6 +31,7 @@ class HomeVC: UIViewController, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var sideMenuLeftConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var backBtn: UIButton!
     
     var pageVM: PageViewModel!
     var pages = [Page]()
@@ -59,8 +61,6 @@ class HomeVC: UIViewController, UIGestureRecognizerDelegate {
         let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
-        
-//        searchTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
     }
     
     override open var shouldAutorotate: Bool {
@@ -74,12 +74,19 @@ class HomeVC: UIViewController, UIGestureRecognizerDelegate {
         
         sideMenuLeftConstraint.constant = view.frame.maxX
         
-        coreBook = Singleton.shared.coreBooks[bookIndex.last ?? 0]
-        ressetView(cBook: coreBook)
+        ressetView()
     }
     
     @objc func tap() {
         showSideBarMenu()
+    }
+    
+    
+    @IBAction func backPressed(_ sender: Any) {
+        if bookIndex.count > 1 {
+            bookIndex.removeLast()
+            ressetView()
+        }
     }
     
     func animateSideMenu() {
@@ -100,8 +107,9 @@ class HomeVC: UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
-    func ressetView(cBook: CoreBook) {
-        coreBook = cBook // Singleton.shared.coreBooks[bookIndex.last ?? 0]
+    func ressetView() {
+        let cBooks = DataManager.shared.coreBooks()
+        coreBook = cBooks[bookIndex.last ?? 0]
         corePages = DataManager.shared.corePages(coreBook: coreBook)
         
         rowType.removeAll()
@@ -119,6 +127,11 @@ class HomeVC: UIViewController, UIGestureRecognizerDelegate {
         collection.reloadData()
         
         getAllBooksAndPages()
+        
+        UIView.animate(withDuration: 0.3, delay: 0) { [weak self] in
+            self?.backBtn.isHidden = self?.bookIndex.last == 0 ? true : false
+            self?.bookTitle.text = self?.bookIndex.last == 0 ? "360 NoteBooks" : self?.coreBook.title ?? "NoteBook"
+        }
     }
     
     func getAllBooksAndPages() {
@@ -141,6 +154,7 @@ class HomeVC: UIViewController, UIGestureRecognizerDelegate {
 //            self.dismiss(animated: true)
 //        }
     }
+    
     @IBOutlet weak var menuBtnImage: UIImageView!
     
     @IBAction func menuPrsd(_ sender: Any) {
@@ -173,7 +187,9 @@ class HomeVC: UIViewController, UIGestureRecognizerDelegate {
                 let cbook = DataManager.shared.coreBook(book: .init(id: UUID().uuidString, title: string, bookIds: []))
                 DataManager.shared.updateCoreBookBookList(book: self?.coreBook ?? .init(), idToAdd: cbook.id ?? "null")
                 DataManager.shared.save()
-                self?.ressetView(cBook: self?.coreBook ?? .init())
+                let index = DataManager.shared.coreBooks().firstIndex(where: {$0 == cbook})
+                self?.bookIndex.append(index ?? 0)
+                self?.ressetView()
             }
         default:
             //
@@ -183,6 +199,7 @@ class HomeVC: UIViewController, UIGestureRecognizerDelegate {
     
     @IBAction func showSideBarMenu(_ sender: Any) {
         self.showSideBarMenu()
+        getAllBooksAndPages()
     }
     
     func callToVMForUIUpdate() {
@@ -379,13 +396,16 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UITextFi
         
         switch rowType[indexPath.row] {
         case .book(let book):
-            let index = Singleton.shared.coreBooks.firstIndex(where: {$0 == book})
-            bookIndex.append(index ?? 0)
-            UIView.animate(withDuration: 20) {
-                self.ressetView(cBook: book)
+            let index = DataManager.shared.coreBooks().firstIndex(where: {$0 == book})
+            if index == nil {
+                
+            } else {
+                bookIndex.append(index ?? 0)
+                self.ressetView()
             }
         case .page(let page):
             selectedPage = Page(cPage: page)
+            corePage = page 
             if page.pageType == "type" {
                 self.performSegue(withIdentifier: "showTypeFromHome", sender: self)
             } else if page.pageType == "draw" || page.pageType == "drawType" {
@@ -417,9 +437,9 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UITextFi
                 self?.cPageIndex = index
                 switch self?.rowType[index] {
                 case .book(let book):
-                    let index = Singleton.shared.coreBooks.firstIndex(where: {$0 == book})
+                    let index = DataManager.shared.coreBooks().firstIndex(where: {$0 == book})
                     self?.bookIndex.append(index ?? 0)
-                    self?.ressetView(cBook: book)
+                    self?.ressetView()
                 case .page(let page):
                     self?.selectedPage = Page(cPage: page)
                     self?.corePage = page
@@ -491,7 +511,9 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource, UISearchBarDelegat
             }
             showSideBarMenu()
         case .book(let book):
-            ressetView(cBook: book)
+            let index = DataManager.shared.coreBooks().firstIndex(where: {$0 == book})
+            bookIndex.append(index ?? 0)
+            ressetView()
             showSideBarMenu()
         }
     }

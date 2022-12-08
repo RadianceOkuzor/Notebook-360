@@ -240,6 +240,7 @@ extension DrawTypeViewController: UIColorPickerViewControllerDelegate {
     func colorPickerViewControllerDidFinish(_ viewController: UIColorPickerViewController) {
         
         color = viewController.selectedColor
+        erasedColor = color
     }
     
     //  Called on every color selection done in the picker.
