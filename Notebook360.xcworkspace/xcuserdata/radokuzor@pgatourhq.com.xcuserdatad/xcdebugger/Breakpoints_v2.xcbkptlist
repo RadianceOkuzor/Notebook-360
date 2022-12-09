@@ -288,7 +288,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "112"
                   endingLineNumber = "112"
-                  offsetFromSymbolStart = "216">
+                  offsetFromSymbolStart = "284">
                </Location>
                <Location
                   uuid = "66984625-B1FB-4CDC-B757-558C7F89BB65 - a2ecd717286df6dc"
@@ -303,7 +303,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "112"
                   endingLineNumber = "112"
-                  offsetFromSymbolStart = "296">
+                  offsetFromSymbolStart = "390">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -336,7 +336,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "121"
                   endingLineNumber = "121"
-                  offsetFromSymbolStart = "52">
+                  offsetFromSymbolStart = "106">
                </Location>
                <Location
                   uuid = "1F51B4D2-10F5-4D2D-BEEC-6B8D9FBE5FFF - ef0113409c49698b"
@@ -351,7 +351,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "121"
                   endingLineNumber = "121"
-                  offsetFromSymbolStart = "132">
+                  offsetFromSymbolStart = "191">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -547,16 +547,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "DEFABE2B-0147-4564-B042-18A40995CB65"
+            uuid = "1C4CB388-69B5-4382-B689-FE231FDFAA19"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Notebook360/Model/Page.swift"
+            filePath = "Notebook360/ViewController/HomeVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "208"
-            endingLineNumber = "208"
-            landmarkName = "updateCorePage(book:index:notes:drawing:isNotes:)"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
+            landmarkName = "drawTypePrsd(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

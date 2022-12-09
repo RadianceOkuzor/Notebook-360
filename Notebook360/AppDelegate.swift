@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, KCLoginManagerDelegate {
         
         Singleton.shared.coreBooks = DataManager.shared.coreBooks()
         if Singleton.shared.coreBooks.isEmpty {
-            let cbook = DataManager.shared.coreBook(book: .init(id: UUID().uuidString, title: "HomeBook"))
+            let cbook = DataManager.shared.coreBook(book: .init(id: UUID().uuidString, title: "Home Book", bookIds: []))
             Singleton.shared.coreBooks.append(cbook)
 //            Singleton.shared.currentBook = cbook
             DataManager.shared.save()

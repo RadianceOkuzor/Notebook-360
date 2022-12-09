@@ -29,6 +29,7 @@ class DrawTypeViewController: UIViewController {
     var cPage = CorePage()
     var page = Page()
     var cPageIndex = Int()
+    var cBook = CoreBook()
     
     var erasedColor = UIColor.black
     var erasedWidth: CGFloat = 10
@@ -68,8 +69,12 @@ class DrawTypeViewController: UIViewController {
     }
     
     @IBAction func setEraser(_ sender: Any) {
-        
-        eraserBtnIsOn = eraserBtnIsOn ? false : true
+        eraserBtnIsOn.toggle()
+        clickEraser()
+        changeBrushWidthView.isHidden = true
+    }
+    
+    func clickEraser() {
         if eraserBtnIsOn {
             erasedColor = color
             erasedWidth = brushWidth
@@ -86,7 +91,9 @@ class DrawTypeViewController: UIViewController {
     }
     
     @IBAction func changeBrushWidthPressed(_ sender: Any) {
-        changeBrushWidthView.isHidden = changeBrushWidthView.isHidden ? false : true
+        changeBrushWidthView.isHidden.toggle() // = changeBrushWidthView.isHidden ? false : true
+        eraserBtnIsOn = false
+        clickEraser()
     }
     @IBAction func sharePressed(_ sender: Any) {
 //        guard let image = mainImageView.image else {
@@ -123,14 +130,9 @@ class DrawTypeViewController: UIViewController {
     }
     
     @IBAction func pencilPressed(_ sender: UIButton) {
-//        guard let pencil = Pencil(tag: sender.tag) else {
-//            return
-//        }
-//        color = pencil.color
-//        if pencil == .eraser {
-//            opacity = 1.0
-//        }
-        
+        changeBrushWidthView.isHidden = true
+        eraserBtnIsOn = false
+        clickEraser()
         let picker = UIColorPickerViewController()
 
         // Setting the Initial Color of the Picker
@@ -208,18 +210,13 @@ class DrawTypeViewController: UIViewController {
         if page.drawing == nil {
             // save new drawing
             page.drawing = drawnImage.jpegData(compressionQuality: 0.2)
-            if let book = Singleton.shared.coreBooks.first {
-                let cpage = DataManager.shared.corePage(page: page, cBook: book)
-                DataManager.shared.save()
-            }
+            let _ = DataManager.shared.corePage(page: page, cBook: cBook)
+            DataManager.shared.save()
         } else {
             // update current drawing
             cPage.drawing = drawnImage.jpegData(compressionQuality: 0.2)
             cPage.dateEdited = Date.now
             DataManager.shared.save()
-//            if let book = Singleton.shared.coreBooks.first {
-//                DataManager.shared.updateCorePage(book: book, index: cPageIndex, notes: nil, drawing: drawnImage.jpegData(compressionQuality: 0.2), isNotes: false)
-//            }
         }
         self.dismiss(animated: true)
     }
@@ -243,6 +240,7 @@ extension DrawTypeViewController: UIColorPickerViewControllerDelegate {
     func colorPickerViewControllerDidFinish(_ viewController: UIColorPickerViewController) {
         
         color = viewController.selectedColor
+        erasedColor = color
     }
     
     //  Called on every color selection done in the picker.

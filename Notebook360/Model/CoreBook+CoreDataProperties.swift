@@ -2,7 +2,7 @@
 //  CoreBook+CoreDataProperties.swift
 //  
 //
-//  Created by Radiance Okuzor on 10/22/22.
+//  Created by Radiance Okuzor on 12/6/22.
 //
 //
 
@@ -16,10 +16,11 @@ extension CoreBook {
         return NSFetchRequest<CoreBook>(entityName: "CoreBook")
     }
 
-    @NSManaged public var title: String?
     @NSManaged public var color: String?
     @NSManaged public var id: String?
+    @NSManaged public var title: String?
     @NSManaged public var pages: NSSet?
+    @NSManaged public var bookIds: NSSet?
 
 }
 
@@ -37,5 +38,22 @@ extension CoreBook {
 
     @objc(removePages:)
     @NSManaged public func removeFromPages(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for bookIds
+extension CoreBook {
+
+    @objc(addBookIdsObject:)
+    @NSManaged public func addToBookIds(_ value: StringHolder)
+
+    @objc(removeBookIdsObject:)
+    @NSManaged public func removeFromBookIds(_ value: StringHolder)
+
+    @objc(addBookIds:)
+    @NSManaged public func addToBookIds(_ values: NSSet)
+
+    @objc(removeBookIds:)
+    @NSManaged public func removeFromBookIds(_ values: NSSet)
 
 }
